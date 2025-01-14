@@ -1,0 +1,38 @@
+.allOfers{
+    border-right: 1.5px solid rgba(255, 255, 255, 0.488);
+    
+}
+.lang{
+    background: #bfa274 !important;
+    border: none;
+    appearance: none;
+}
+.lang:focus-visible{
+  
+    border: 1px solid white;
+    outline: none;
+  
+}
+
+.searchInput input {
+    background-color: #2C343C !important;
+    border: none !important;
+    outline: none !important;
+    color: white !important;
+    border-radius: 15px;
+
+}
+.searchInput input:focus{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none;
+}
+.searchInput span{
+    border: none;
+    background-color: #2C343C !important;
+    border-radius: 15px;
+
+}
+.login-button{
+    background-color: #bfa274;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min (1).css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Amatic+SC&family=Bad+Script&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .address-form-container {
+            width: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-title {
+            font-size: 18px;
+            color: #BEA276;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .special-row .form-group {
+            flex: 1;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 150px;
+            background: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .map-placeholder p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #BEA276;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #a88f64;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <form id="newAddressForm"class="address-form-container" style="width: 50%;margin-top: 200px;">
+        <h2 class="form-title">Add Address</h2>
+      
+        <!-- Search Input -->
+        <div class="form-group search-input-group">
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg style="color: rgb(35, 34, 34);" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.259 16.3149C12.9822 16.3149 16.0004 13.2966 16.0004 9.57345C16.0004 5.85027 12.9822 2.83203 9.259 2.83203C5.53581 2.83203 2.51758 5.85027 2.51758 9.57345C2.51758 13.2966 5.53581 16.3149 9.259 16.3149Z"
+                    stroke="#BFA274" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.9492 14.6133L16.5922 17.2494" stroke="#BFA274" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <input type="text" id="searchAddress" placeholder="Search " />
+            </div>
+          </div>
+      
+        <!-- Map -->
+        <div class="groub-button py-2" >
+            <div class="map p-2 " style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no"
+                marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                    href="https://www.maps.ie/population/">Find Population on Map</a></iframe></div>
+        </div>
+      
+        <!-- First Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="addressName">Address Name *</label>
+            <input style="background-color: #F5F5F5;width:200%;" type="text" id="addressName" placeholder="Home" />
+          </div>
+          <div class="form-group" style="margin-left: 190px">
+            <label for="buildingNumber">Building Number *</label>
+            <input style="background-color: #F5F5F5; width: 100%;" type="text" id="buildingNumber" placeholder="23"  />
+          </div>
+          <div class="form-group">
+            <label for="apartmentNumber">Apartment Number *</label>
+            <input style="background-color: #F5F5F5;width: 100%;" type="text" id="apartmentNumber" placeholder="10" />
+          </div>
+        </div>
+      
+        <!-- Second Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <select style="width:95% ;" id="country">
+              <option value="Yemen">Yemen</option>
+              <option value="Egypt">Egypt</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="specialMark">Special Mark</label>
+            <input style="background-color: #F5F5F5;" type="text" id="specialMark" placeholder="Front of McDonald's" />
+          </div>
+        </div>
+      
+       <!-- Third Row -->
+<div class="form-row">
+    <div class="form-group">
+      <label for="governorate">Governorate *</label>
+      <select style="width: 100%;" id="governorate">
+        <option value="Shabwa">Shabwa</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="city">City *</label>
+      <select style="width: 100%;" id="city">
+        <option value="Shabwa">Dar Muhaimud</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number *</label>
+      <input style="background-color: #F5F5F5; width: 100%;" type="text" id="mobileNumber" placeholder="+967 123 456 789" />
+    </div>
+  </div>
+  
+      
+        <!-- Fourth Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="street">Street *</label>
+            <input style="background-color: #F5F5F5;" type="text" id="street" placeholder="ST7" />
+          </div>
+          <div class="form-group">
+            <label for="anotherMobileNumber">Another Mobile Number</label>
+            <input style="background-color: #F5F5F5;" type="text" id="anotherMobileNumber" placeholder="+967 123 456 789" />
+          </div>
+        </div>
+      
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" style="padding: 10px 10px;width: 40%;margin-left: 25%;margin-top: 50px;" class="submit-button">Save Address</button>
+        </div>
+      </form>
+      
+</body>
+</html>

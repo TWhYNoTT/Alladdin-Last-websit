@@ -1,0 +1,90 @@
+/*samall screen*/
+ 
+@media screen and(min-width:640px){
+    
+   .smm-100{
+    width: 100%;
+   }
+   .smm-50{
+    width: 50%;
+   }
+   .smm-33{
+    width: 33.33%;
+   }.smm-20{
+    width: 10%;
+   }.smm-16{
+    width: 16%;
+   }
+}
+/*medium screen*/
+@media screen and(min-width:768px){
+    .md-100{
+        width: 100%;
+       }
+       .md-50{
+        width: 50%;
+       }
+       .md-33{
+        width: 33.33%;
+       }
+       .md-20{
+        width: 10%;
+       }
+       .md-16{
+        width: 16%;
+       }
+}
+/*large screen*/
+@media screen and(min-width:1024px ){
+    .lg-100{
+        width: 100%;
+       }
+       .lg-50{
+        width: 50%;
+       }
+       .lg-33{
+        width: 33.33%;
+       }
+       .lg-20{
+        width: 10%;
+       }
+       .lg-16{
+        width: 16%;
+       }
+}
+/*x lerge screen*/
+@media screen and(min-width:1240px){
+    .xlg-100{
+        width: 100%;
+       }
+       .xlg-50{
+        width: 50%;
+       }
+       .xlg-33{
+        width: 33.33%;
+       }
+       .xlg-20{
+        width: 10%;
+       }
+       .xlg-16{
+        width: 16%;
+       }
+}
+/*xx large screen*/
+@media screen and(min-width:1280px) {
+    .xxlg-100{
+        width: 100%;
+       }
+       .xxlg-50{
+        width: 50%;
+       }
+       .xxlg-33{
+        width: 33.33%;
+       }
+       .xxlg-20{
+        width: 10%;
+       }
+       .xxlg-16{
+        width: 16%;
+       }
+} 
