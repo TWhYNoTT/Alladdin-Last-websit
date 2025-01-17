@@ -255,3 +255,6 @@ document.querySelector('.signup__form').addEventListener('submit', (e) => {
 
 // Update the sign up link in the login form
 document.querySelector('.login__signup-link').addEventListener('click', showSignupModal);
+
+
+

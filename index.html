@@ -354,7 +354,7 @@
 
                                 <div class="modal__footer">
                                     <button class="modal__button" data-bs-target="#exampleModalToggle4"
-                                        onclick="startTimer()" data-bs-toggle="modal">Next</button>
+                                        onclick="startTimer(); return false;" data-bs-toggle="modal">Next</button>
                                 </div>
                             </form>
                         </div>
@@ -399,7 +399,7 @@
 
                                 <div class="modal__footer">
                                     <button class="modal__button" data-bs-target="#exampleModalToggle5"
-                                        data-bs-toggle="modal">Next</button>
+                                        data-bs-toggle="modal" onclick="return false;">Next</button>
                                 </div>
                             </form>
 
@@ -473,14 +473,14 @@
                             <p class="text-center enter ">Enter Your Code Sent To your Phone</p>
                             <div class="groub1-inbut  ms-4 m-2 position-relative">
                                 <label for="yourpassword">New Password</label>
-                                <input id="editenumber" class="form-control" type="password"
+                                <input id="editenumber0" class="form-control" type="password"
                                     placeholder="Enter your password">
                                 <i id="passicon"
                                     class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
                             </div>
                             <div class="groub1-inbut  ms-4 m-2 position-relative">
                                 <label for="yourpassword">Confirm password</label>
-                                <input id="editenumber" class="form-control" type="password"
+                                <input id="editenumber1" class="form-control" type="password"
                                     placeholder="Enter your password">
                                 <i id="passicon"
                                     class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
@@ -2134,6 +2134,37 @@
                 ]
             });
         });
+
+
+        function updateTimer() {
+            let days = parseInt(document.getElementById('fs-days').textContent);
+            let hours = parseInt(document.getElementById('fs-hours').textContent);
+            let minutes = parseInt(document.getElementById('fs-minutes').textContent);
+            let seconds = parseInt(document.getElementById('fs-seconds').textContent);
+
+            seconds--;
+
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    if (hours < 0) {
+                        hours = 23;
+                        days--;
+                    }
+                }
+            }
+
+            document.getElementById('fs-days').innerHTML = days.toString().padStart(2, '') + `<span>H</span>`;
+            document.getElementById('fs-hours').innerHTML = hours.toString().padStart(2, '0') + `<span>D</span>`;
+            document.getElementById('fs-minutes').innerHTML = minutes.toString().padStart(2, '0') + `<span>MIN</span>`;
+            document.getElementById('fs-seconds').innerHTML = seconds.toString().padStart(2, '0') + `<span>SEC</span>`;
+        }
+
+        setInterval(updateTimer, 1000);
+
     </script>
 
 
