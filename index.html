@@ -19,992 +19,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index0.css">
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" rel="stylesheet">
-    <style>
-        .MyFavourite {
-            overflow: hidden;
-        }
 
-        .category-section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .header-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .textShop {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .topspan {
-            color: #007bff;
-        }
-
-        .category-slider {
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .category-item {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .category-item a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .category-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        /* Responsive settings */
-        @media (max-width: 768px) {
-            .category-section {
-                padding: 10px;
-            }
-
-            .textShop {
-                font-size: 20px;
-            }
-        }
-
-        /* Custom arrow styles */
-        .slick-prev {
-            left: -5px;
-            top: 30px
-        }
-
-
-        .slick-next {
-            right: -5px;
-            top: 35px
-        }
-    </style>
-
-    <style>
-        .download-bar {
-            display: flex;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: white;
-
-            max-width: 800px;
-            margin: 20px auto;
-        }
-
-        .location {
-            display: flex;
-            align-items: center;
-            margin-right: auto;
-        }
-
-        .flag {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            margin-right: 10px;
-            overflow: hidden;
-        }
-
-        .flag img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .location-text {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .download-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-
-
-        .store-button {
-            height: 40px;
-
-            transition: opacity 0.2s;
-        }
-
-        .store-button0 {
-            height: 35px;
-
-            transition: opacity 0.2s;
-        }
-
-        .store-button:hover {
-            opacity: 0.8;
-        }
-
-        @media (max-width: 600px) {
-            .download-bar {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .location {
-                margin-right: 0;
-            }
-        }
-
-
-
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .slider-container {
-            /* padding: 30px; */
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: #000;
-            border-radius: 8px;
-            overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        .content {
-            color: white;
-            max-width: 50%;
-        }
-
-        .apple-logo {
-            width: 40px;
-            margin-bottom: 20px;
-        }
-
-        .title {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .offer {
-            font-size: 35px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            border-bottom: 1px solid white;
-            padding-bottom: 5px;
-        }
-
-        .cta::after {
-            content: "→";
-            margin-left: 8px;
-        }
-
-        .image {
-            width: 60%;
-            transform: translateX(60px);
-            height: auto;
-        }
-
-        .dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background: #DB4444;
-            border: white 2px solid;
-
-        }
-    </style>
-
-
-
-
-
-
-
-
-
-    <style>
-        /* Reset and Base Styles */
-        .fs-container {
-            width: 100%;
-            max-width: 72rem;
-            margin: 0 auto;
-            padding: 2rem;
-            font-family: system-ui, -apple-system, sans-serif;
-            overflow: hidden;
-        }
-
-        /* Header Section */
-        .fs-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            /* background: linear-gradient(to right, #fff, #fef2f2); */
-            border-radius: 0.5rem;
-            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
-        }
-
-        .fs-title-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .fs-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .fs-title-highlight {
-            color: #ef4444;
-            -webkit-text-fill-color: #ef4444;
-        }
-
-        .fs-emoji {
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-        }
-
-        /* Timer Section */
-        .fs-timer-section {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .fs-timer {
-            display: flex;
-            gap: 0.75rem;
-            border-radius: 0.5rem;
-            background: #ef4444;
-        }
-
-        .fs-timer-box {
-            color: white;
-            padding: 0.5rem 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            /* box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2); */
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fs-timer-box>span {
-            font-weight: 600;
-            font-size: 10px;
-        }
-
-        .fs-view-all {
-            color: #4b5563;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .fs-view-all:hover {
-            background-color: #4b5563;
-            color: white;
-            border-color: #4b5563;
-        }
-
-        /* Carousel Section */
-        .fs-carousel {
-            position: relative;
-            background: white;
-            padding: 1rem;
-            border-radius: 1rem;
-            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); */
-        }
-
-        .fs-carousel__button {
-            color: white;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #bfa274;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border-radius: 9999px;
-            padding: 0.5rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .fs-carousel__button:not(:disabled):hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .fs-carousel__button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .fs-carousel__button--prev {
-            left: -1.5rem;
-        }
-
-        .fs-carousel__button--next {
-            right: -1.5rem;
-        }
-
-        .fs-carousel__track {
-            display: flex;
-            gap: 1.5rem;
-            transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 1rem 0;
-        }
-
-        /* Product Card */
-        .fs-product {
-            flex: none;
-            width: calc(25% - 1.125rem);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .fs-product:hover {
-            transform: translateY(-4px);
-        }
-
-        .fs-product__image-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .fs-product__image {
-            width: 100%;
-            height: 20rem;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .fs-product__image-wrapper:hover .fs-product__image {
-            transform: scale(1.05);
-        }
-
-        .fs-product__favorite {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            padding: 0.75rem;
-            width: 48px;
-            height: 48px;
-            background-color: #FFFFFFCC;
-            border: none;
-            border-radius: 9999px;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .fs-product__favorite.active svg {
-            fill: #ef4444;
-            stroke: #ef4444;
-        }
-
-        .fs-product__image-wrapper:hover .fs-product__favorite {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .bomber-product__image-container:hover .fs-product__favorite {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fs-product__discount {
-            padding: 2px 10px;
-            position: absolute;
-            top: 0.75rem;
-            left: 0.75rem;
-            background: linear-gradient(45deg, #ef4444, #dc2626);
-            color: white;
-            border: white 3px solid;
-            border-radius: 36px;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
-        }
-
-        .fs-product__info {
-            margin-top: 1rem;
-            padding: 0.5rem;
-        }
-
-        .fs-product__name {
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            font-size: 1.125rem;
-        }
-
-        .fs-product__price {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .fs-product__price-sale {
-            color: #ef4444;
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-
-        .fs-product__price-original {
-            color: #9ca3af;
-            text-decoration: line-through;
-            font-size: 0.875rem;
-        }
-
-        .fs-product__rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-
-        .fs-product__stars {
-            color: #fbbf24;
-        }
-
-        /* Animations */
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes shimmer {
-            100% {
-                left: 100%;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .fs-product {
-                width: calc(33.333% - 1rem);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .fs-product {
-                width: calc(50% - 0.75rem);
-            }
-
-            .fs-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .fs-product {
-                width: 100%;
-            }
-
-            .fs-timer-section {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        .prizeimage {
-            transform: translateY(-10px);
-            height: 70px;
-        }
-
-        .prizeimage0 {
-            transform: translateY(-10px);
-            height: 50px;
-        }
-    </style>
-
-
-
-    <style>
-        .lineStores {
-            padding: 1rem 0;
-        }
-
-        .textShop {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 0;
-        }
-
-        .topspan {
-            color: #666;
-        }
-
-        .store-slider {
-            position: relative;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 40px;
-        }
-
-        .store-slider__wrapper {
-            overflow-x: hidden;
-        }
-
-        .store-slider__list {
-            display: flex;
-            gap: 20px;
-            transition: transform 0.3s ease;
-            width: 90%;
-            margin: auto;
-        }
-
-        .store-slider__card {
-            width: 290px;
-            border: 1px solid #E8E8E8;
-            border-radius: 8px;
-            padding: 8px;
-            background: white;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .store-slider__logo {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            padding: 8px;
-        }
-
-        .store-slider__info {
-            flex-grow: 1;
-        }
-
-        .store-slider__title {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .store-slider__distance {
-            color: #ff4d4d;
-            font-size: 14px;
-            margin: 4px 0;
-        }
-
-        .store-slider__rating-box {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .store-slider__star {
-            color: #ffd700;
-        }
-
-        .store-slider__rating-text {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .store-slider__nav-btn {
-            width: 29px;
-            height: 29px;
-            padding: 0;
-            border: none;
-            background: none;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .store-slider__nav-btn--prev {
-            left: 0;
-        }
-
-        .store-slider__nav-btn--next {
-            right: 0;
-        }
-
-        .store-slider__nav-btn:disabled circle {
-            opacity: 0.5;
-        }
-
-        .store-slider__nav-btn circle {
-            fill: #BFA274;
-        }
-    </style>
-
-
-
-    <style>
-        .bomber-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .bomber-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .bomber-header__title {
-            font-size: 24px;
-            font-weight: 600;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .bomber-header__highlight {
-            color: #c17f59;
-        }
-
-        .bomber-header__view-all {
-            color: #666;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .bomber-carousel__wrapper {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bomber-carousel {
-            display: flex;
-            gap: 20px;
-            transition: transform 0.3s ease;
-            padding: 10px;
-        }
-
-        .bomber-product {
-            flex: 0 0 calc(33.333% - 14px);
-            min-width: 280px;
-            position: relative;
-        }
-
-        .bomber-product__image-container {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 1;
-        }
-
-        .bomber-product__image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .bomber-product__favorite {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .bomber-product__discount {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #ff4444;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .bomber-product__info {
-            margin-top: 10px;
-        }
-
-        .bomber-product__title {
-            font-size: 16px;
-            margin-bottom: 5px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .bomber-product__price-container {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .bomber-product__price--current {
-            color: #ff4444;
-            font-weight: 600;
-        }
-
-        .bomber-product__price--original {
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .bomber-carousel__button {
-            color: white;
-            font-size: 20px;
-
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            background: #bfa274;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-
-        .bomber-carousel__button--prev {
-            left: 10px;
-        }
-
-        .bomber-carousel__button--next {
-            right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .bomber-product {
-                flex: 0 0 calc(50% - 10px);
-                min-width: 240px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .bomber-product {
-                flex: 0 0 calc(100% - 20px);
-                min-width: 200px;
-            }
-        }
-    </style>
-
-
-    <style>
-        .suggested-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .suggested-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e5e5e5;
-            padding-bottom: 10px;
-        }
-
-        .suggested-header__title {
-            font-size: 24px;
-            font-weight: 600;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-        }
-
-        .suggested-header__highlight {
-            color: #c17f59;
-        }
-
-        .suggested-header__view-all {
-            color: #666;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .suggested-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 10px 0;
-        }
-
-        .suggested-product {
-            position: relative;
-        }
-
-        .suggested-product__image-container {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 1;
-        }
-
-        .suggested-product__image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .suggested-product__favorite {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .suggested-product__discount {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #ff4444;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            z-index: 1;
-        }
-
-        .suggested-product__info {
-            margin-top: 10px;
-        }
-
-        .suggested-product__title {
-            font-size: 16px;
-            margin: 0 0 5px 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .suggested-product__price-container {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .suggested-product__price--current {
-            color: #ff4444;
-            font-weight: 600;
-        }
-
-        .suggested-product__price--original {
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        @media (max-width: 768px) {
-            .suggested-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .suggested-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 
     <title>Alladdin website-Home</title>
 
@@ -1182,164 +202,161 @@
             <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                 tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content login-modal">
-                        <div class="modal-body">
-                            <form class="p-4">
-                                <div class="ms-2">
-                                    <h1 class="titel1">
-                                        <img class="handAnimation1" src="./photo/animation_ll3sbp58_small 2 - Copy.png"
-                                            alt="">
-                                        Hello
-                                        <img class="handAnimation2" src="./photo/animation_ll3sbp58_small 1.png" alt="">
-                                    </h1>
-                                    <h6 class="fs-6 text-secondary text-center fw-normal">
-                                        Login
-                                    </h6>
-                                    <label for="yournumber">Mobile number</label>
-                                    <div class="position-relative">
-                                        <input id="editenumber" class="editenumber form-control position-relative"
-                                            type="number">
-                                        <div class="   mobile position-absolute top-50 start-0 translate-middle-y">
-                                            <span>+967</span>
-                                            <i class="fa-solid fa-mobil-button"></i>
-                                        </div>
-                                        <div class="p-2 position-absolute top-50 end-0 translate-middle-y">
-                                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.5 1.25H8.25C7.65326 1.25 7.08097 1.44754 6.65901 1.79917C6.23705 2.15081 6 2.62772 6 3.125V16.875C6 17.3723 6.23705 17.8492 6.65901 18.2008C7.08097 18.5525 7.65326 18.75 8.25 18.75H15.75C16.3467 18.75 16.919 18.5525 17.341 18.2008C17.7629 17.8492 18 17.3723 18 16.875V3.125C18 2.62772 17.7629 2.15081 17.341 1.79917C16.919 1.44754 16.3467 1.25 15.75 1.25H13.5M10.5 1.25V2.5H13.5V1.25M10.5 1.25H13.5M10.5 16.875H13.5"
-                                                    stroke="#7A808A" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-
-                                        </div>
-                                    </div>
-                                    <div class="  position-relative ms-2">
-                                        <label for="yourpassword"> Password</label>
-                                        <input id="editenumber" class="form-control w-100" type="password"
-                                            placeholder="Enter your password">
-                                        <i id="passicon"
-                                            class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
-
-                                    </div>
-                                    <div class="">
-                                        <p id="warning"
-                                            class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                            All inputs
-                                            is required</p>
-                                        <p id="warningmessage"
-                                            class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                            incorrect Mobile number or password</p>
-                                        <button class="form-control btn btn11 py-2 mt-3" value="Login">Login</button>
-                                    </div>
-                                    <div class=" d-flex align-items-center justify-content-between mt-1 mb-3">
-                                        <div class=" d-flex align-items-center">
-                                            <input type="checkbox" name="" id="" class=" ">
-                                            Remember me
-                                        </div>
-                                        <button class="text-danger border-0 bg-light" type="button"
-                                            data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-                                            Forgot Password?
-                                        </button>
-                                    </div>
-                                    <div class="orLine position-relative bg-danger">
-                                        <span
-                                            class="position-absolute start-50 top-50 fs-5 px-2 translate-middle bg-white or">Or</span>
-                                    </div>
-                                    <div class="py-2 mt-4">
-                                        <div class="d-flex align-items-center justify-content-center gap-4 ">
-                                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="49" height="49" rx="24.5" fill="#337FFF" />
-                                                <path
-                                                    d="M30.4951 26.0954L31.1933 21.6595H26.8927V18.7763C26.8927 17.5633 27.4931 16.3781 29.413 16.3781H31.3958V12.6008C30.2411 12.4166 29.0744 12.317 27.905 12.3027C24.3654 12.3027 22.0545 14.4305 22.0545 18.2772V21.6595H18.1309V26.0954H22.0545V36.8245H26.8927V26.0954H30.4951Z"
-                                                    fill="white" />
-                                            </svg>
-
-                                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="0.5" y="0.5" width="48" height="48" rx="24" fill="white"
-                                                    stroke="#C4CFE3" />
-                                                <path
-                                                    d="M14.6957 33.6576H18.6524V24.0484L13 19.8091V31.9618C13 32.9001 13.7603 33.6576 14.6957 33.6576Z"
-                                                    fill="#4285F4" />
-                                                <path
-                                                    d="M32.2188 33.6576H36.1755C37.1138 33.6576 37.8712 32.8973 37.8712 31.9618V19.8091L32.2188 24.0484"
-                                                    fill="#34A853" />
-                                                <path
-                                                    d="M32.2188 16.7005V24.0487L37.8712 19.8094V17.5484C37.8712 15.4514 35.4774 14.2559 33.8014 15.5135"
-                                                    fill="#FBBC04" />
-                                                <path
-                                                    d="M18.6523 24.0484V16.7002L25.4353 21.7874L32.2182 16.7002V24.0484L25.4353 29.1356"
-                                                    fill="#EA4335" />
-                                                <path
-                                                    d="M13 17.5484V19.8094L18.6524 24.0487V16.7005L17.0698 15.5135C15.391 14.2559 13 15.4514 13 17.5484Z"
-                                                    fill="#C5221F" />
-                                            </svg>
-
-                                            <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="23.5" cy="23.5" r="23.5" fill="#040415" />
-                                                <path
-                                                    d="M33.4215 17.392C32.6116 17.6659 31.9366 18.3016 31.3967 19.2993C30.8567 20.2969 30.5868 21.2848 30.5868 22.2629C30.5868 23.4757 30.8953 24.6005 31.5124 25.6373C32.1295 26.6741 32.9587 27.3294 34 27.6033C33.6915 28.6596 33.1804 29.7453 32.4669 30.8603C31.7534 31.9754 31.0303 32.8067 30.2975 33.3545C29.6804 33.7848 28.9091 34 27.9835 34C27.3664 34 26.6529 33.8435 25.843 33.5305C25.1488 33.1784 24.551 33.0023 24.0496 33.0023C23.6639 33.0023 22.8926 33.2371 21.7355 33.7066C21.0413 33.9022 20.5399 34 20.2314 34C19.3058 34 18.3609 33.6088 17.3967 32.8263C16.0083 31.4961 14.9284 29.9116 14.157 28.0728C13.3857 26.234 13 24.3169 13 22.3216C13 20.248 13.5882 18.419 14.7645 16.8345C15.9408 15.25 17.4353 14.4577 19.2479 14.4577C20.2507 14.4577 21.1763 14.6729 22.0248 15.1033C22.6804 15.5336 23.3361 15.7488 23.9917 15.7488C24.6088 15.7488 25.2066 15.6315 25.7851 15.3967C27.2893 14.7707 28.292 14.4577 28.7934 14.4577C30.1433 14.4577 31.3196 14.9077 32.3223 15.8075C32.7851 16.277 33.1515 16.8052 33.4215 17.392ZM23.3554 14.6338C23.3554 13.3818 23.8375 12.1495 24.8017 10.9366C25.7658 9.88028 26.9421 9.23474 28.3306 9C28.3306 10.4867 27.8678 11.7973 26.9421 12.9319C25.9008 14.0665 24.7052 14.6338 23.3554 14.6338Z"
-                                                    fill="#F9FAFB" />
-                                            </svg>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="py-2 mt-2 d-flex align-items-center gap-2">
-                                        <p class="">
-                                            Don’t have an account?
-                                        </p>
-                                        <p class="fs-5 fw-bold sign" type="button" data-bs-target="#exampleModalToggle7"
-                                            data-bs-toggle="modal">
-                                            sign up
-                                        </p>
-                                    </div>
-                                </div>
-                            </form>
+                    <div class="login__wrapper">
+                        <div class="login__header">
+                            <img class="handAnimation1" src="./photo/animation_ll3sbp58_small 2 - Copy.png" alt="">
+                            Hello
+                            <img class="handAnimation2" src="./photo/animation_ll3sbp58_small 1.png" alt="">
                         </div>
+
+                        <form class="login__form">
+                            <div class="login__form-group">
+                                <label class="login__label">Mobile number</label>
+                                <div class="login__input-container">
+                                    <div class="login__country-code" id="countryCode">
+                                        <span>+967</span>
+                                        <div class="login__country-dropdown" id="countryDropdown">
+                                            <div class="login__country-option" data-code="+967">+967 Yemen</div>
+                                            <div class="login__country-option" data-code="+966">+966 Saudi Arabia</div>
+                                            <div class="login__country-option" data-code="+971">+971 UAE</div>
+                                            <div class="login__country-option" data-code="+974">+974 Qatar</div>
+                                            <div class="login__country-option" data-code="+968">+968 Oman</div>
+                                        </div>
+                                    </div>
+                                    <input type="tel" class="login__input" placeholder="123 456 789">
+                                    <span class="login__icon">
+                                        <i class="fa-solid fa-mobile-button"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="login__form-group">
+                                <label class="login__label">Password</label>
+                                <div class="login__input-container">
+                                    <input type="password" class="login__input" placeholder="••••••••••">
+                                    <span class="login__icon" id="togglePassword">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="login__remember-forgot">
+                                <label class="login__remember">
+                                    <input type="checkbox" class="login__checkbox">
+                                    Remember me
+                                </label>
+                                <button class="text-danger border-0 bg-light" type="button"
+                                    data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                    Forgot Password?
+                                </button>
+                            </div>
+
+                            <button type="submit" class="login__button">Login</button>
+
+                            <div class="login__divider">Or</div>
+
+                            <div class="login__social">
+                                <a href="#" class="login__social-btn login__social-btn--fb">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="49" height="49" rx="24.5" fill="#337FFF" />
+                                        <path
+                                            d="M30.4951 26.0954L31.1933 21.6595H26.8927V18.7763C26.8927 17.5633 27.4931 16.3781 29.413 16.3781H31.3958V12.6008C30.2411 12.4166 29.0744 12.317 27.905 12.3027C24.3654 12.3027 22.0545 14.4305 22.0545 18.2772V21.6595H18.1309V26.0954H22.0545V36.8245H26.8927V26.0954H30.4951Z"
+                                            fill="white" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="login__social-btn">
+
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.5" y="0.5" width="48" height="48" rx="24" fill="white"
+                                            stroke="#C4CFE3" />
+                                        <path
+                                            d="M14.6957 33.6576H18.6524V24.0484L13 19.8091V31.9618C13 32.9001 13.7603 33.6576 14.6957 33.6576Z"
+                                            fill="#4285F4" />
+                                        <path
+                                            d="M32.2188 33.6576H36.1755C37.1138 33.6576 37.8712 32.8973 37.8712 31.9618V19.8091L32.2188 24.0484"
+                                            fill="#34A853" />
+                                        <path
+                                            d="M32.2188 16.7005V24.0487L37.8712 19.8094V17.5484C37.8712 15.4514 35.4774 14.2559 33.8014 15.5135"
+                                            fill="#FBBC04" />
+                                        <path
+                                            d="M18.6523 24.0484V16.7002L25.4353 21.7874L32.2182 16.7002V24.0484L25.4353 29.1356"
+                                            fill="#EA4335" />
+                                        <path
+                                            d="M13 17.5484V19.8094L18.6524 24.0487V16.7005L17.0698 15.5135C15.391 14.2559 13 15.4514 13 17.5484Z"
+                                            fill="#C5221F" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="login__social-btn login__social-btn--apple">
+                                    <svg width="47" height="47" viewBox="0 0 47 47" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="23.5" cy="23.5" r="23.5" fill="#040415" />
+                                        <path
+                                            d="M33.4215 17.392C32.6116 17.6659 31.9366 18.3016 31.3967 19.2993C30.8567 20.2969 30.5868 21.2848 30.5868 22.2629C30.5868 23.4757 30.8953 24.6005 31.5124 25.6373C32.1295 26.6741 32.9587 27.3294 34 27.6033C33.6915 28.6596 33.1804 29.7453 32.4669 30.8603C31.7534 31.9754 31.0303 32.8067 30.2975 33.3545C29.6804 33.7848 28.9091 34 27.9835 34C27.3664 34 26.6529 33.8435 25.843 33.5305C25.1488 33.1784 24.551 33.0023 24.0496 33.0023C23.6639 33.0023 22.8926 33.2371 21.7355 33.7066C21.0413 33.9022 20.5399 34 20.2314 34C19.3058 34 18.3609 33.6088 17.3967 32.8263C16.0083 31.4961 14.9284 29.9116 14.157 28.0728C13.3857 26.234 13 24.3169 13 22.3216C13 20.248 13.5882 18.419 14.7645 16.8345C15.9408 15.25 17.4353 14.4577 19.2479 14.4577C20.2507 14.4577 21.1763 14.6729 22.0248 15.1033C22.6804 15.5336 23.3361 15.7488 23.9917 15.7488C24.6088 15.7488 25.2066 15.6315 25.7851 15.3967C27.2893 14.7707 28.292 14.4577 28.7934 14.4577C30.1433 14.4577 31.3196 14.9077 32.3223 15.8075C32.7851 16.277 33.1515 16.8052 33.4215 17.392ZM23.3554 14.6338C23.3554 13.3818 23.8375 12.1495 24.8017 10.9366C25.7658 9.88028 26.9421 9.23474 28.3306 9C28.3306 10.4867 27.8678 11.7973 26.9421 12.9319C25.9008 14.0665 24.7052 14.6338 23.3554 14.6338Z"
+                                            fill="#F9FAFB" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="login__signup">
+                                Don't have an account? <a data-bs-target="#exampleModalToggle7" data-bs-toggle="modal"
+                                    class="login__signup-link">Sign up</a>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
             <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-sm ">
-                    <div class="modal-content ">
-                        <div class="modal-body">
-                            <a class="" href="/">
-                                <div class="icon5 ms-2">
-                                    <i class="fa-solid fa-arrow-left arrow"></i>
-                                </div>
-                            </a>
-                            <h2 class="titel1 py-1"> Forgot Password ?</h2>
-                            <p class="text-center enter ">Enter your mobile number to send the code</p>
-                            <div class="groub1-inbut ms-1 m-1 ">
-                                <label class="py-1" for="yournumber">Mobile number</label>
-                                <div class="position-relative py-1 ">
-                                    <input id="editenumber" class="editenumber form-control position-relative"
-                                        type="number">
-                                    <div class="   mobile position-absolute top-50 start-0 translate-middle-y">
-                                        <span>+967</span>
-                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    <div class="modal__overlay" id="forgotPasswordModal">
+                        <div class="modal__content">
+                            <form action="">
+                                <div class="modal__body">
+                                    <button class="modal__back" data-bs-target="#exampleModalToggle"
+                                        data-bs-toggle="modal">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
+
+                                    <h2 class="modal__title">Forgot Password?</h2>
+                                    <p class="modal__subtitle">Enter your mobile number to send the code</p>
+
+                                    <div class="login__input-group">
+                                        <label class="login__label">Mobile number</label>
+                                        <div class="login__input-container">
+                                            <div class="login__country-code" id="forgotPasswordCountryCode"
+                                                style="display: flex;justify-content: center;align-items: center;gap: 3px;">
+                                                <span>+967</span>
+                                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                                <div class="login__country-dropdown" id="forgotPasswordCountryDropdown">
+                                                    <div class="login__country-option" data-code="+967">+967 Yemen</div>
+                                                    <div class="login__country-option" data-code="+966">+966 Saudi
+                                                        Arabia
+                                                    </div>
+                                                    <div class="login__country-option" data-code="+971">+971 UAE</div>
+                                                    <div class="login__country-option" data-code="+974">+974 Qatar</div>
+                                                    <div class="login__country-option" data-code="+968">+968 Oman</div>
+                                                </div>
+                                            </div>
+                                            <input type="tel" class="login__input" placeholder="Enter your number">
+                                        </div>
                                     </div>
+
+                                    <p class="modal__warning" id="warningRequired">
+                                        All inputs is required
+                                    </p>
+                                    <p class="modal__warning" id="warningIncorrect">
+                                        Incorrect Mobile number or password
+                                    </p>
                                 </div>
-                            </div>
 
-                            <div class="groub1-button  py-0">
-                                <p id="warning"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                    inputs is required</p>
-                                <p id="warningmessage"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                    incorrect Mobile number or password</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal"
-                                class="form-control btn btn11 " value="Next">Next</button>
-
+                                <div class="modal__footer">
+                                    <button class="modal__button" data-bs-target="#exampleModalToggle4"
+                                        onclick="startTimer()" data-bs-toggle="modal">Next</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -1347,55 +364,45 @@
             <div class="modal fade" id="exampleModalToggle4" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body ">
-                            <a class="" href="/">
-                                <div class="icon5 ms-2">
-                                    <i class="fa-solid fa-arrow-left arrow"></i>
-                                </div>
-                            </a>
-                            <h2 class="titel1"> Forgot Password ?</h2>
-                            <p class="text-center enter ">Enter Your Code Sent To your Phone</p>
-                            <div class="groub-inbut ms-4 m-2  ">
-                                <div class="d-flex justify-content-center align-items-center gap-4">
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                </div>
-                            </div>
-                            <div class="count1">
-                                <div class="container fan d-flex justify-content-center align-items-center">
-                                    <div class="row text-secondary">
+                    <div class="modal__overlay" id="verificationModal">
+                        <div class="modal__content">
+                            <form action="">
+                                <div class="modal__body">
+                                    <button class="modal__back" data-bs-target="#exampleModalToggle2"
+                                        data-bs-toggle="modal">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
 
-                                        <div class="col-md-3">
-                                            <div class="time  ">
-                                                <span class="mins">00: </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="time">
-                                                <span class="sec"> 59s</span>
-                                            </div>
-                                        </div>
+                                    <h2 class="modal__title">Forgot Password?</h2>
+                                    <p class="modal__subtitle">Enter Your Code Sent To your Phone</p>
+
+                                    <div class="verify__input-group">
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
                                     </div>
+
+                                    <div class="verify__timer">
+                                        <span id="timerMinutes">00</span>:<span id="timerSeconds">59</span>s
+                                    </div>
+
+                                    <a href="#" class="verify__resend" id="resendButton">Resend</a>
+
+                                    <p class="modal__warning" id="verifyWarningRequired">
+                                        All inputs is required
+                                    </p>
+                                    <p class="modal__warning" id="verifyWarningIncorrect">
+                                        Incorrect verification code
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <a class="Resend" href="">Resend</a>
-                            </div>
-                            <div class="groub1-button py-3">
-                                <p id="warning"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                    inputs is required</p>
-                                <p id="warningmessage"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                    incorrect Mobile number or password</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal"
-                                class="form-control btn btn11 " value="Next">Next</button>
+
+                                <div class="modal__footer">
+                                    <button class="modal__button" data-bs-target="#exampleModalToggle5"
+                                        data-bs-toggle="modal">Next</button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -1403,40 +410,51 @@
             <div class="modal fade" id="exampleModalToggle5" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body ">
-                            <a class="" href="/">
-                                <div class="icon5 ms-2">
-                                    <i class="fa-solid fa-arrow-left arrow"></i>
+                    <div class="modal__overlay" id="newPasswordModal">
+                        <div class="modal__content">
+                            <form action="/loged.html">
+                                <div class="modal__body">
+                                    <button class="modal__back" data-bs-target="#exampleModalToggle4"
+                                        data-bs-toggle="modal"">
+                                    <i class=" fa-solid fa-arrow-left"></i>
+                                    </button>
+
+                                    <h2 class="modal__title">Forgot Password?</h2>
+                                    <p class="modal__subtitle">Enter Your Code Sent To your Phone</p>
+
+                                    <div class="login__form-group">
+                                        <label class="login__label">New Password</label>
+                                        <div class="login__input-container">
+                                            <input type="password" class="login__input" id="newPassword"
+                                                placeholder="Enter your password">
+                                            <span class="login__icon" onclick="togglePassword0('newPassword', this)">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="login__form-group">
+                                        <label class="login__label">Confirm password</label>
+                                        <div class="login__input-container">
+                                            <input type="password" class="login__input" id="confirmPassword"
+                                                placeholder="Enter your password">
+                                            <span class="login__icon"
+                                                onclick="togglePassword0('confirmPassword', this)">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <p class="modal__warning" id="newPasswordWarning">
+                                        All inputs is required
+                                    </p>
                                 </div>
-                            </a>
-                            <h2 class="titel1"> Forgot Password ?</h2>
-                            <p class="text-center enter ">Enter Your Code Sent To your Phone</p>
-                            <div class="groub1-inbut  ms-4 m-2 position-relative">
-                                <label for="yourpassword">New Password</label>
-                                <input id="editenumber" class="form-control" type="password"
-                                    placeholder="Enter your password">
-                                <i id="passicon"
-                                    class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
 
-                            </div>
-                            <div class="groub1-inbut  ms-4 m-2 position-relative">
-                                <label for="yourpassword">Confirm password</label>
-                                <input id="editenumber" class="form-control" type="password"
-                                    placeholder="Enter your password">
-                                <i id="passicon"
-                                    class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
+                                <div class="modal__footer">
+                                    <button class="modal__button" onclick="handleNewPassword()">Save</button>
+                                </div>
+                            </form>
 
-                            </div>
-                            <div class="groub1-button py-3">
-                                <p id="warning"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                    inputs is required</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
-                                class="form-control btn btn11 " value="Save">Save</button>
                         </div>
                     </div>
                 </div>
@@ -1486,206 +504,198 @@
             <div class="modal fade" id="exampleModalToggle7" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel7" tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content signUp-modal">
-                        <div class="modal-body">
-                            <form class=" ">
-                                <div class="ms-2">
-                                    <a class="" href="/">
-                                        <div class="icon5 ms-2">
-                                            <i class="fa-solid fa-arrow-left arrow"></i>
-                                        </div>
-                                    </a>
-                                    <h2 class="titel1"> Create new account</h2>
-                                    <p class="text-center enter py-0 "> Sign up</p>
-                                    <div class="groub1-inbut  ms-4 m-2 position-relative">
-                                        <label for="yourpassword">Name</label>
-                                        <div class="position-relative">
-                                            <input id="editenumber" class="form-control" type="password"
-                                                placeholder="Enter your number">
-                                            <div class="p-2 position-absolute top-50 end-0 translate-middle-y">
-                                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M4.48131 12.9013C3.30234 13.6033 0.211137 15.0367 2.09388 16.8304C3.01359 17.7066 4.03791 18.3333 5.32572 18.3333H12.6743C13.9621 18.3333 14.9864 17.7066 15.9061 16.8304C17.7889 15.0367 14.6977 13.6033 13.5187 12.9013C10.754 11.2551 7.24599 11.2551 4.48131 12.9013Z"
-                                                        stroke="#7A808A" stroke-width="1.5" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    <path
-                                                        d="M12.75 5.41663C12.75 7.48769 11.0711 9.16663 9 9.16663C6.92893 9.16663 5.25 7.48769 5.25 5.41663C5.25 3.34556 6.92893 1.66663 9 1.66663C11.0711 1.66663 12.75 3.34556 12.75 5.41663Z"
-                                                        stroke="#7A808A" stroke-width="1.5" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                    <div class="signup__modal" id="signupModal">
+                        <div class="signup__content">
+                            <button class="signup__back" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
 
+                            <h2 class="signup__title">Create new account</h2>
+                            <p class="signup__subtitle">Sign up</p>
 
-                                    </div>
-                                    <div class="groub1-inbut  ms-4 m-2 position-relative ">
-                                        <label class="py-0" for="yournumber">Mobile number</label>
-                                        <div class="position-relative ">
-                                            <input id="editenumber" class="editenumber form-control position-relative"
-                                                type="number">
-                                            <div class="d-flex justify-content-around">
-                                                <div
-                                                    class="   mobile position-absolute top-50 start-0 translate-middle-y">
-                                                    <span>+967</span>
-                                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                            <form class="signup__form">
+                                <!-- Name Input -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">Name</label>
+                                    <input type="text" class="signup__input" placeholder="Enter your name">
+                                    <span class="signup__input-icon">
+                                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M4.48131 12.9013C3.30234 13.6033 0.211137 15.0367 2.09388 16.8304C3.01359 17.7066 4.03791 18.3333 5.32572 18.3333H12.6743C13.9621 18.3333 14.9864 17.7066 15.9061 16.8304C17.7889 15.0367 14.6977 13.6033 13.5187 12.9013C10.754 11.2551 7.24599 11.2551 4.48131 12.9013Z"
+                                                stroke="#7A808A" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M12.75 5.41663C12.75 7.48769 11.0711 9.16663 9 9.16663C6.92893 9.16663 5.25 7.48769 5.25 5.41663C5.25 3.34556 6.92893 1.66663 9 1.66663C11.0711 1.66663 12.75 3.34556 12.75 5.41663Z"
+                                                stroke="#7A808A" stroke-width="1.5" />
+                                        </svg>
+                                    </span>
+                                </div>
 
+                                <!-- Mobile Number Input -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">Mobile number</label>
+                                    <div class="login__input-container">
+                                        <div class="login__country-code" id="signupCountryCode">
+                                            <button type="button" class="signup__dropdown"
+                                                onclick="toggleDropdown('codedown')"
+                                                style="display: flex;align-items: center;justify-content: center;gap: 5px; border: 0;background-color: #f5f5f5;">
+                                                <span>+966</span>
+
+                                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                            </button>
+                                            <div class="login__country-dropdown" id="codedown">
+                                                <div class="login__country-option" data-code="+967">+967 Yemen</div>
+                                                <div class="login__country-option" data-code="+966">+966 Saudi Arabia
                                                 </div>
-                                                <div
-                                                    class="position-absolute top-50     start-50 px-5 translate-middle-y pt-2  ">
-                                                    <div class="Activate   ">
-                                                        <span>Activate</span>
-                                                    </div>
-                                                </div>
+                                                <div class="login__country-option" data-code="+971">+971 UAE</div>
+                                                <div class="login__country-option" data-code="+974">+974 Qatar</div>
+                                                <div class="login__country-option" data-code="+968">+968 Oman</div>
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                    <div class="groub1-inbut  ms-4 m-2 position-relative">
-                                        <label class="py-0" for="yourpassword">Email</label>
-                                        <input id="editenumber" class="form-control" type="Email"
-                                            placeholder="Enter your Email">
-                                        <div
-                                            class="position-absolute top-50     start-50 px-5 translate-middle-y pt-4  ">
-                                            <div class="Activate   ">
-                                                <span>Activate</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="groub1-inbut py-1 ms-1 m-1 ">
-                                        <div class="d-flex">
-                                            <label class="py-0" for="exampleFormControlTextarea1"> Country</label>
-                                            <div class="pt-1 px-1">
-                                                <svg width="7" height="7" viewBox="0 0 7 7" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
-                                                        fill="#EB3C3C" />
-                                                </svg>
-                                            </div>
-
-                                        </div>
-
-                                        <div class=" drow dropdown w-100">
-                                            <a class=" btn btn-white dropdown-toggle  " href="#" role="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                Yemen
-                                            </a>
-
-
-                                            <ul class="dropdown-menu py-0">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="groub1-inbut py-1 ms-1 m-1 d-flex justify-content-around">
-                                        <div class="">
-                                            <div class="d-flex">
-                                                <label class="py-0" for="exampleFormControlTextarea1">
-                                                    Governorate</label>
-                                                <div class="pt-1 px-1">
-                                                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
-                                                            fill="#EB3C3C" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-
-                                            <div class=" drow dropdown py-0">
-                                                <a class=" btn btn-white dropdown-toggle  " href="#" role="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Shabwa
-                                                </a>
-
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="d-flex">
-                                                <label class="py-0" for="exampleFormControlTextarea1">City</label>
-                                                <div class="pt-1 px-1">
-                                                    <svg width="7" height="7" viewBox="0 0 7 7" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
-                                                            fill="#EB3C3C" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <a class=" btn btn-white dropdown-toggle  " href="#" role="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                Shabwa
-                                            </a>
-
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
+                                        <input type="tel" class="login__input" placeholder="Enter your number">
+                                        <span class="signup__activate">Activate</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="d-flex">
-                                        <label class="py-0" for="exampleFormControlTextarea1">Select cruuency</label>
-                                        <div class="pt-1 px-1">
-                                            <svg width="7" height="7" viewBox="0 0 7 7" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+
+                                <!-- Email Input -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">Email</label>
+                                    <input type="email" class="signup__input" placeholder="Enter your email">
+                                    <span class="signup__activate" style="transform: translateY(10px);">Activate</span>
+                                </div>
+
+                                <!-- Country Dropdown -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">
+                                        Country
+                                        <svg class="signup__required" width="7" height="7" viewBox="0 0 7 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
+                                                fill="#EB3C3C" />
+                                        </svg>
+                                    </label>
+                                    <button type="button" class="signup__dropdown"
+                                        onclick="toggleDropdown('countryDropdown')">
+                                        <span>Yemen</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="signup__dropdown-content" id="countryDropdown">
+                                        <div class="signup__dropdown-item">Yemen</div>
+                                        <div class="signup__dropdown-item">Saudi Arabia</div>
+                                        <div class="signup__dropdown-item">UAE</div>
+                                    </div>
+                                </div>
+
+                                <!-- Location Two Columns -->
+                                <div class="signup__two-cols">
+                                    <!-- Governorate Dropdown -->
+                                    <div class="signup__form-group">
+                                        <label class="signup__label">
+                                            Governorate
+                                            <svg class="signup__required" width="7" height="7" viewBox="0 0 7 7"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
                                                     fill="#EB3C3C" />
                                             </svg>
+                                        </label>
+                                        <button type="button" class="signup__dropdown"
+                                            onclick="toggleDropdown('governorateDropdown')">
+                                            <span>Shabwa</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="signup__dropdown-content" id="governorateDropdown">
+                                            <div class="signup__dropdown-item">Shabwa</div>
+                                            <div class="signup__dropdown-item">Sana'a</div>
+                                            <div class="signup__dropdown-item">Aden</div>
                                         </div>
                                     </div>
-                                    <div class="py-1 drow dropdown">
-                                        <a class=" btn btn-white dropdown-toggle  " href="#" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            YER
-                                        </a>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
+                                    <!-- City Dropdown -->
+                                    <div class="signup__form-group">
+                                        <label class="signup__label">
+                                            City
+                                            <svg class="signup__required" width="7" height="7" viewBox="0 0 7 7"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
+                                                    fill="#EB3C3C" />
+                                            </svg>
+                                        </label>
+                                        <button type="button" class="signup__dropdown"
+                                            onclick="toggleDropdown('cityDropdown')">
+                                            <span>Shabwa</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="signup__dropdown-content" id="cityDropdown">
+                                            <div class="signup__dropdown-item">Shabwa</div>
+                                            <div class="signup__dropdown-item">City 2</div>
+                                            <div class="signup__dropdown-item">City 3</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="groub1-inbut  py-1 m1-4 m-1 position-relative">
-                                    <label class="py-0" for="yourpassword">Password</label>
-                                    <input id="editenumber" class="form-control" type="password"
-                                        placeholder="Enter your password">
-                                    <i id="passicon"
-                                        class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
 
+                                <!-- Currency Dropdown -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">
+                                        Select currency
+                                        <svg class="signup__required" width="7" height="7" viewBox="0 0 7 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.108 6.422L3.038 4.21L1.232 5.428L0.588 4.182L2.632 3.44L0.938 2.124L1.932 1.13L3.248 2.824L3.99 0.78L5.25 1.424L4.018 3.23L6.23 3.3L6.006 4.686L3.892 4.07L4.508 6.198L3.108 6.422Z"
+                                                fill="#EB3C3C" />
+                                        </svg>
+                                    </label>
+                                    <button type="button" class="signup__dropdown"
+                                        onclick="toggleDropdown('currencyDropdown')">
+                                        <span>YER</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="signup__dropdown-content" id="currencyDropdown">
+                                        <div class="signup__dropdown-item">YER</div>
+                                        <div class="signup__dropdown-item">USD</div>
+                                        <div class="signup__dropdown-item">SAR</div>
+                                    </div>
                                 </div>
-                                <div class="groub1-inbut  ms-4 m-2 position-relative">
-                                    <label class="py-0" for="yourpassword">Confirm password</label>
-                                    <input id="editenumber" class="form-control" type="password"
-                                        placeholder="Enter your password">
-                                    <i id="passicon"
-                                        class="fa-regular fa-eye  position-absolute  top-50 translate-middle-y  end-0 pe-2 "></i>
 
+                                <!-- Password Input -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">Password</label>
+                                    <div class="position-relative">
+                                        <input type="password" class="signup__input" placeholder="Enter your password">
+                                        <i class="fa-regular fa-eye signup__input-icon"
+                                            onclick="togglePassword12(this)"></i>
+                                    </div>
                                 </div>
-                                <div class="groub1-button py-1">
-                                    <p id="warning"
-                                        class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                        inputs is required</p>
-                                    <p id="warningmessage"
-                                        class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                        incorrect Mobile number or password</p>
-                                    <button type="button" data-bs-target="#exampleModalToggle8" data-bs-toggle="modal"
-                                        class="form-control btn btn11 " value="Sign up"> Sign up</button>
+
+                                <!-- Confirm Password Input -->
+                                <div class="signup__form-group">
+                                    <label class="signup__label">Confirm password</label>
+                                    <div class="position-relative">
+                                        <input type="password" class="signup__input"
+                                            placeholder="Confirm your password">
+                                        <i class="fa-regular fa-eye signup__input-icon"
+                                            onclick="togglePassword12(this)">
+                                        </i>
+                                    </div>
                                 </div>
+                                <div class="signup__form-group">
+                                    <label class="login__remember">
+                                        <input type="checkbox" class="login__checkbox">
+                                        I agree to the <a class="login__signup-link" href="#">terms and conditions</a>
+                                    </label>
+                                </div>
+                                <!-- Warning Messages -->
+                                <div class="signup__warning" id="requiredWarning">All inputs are required</div>
+                                <div class="signup__warning" id="passwordWarning">Incorrect Mobile number or password
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="signup__button">Sign up</button>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -1808,184 +818,13 @@
     </header>
 
     <section>
-        <form id="newAddressForm" class="hidden-form" style="width: 50%;margin-top: 200px;">
-            <h2 class="new-form-title">Add Address</h2>
 
-            <!-- Search Input -->
-            <div class="form-group search-input-group">
-                <div class="input-wrapper">
-                    <input type="text" id="searchAddress" placeholder="Search " />
-                </div>
-            </div>
-
-            <!-- Map -->
-            <div class="groub-button py-2">
-                <div class="map p-2 " style="width: 100%"><iframe width="100%" height="200" frameborder="0"
-                        scrolling="no" marginheight="0" marginwidth="0"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                            href="https://www.maps.ie/population/">Find Population on Map</a></iframe></div>
-            </div>
-
-            <!-- First Row -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="addressName">Address Name *</label>
-                    <input style="background-color: #F5F5F5;width:100%;" type="text" id="addressName"
-                        placeholder="Home" />
-                </div>
-                <div class="form-group" style="margin-left: 10px">
-                    <label for="buildingNumber">Building Number *</label>
-                    <input style="background-color: #F5F5F5; width: 100%;" type="text" id="buildingNumber"
-                        placeholder="23" />
-                </div>
-                <div class="form-group">
-                    <label for="apartmentNumber">Apartment Number *</label>
-                    <input style="background-color: #F5F5F5;width: 100%;" type="text" id="apartmentNumber"
-                        placeholder="10" />
-                </div>
-            </div>
-
-            <!-- Second Row -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="country">Country *</label>
-                    <select style="width:95% ;" id="country">
-                        <option value="Yemen">Yemen</option>
-                        <option value="Egypt">Egypt</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="specialMark">Special Mark</label>
-                    <input style="background-color: #F5F5F5;" type="text" id="specialMark"
-                        placeholder="Front of McDonald's" />
-                </div>
-            </div>
-
-            <!-- Third Row -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="governorate">Governorate *</label>
-                    <select style="width: 100%;" id="governorate">
-                        <option value="Shabwa">Shabwa</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="city">City *</label>
-                    <select style="width: 100%;" id="city">
-                        <option value="Shabwa">Dar Muhaimud</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mobileNumber">Mobile Number *</label>
-                    <input style="background-color: #F5F5F5; width: 100%;" type="text" id="mobileNumber"
-                        placeholder="+967 123 456 789" />
-                </div>
-            </div>
-
-
-            <!-- Fourth Row -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="street">Street *</label>
-                    <input style="background-color: #F5F5F5;" type="text" id="street" placeholder="ST7" />
-                </div>
-                <div class="form-group">
-                    <label for="anotherMobileNumber">Another Mobile Number</label>
-                    <input style="background-color: #F5F5F5;" type="text" id="anotherMobileNumber"
-                        placeholder="+967 123 456 789" />
-                </div>
-            </div>
-
-
-            <!-- Submit Button -->
-            <div class="form-group">
-                <button type="submit" style="padding: 10px 10px;width: 40%;margin-left: 30%;margin-top: 50px;"
-                    class="submit-button">Save Address</button>
-            </div>
-        </form>
         <div class="container py-2">
 
             <div class="row " style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                 <div class="col col-md-6">
-                    <div class="d-flex gap-2">
-                        <a href="#addressForm " onclick="openForm()" style="margin-top: 20px;">
-                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <rect width="40.881" height="40.881" rx="4.80952" fill="#FFE0E0" />
-                                <rect x="4" y="2" width="34" height="36" rx="4" fill="url(#pattern0_128_29589)" />
-                                <defs>
-                                    <pattern id="pattern0_128_29589" patternContentUnits="objectBoundingBox" width="1"
-                                        height="1">
-                                        <use xlink:href="#image0_128_29589"
-                                            transform="matrix(0.00264286 0 0 0.00246667 -0.178571 0)" />
-                                    </pattern>
-                                    <image id="image0_128_29589" width="500" height="500"
-                                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNSR0IArs4c6QAAIABJREFUeF7tnW2MnuWV38/9zIzHM34hM1Oz1MY1Mc5WWgErVRDyJQRUCQvUFSz0Q5Jlq7IRSAvdWIqTYAmywCaRyAuVyG74wKqJqnXrtBKEqBUskSoIfAkJXxK7WykYB2rsuHHsCfbY4/HMPHd17vEMnvF45nqe534513V+l2SZl+u+rnN+53j+vt6z/N13c6FAAAIQgAAEIBA1gQxBjzp+GA8BCEAAAhAoCCDoJAIEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAUIQAACEIAAgk4OQAACEIAABBIggKAnEERcgAAEIAABCCDo5AAEIAABCEAgAQIIegJBxAVfBCYPHSwcPnvw7eL39uSknDvy/gKEyXfm/ntIGbr2YwvVBkZHZWB0rPj3wS1XS9/QkAxt3xHSDHUgAAEDBBB0A0HABAgsJdA+NylTR48Uoj198oRMnzwpnQh12URV+FXgVeiHd3xMBkZGpX9ktOxuaA8CEOiBAILeAzw+hUBZBHTUreI9deR9OfvO28Wo23ppqcBvnhN4/cVo3nrEsC91Agh66hHGP5MEdPQ9ceCXhYg3OfIuG04xgr/2Y7L++hsQ+LLh0h4EViGAoJMiEKiBgE6hTxzYL2cP/qoQ8hhG4L1i0RH8nLj/sQxfu4Mp+l6B8j0EEHRyAALNEJgX8Yn9vyhE3HtZf90Nhbivv+56aa0d8o4D/yFQOgFG6KUjpUHvBCb+93459bOfIuIrJMK8uG+88ePe0wX/IVAaAQS9NJQ05JnAzPhJGX/9Nfng5z91MZ1eVqx1Wv6Kmz4hI7fcypR8WVBpxy0BBN1t6HG8DAKT7xyU373yUlIb28rg0k0bejTuio9/Qhi1d0OPbyAggqCTBRDogsCpt34mJ155qTgjTimXgF5uM7bzTtbay8VKaw4IIOgOgoyL5RDQTW46rT7++qtMq5eDdMVWdDp+5Jbbiul4NtHVAJwuoieAoEcfQhyog8CJH7+MkNcBepk+EPaGwNNtdAQQ9OhChsF1EmBqvU7aK/c1L+xjt99hxygsgYAhAgi6oWBgih0Cutnt2A/2skZuJyQLluga+6a77i3W2CkQgMCHBBB0sgECFxHQ42e/2beXXesRZIXuir/y7ntlcPOWCKzFRAhUTwBBr54xPURAYH7Dm+5cp8RFQDfOje28g41zcYUNaysggKBXAJUm4yLA9Hpc8VrOWqbh448hHvROAEHvnSEtREpAR+W/ffF5OfXzNyP1ALOXEtArZa/6zH2M1kkNlwQQdJdhx2kdlR/5/nOcJ08wFXQ3/FWf/nM2zSUYW1xamQCCToa4I3D8Ry8UZ8opaRPYeNPNxaY5LqVJO8549yEBBJ1scENg6uiR4ija1JH33fjs3VFdW998/wPshPeeCE78R9CdBNq7m6feerNYL29PTnpH4dL/K++6Vz5yy60ufcdpPwQQdD+xduspU+xuQ7/IcabgyYPUCSDoqUfYsX+6i/3ws99hit1xDix1fXDL1bLl/gd4e52cSJIAgp5kWHFK18sPP/sMU+ykwiUEdBf81od2sa5ObiRHAEFPLqQ4NHFgvxz7wT8g5qTCigT0vPrGG2+GEgSSIYCgJxNKHFECuvnt2L69wIBAEAE2ywVholIkBBD0SAKFmasTYPPb6oyocSkB3Sx31afvAw0EoieAoEcfQhxQAnq+nCtcyYVuCSDq3ZLjO0sEEHRL0cCWrggg5l1h46MlBBB1UiJ2Agh67BF0bj9i7jwBSnZf31jf8hcPcF1syVxprh4CCHo9nOmlAgKIeQVQaVL0rPq2LzwCCQhERwBBjy5kGMyaOTlQNQGm36smTPtVEEDQq6BKm5USYGReKV4av0AAUScVYiOAoMcWMef2cjTNeQLU7D6iXjNwuuuJAILeEz4+rpMAl8bUSZu+5gmM7bxTxm6/AyAQME8AQTcfIgxUAnqd69HvPwcMCDRCgGtiG8FOpx0SQNA7BEb1+gnw0Er9zOnxUgLbdu/hQRcSwzQBBN10eDBOn0A99LXHeWiFVGicgL7Sds3uPTy92ngkMOByBBB0csM0gff+4zd4z9x0hHwZp2fUtz70eS6e8RX2aLxF0KMJlT9D2dHuL+YxeMzO9xii5NNGBN1n3M17zY528yFybeCmu++VkU/e6poBztsjgKDbi4l7i9gE5z4FogDAJrkowuTKSATdVbjjcJZ18zji5N3KgdEx2bb7EdbTvSeCIf8RdEPBwBQR1s3JgpgIsJ4eU7TStxVBTz/G0Xg4+c5BOfzsM9HYi6EQUAKb739Q1l93PTAg0DgBBL3xEGCAEuC8OXkQKwHOp8caufTsRtDTi2mUHjHVHmXYMPoCgfXX3SCb738AHhBolACC3ih+OlcCTLWTBykQYOo9hSjG7QOCHnf8ordep9rfe/obMn3yRPS+4IBvAjr1vv2xJ9n17jsNGvUeQW8UP52f+PHLcuKVlwABgSQIbLzxZtGX2SgQaIIAgt4EdfosCMyMnyweXqFAICUCWx/aJUPX7kjJJXyJhACCHkmgUjTz8LPfkcl33k7RNXxyTGDo2o8VD7hQIFA3AQS9buL0VxBgIxyJkDIBnXbX6XcKBOokgKDXSZu+Fgj8+utPsBGOfEiWANfCJhta044h6KbDk6ZxvKSWZlzxajGBsZ13ytjtd4AFArURQNBrQ01H8wQYnZMLHghwjM1DlG35iKDbikfy1oy/8Zocf/H55P3EQQgoAUbp5EGdBBD0Omk774v72p0ngEP3GaU7DHqDLiPoDcL31jWXyHiLOP4ySicH6iSAoNdJ23lfrJ07TwCn7jNKdxr4BtxG0BuA7rFLdrZXG/X+kVEZGB2V4R1/KCogazdfvahD/X/TJ08u+m/njr4v7clJOXvwV8X/05v7KNUQYC29Gq60upgAgk5G1EKA0Xm5mAc3bynEW28lG96xo7QHQfTCn7PvvC0T+38hU0ePlGu049b0XPpHH33CMQFcr4MAgl4HZed9cCtcOQmgIj7yqdtE395urR0qp9EVWtFNjBMHfikf/Oynxc1+lN4IcHtcb/z4enUCCPrqjKjRIwHubO8eoAq3ivgVN90sOq3eVNHp+NMHfinjP3mVqfkugzC45WrZ9oVHuvyazyCwOgEEfXVG1OiBAC+qdQdPxXteyOsYjXdipe6H+N0/voSwdwLtQt1tu/eIzrRQIFAFAQS9Cqq0uUCAo2qdJYOK95V/em8UD3sg7J3FVmvzXnrnzPginACCHs6Kml0QYDNcODT9Ya9ibm1EvpIHus5+4pWXZfz1V8MddVyTI2yOg1+D6wh6DZC9djFxYL8c/f5zXt0P9lunYK+8+9/K0LU7gr+xVlF3xB/b9w/sjA8IDJvjAiBRpSsCCHpX2PgohICKuYo65fIEYhyVrxTP4z96gdH6KgnP5jh+IlRFAEGviqzzdnUq9uCjX3ZO4fLux7RW3mkQ9S9xOlrXHKAsT2D7Y082emqBuKRJAEFPM66Ne8XNcJcPge5g3/IXDya921lPNxz53nNMwV8mDTbdfa+MfPLWxv+cYkBaBBD0tOJpxhum25cPha6Xb314V1Qb37pNKh2hH/7uM4j6MgCZdu82q/huJQIIOvlROgGm2xHzeQKaC7/94fOiMzaUxQSYdicjyiaAoJdNlPaKH97H9u2FxEUEPI3Mlwu85gOivpgM0+78iCibAIJeNlHaK8ScH94fJoJ3MVcSTL9f+oNh/XXXy+b7H+QnBgRKI4Cgl4aShuYJHHzsy8WznBQpdjJf88U9LtbMV4s3on4poT98+m9Xw8b/h0AwAQQ9GBUVQwjoBSPvPf1USNXk6+jRNN0Ax93dH4ZaRf3QVx/nSNsFJDpC15E6BQJlEEDQy6BIGwsEuLv9w2TgRrDl/2DwnO6HXEZuuU023XUPP0EgUAoBBL0UjDQyT+Dws8/wdjaPcKz6B4K/+M0h4vjaqqlChQ4IIOgdwKLq6gR+tfuvVq+UeA02wYUFmL/8zXHa8fVvssciLGWotQoBBJ0UKY0AU6lzKLc+tCvqh1ZKS4hVGtLb5A597fG6ujPbD+voZkMTnWEIenQhs2vw+BuvyfEXn7drYA2W8d51Z5CZehdhHb2znKH25Qkg6GRHaQS8X/equ9q3f+VJpk87yCjd9f7ut58SHa17Lfpsrs7qUCDQKwEEvVeCfL9AwPv5c27+6u4PAzcLinAevbvc4avFBBB0MqIUAt7vb9cLZPRubkp3BHQt3fMofdvuPdxX0F3q8NVFBBB00qEUAt43xI3tvFPGbr+jFJYeG/E+SmdjnMesL99nBL18pi5b9LwhjrXzclLe8yidvxCWk0PeW0HQvWdASf57fpCFXcrlJJHnvxSyMa6cHPLeCoLuPQNK8t/zJSG8a11OEnnehzEwOiYfffSJckDSilsCCLrb0JfruNcd7nornG5oopRDwPPRR3a6l5NDnltB0D1Hv0TfvV75ylG1EpNIRDxvjmOmp9xc8tgagu4x6iX77HmHO/dwl5xMIuL1L4dcGVx+LnlrEUH3FvEK/PUq6Ey3V5BMIuJ1PwbP7VaTT55aRdA9RbsiX73ex83u9moSyms+cXStmnzy1CqC7inaFfnq9Qcwl4FUk1BeZ3z4C2I1+eSpVQTdU7Qr8tWroLN+XlFCOV1H5yx6dfnkpWUE3UukK/TT45ond7dXmFBO19ER9GpzykPrCLqHKFfso0dB54dvtUnl8Tw6OVVtTnloHUH3EOWKffQo6Kx3VptUHpdxWkNDsuNr36wWLK0nTQBBTzq89Tj3668/IdMnT9TTmZFeuFCm2kBMHNgvOkr3VrgtzlvEy/UXQS+Xp8vWPF4EwiUg1aa6153uCHq1eZV66wh66hGuwT8EvQbIzrpA0J0FHHdLIYCgl4LRdyMIuu/4V+E9gl4FVdpMnQCCnnqEa/APQa8BssMuPOYVU+4OE71ElxH0EmF6bcrjD17W0KvPdo95haBXn1cp94Cgpxzdmnzz+IMXQa8+uTzmFYJefV6l3AOCnnJ0a/LN4w9eBL3a5Jo6ekTee/qpajsx2DqCbjAoEZmEoEcULKumIuhWIxOvXWyKizd2WN4cAQS9OfbJ9IygJxNKM44g6GZCgSEREUDQIwqWVVMPfe1xmRk/adW8SuziprhKsC40yk1x1fKl9TQJIOhpxrVWr7jLvVbcLjrzeJe7BpY1dBfpXZmTCHplaP007FHQeRmr2vzmtbVq+dJ6mgQQ9DTjWqtXHgV9YHRMPvroE7Vy9tSZx5ziL4meMrwaXxH0ari6atXjD18N8I6vf1Naa4dcxbouZz1utETQ68qudPtB0NONbW2eHf/RCzL++qu19Welo833Pyjrr7veijnJ2OH1DPrYzjtl7PY7kokjjtRPAEGvn3lyPXrdwDRyy22y6a57kotn0w6Nv/GaHH/x+abNqL1/BL125Ml1iKAnF9L6HfIq6INbrpZtX3ikfuCJ9+h1Ceeqz9wnG2+8OfHo4l6VBBD0Kuk6afvUW2/KsX17nXi72E3W0csPu8f1c6XIdcLl55K3FhF0bxGvwF+vt3opSkZV5SaU1wtlEPRy88hrawi618iX6LdnQWfavcREEhGP58/nCXKpTLm55LE1BN1j1Cvw2es0qaLc/tiT0j8yWgFVX022z03KwUe/7MvpC95q/mgeUSDQCwEEvRd6fLtAQH8Q6w9kj4XdyeVE3fNeDM6gl5ND3ltB0L1nQEn+e92ZrPhaQ0PF6IpLZnpLpl9//QmZPnmit0Yi/ZojkJEGzpjZCLqxgMRqju5y1xGW18LmuN4i73l0ruR4va+3/OHrOQIIOplQCgGvZ9Hn4XG3e29p5Hl0ruQ4stZb/vA1gk4OlEjA83GjeYyM0rtLKHKHjZXdZQ5fLSXACJ2cKIWA1/u3L4bHWnp3qeR9dK57L/SCIgoEeiWAoPdKkO8XCHg+ujYPgc1Nnf2B8L5Uo7T0gR996IcCgV4JIOi9EuT7BQKed7pfnAbbdu+Rwc1byIxVCMyMn5RDX3vcPSeOPbpPgdIAIOiloaQhr8+oLo08t8eF/Vk4/Ox3ZPKdt8MqJ1yLDXEJB7dm1xD0moGn3J33o0cXx5ap95Uznan2D/lw5WvKPxXr9Q1Br5d30r0xhbo4vLouquujlMUEPN/9f8lszuYtoks0FAiUQQBBL4MibSwQ8HwF7NI00F3v1+zewz3vF4HR64F13bw96fOa4KU5ou+f63FHCgTKIICgl0GRNhYIeH4ta7k00PX0rQ99nmthRYq7/nXdfOrI+/yJuUCAuwtIhTIJIOhl0qQtGX/jNTn+4vOQuIgAoj4Hg01wl/6x0PPnvAHAj4uyCCDoZZGknYIA6+jLJ8LQtR8rRupey7Ef7JVTP/d71/+yszesn3v941CZ3wh6ZWj9Nvze00+J3hxHWUxg/XU3FOul3kZkiPnyfxI4f85PiLIJIOhlE6U94Tz65ZPA0/S7rpkf+d7fc9b8MunABUT8sCybAIJeNlHaE44lrZwEKupb7n8g6d3vbIBbOQe4v50flFUQQNCroEqbwvG1VX6gDw3JVZ/+8yTPqetf6I58/zmOpq2QAhxX44dkFQQQ9Cqo0qYc27dX9OY4ysoEUrtRjhvgwjKeS4fCOFGrMwIIeme8qB1IgGn3QFAiolPwV336vqgfdNHTDb/Zt5f18oCwM90eAIkqXRFA0LvCxkchBPRGMP1BTwkjoKP1sZ13RLULXtfKx19/TU688lKYk9SS1GZlCKkdAgi6nVgkZwmXzHQe0oHRMdHjTBtv/HjnH9f8xam3flYI+fTJEzX3HHd37G6PO36WrUfQLUcnctu4ZKb7AFoWdoS8+7gOcplM9/D4clUCCPqqiKjQCwHudu+FnogK+8gnb5X119/Q6DE3nVo/9bM3i6t9GZF3H9NNd99bxJMCgSoIIOhVUKXNBQITB/aLijqldwJ609z66/+4OOpW121zOhqf2P8LmTjwy94doAXh7naSoEoCCHqVdGm7IMDmuPITQe+GH94x92to+47SOtAre1W8zx58mx3rpVGda4iz5yUDpblLCCDoJEXlBDjCVjni4ujbwMjo3O+jYzIwOrrQqa7bzo/oJw8dXPjvs5OTxVOm+kv/efKdt6s31HEP2x97stFlE8fo3biOoLsJdbOOHn72meJKWAoEPBJgdO4x6vX7jKDXz9xlj4zSXYYdpy8QYHROKtRBAEGvgzJ9FAQYpZMIHgkwOvcY9WZ8RtCb4e6yV0bpLsPu3umtD+2SoWvL27joHigALksAQSc5aiXAufRacdNZwwT0iKE+xEKBQB0EEPQ6KNPHAgG9oOTQVx8X/Z0CgZQJ6MmC7V95srY7A1JmiW9hBBD0ME7UKpEAl82UCJOmzBK46jP3FWfPKRCoiwCCXhdp+llEgKl3EiJlArpmrmvnFAjUSQBBr5M2fTH1Tg4kT0Cn2q/54h4ukUk+0vYcRNDtxcSNRUy9uwm1K0d5gMVVuE05i6CbCoc/Y5h69xfzlD1mqj3l6Nr3DUG3H6OkLdTd7u9++ynRt9MpEIiZALvaY45eGrYj6GnEMWovuHAm6vBh/AUCet5cz51TINAUAQS9KfL0u4jAiR+/LCdeeQkqEIiSwMgtt8mmu+6J0naMTocAgp5OLKP35L2nnxJ9j5sCgZgI6PO0Wx/exQUyMQUtUVsR9EQDG6Nbuo6u6+ncIhdj9PzavG33HlFRp0CgaQIIetMRoP9FBE699aYc27cXKhCIggBH1KIIkxsjEXQ3oY7HUY6yxRMrz5ZyRM1z9G36jqDbjItrqzjK5jr8UTjPEbUowuTOSATdXcjjcJijbHHEyauVHFHzGnnbfiPotuPj2jqOsrkOv1nn9QU1fUmNAgFrBBB0axHBnkUEOMpGQlgi0D8yWjy8olPuFAhYI4CgW4sI9iwiwFE2EsISAY6oWYoGtiwlgKCTE+YJcJTNfIhcGDi2804Zu/0OF77iZJwEEPQ44+bOao6yuQu5KYc5omYqHBhzGQIIOqkRBQGOskURpiSN1PVyXTfX9XMKBCwTQNAtRwfbFhHgKBsJ0QQBjqg1QZ0+uyGAoHdDjW8aI8BRtsbQu+yYI2ouwx6t0wh6tKHzazhH2fzGvk7PeUWtTtr0VQYBBL0MirRRKwGOstWK221nHFFzG/poHUfQow2db8M5yuY7/lV7zytqVROm/SoIIOhVUKXNWghwlK0WzO464Yiau5An4zCCnkwo/TnCUTZ/Ma/aY15Rq5ow7VdJAEGvki5tV06Ao2yVI3bVAUfUXIU7OWcR9ORC6s8hjrL5i3kVHo/ccptsuuueKpqmTQjUQgBBrwUznVRNgKNsVRNOu32OqKUdXy/eIeheIp24nxxlSzzAFbvHEbWKAdN8LQQQ9Fow00kdBCYO7Bfd+U6BQCcEOKLWCS3qWiaAoFuODrZ1TODYvr2iZ9QpEAghsP6660U3wlEgkAIBBD2FKOLDAgGOspEMoQQ4ohZKinqxEEDQY4kUdgYTmDp6RHSTHAUCKxHY+tAu0UtkKBBIhQCCnkok8WMRAY6ykRArEeCIGvmRIgEEPcWo4lNB4PCzz4hePEOBwMUE9Iia7mqnQCA1Agh6ahHFnwUCup5+6KuPi/5OgYAS0HXzrQ/vEhV1CgRSI4CgpxZR/FlEgKNsJMTFBK76zH2y8cabgQKBJAkg6EmGFacuJnD8Ry/I+OuvAsU5AY6oOU8AB+4j6A6C7N1FnXI//N1nRHe/U3wS6B8ZlWu+uKeYcqdAIFUCCHqqkcWvRQRUzFXUWU/3mRgcUfMZd29eI+jeIu7Y3/E3XpPjLz7vmIBP18d23iljt9/h03m8dkUAQXcVbpzVu951oxzFBwG9OEZH5xQIeCCAoHuIMj4uEOAom59k0PVyXTfX9XMKBDwQQNA9RBkfFxHQy2b00hlK2gT00RXd2U6BgBcCCLqXSOPnIgJcDZt2QuhZcz1zToGAJwIIuqdo4+siAvqAC0fZ0ksKvQVOb4PjiFp6scWjlQkg6GSIWwIz4yfl3W8/xVG2xDJA72nnatfEgoo7QQQQ9CBMVEqVwKm33pRj+/am6p47vzbdfa+MfPJWd37jMASUAIJOHrgnoIKuwk6JmwBXu8YdP6zvnQCC3jtDWoicgB5l06l3nYKnxElA18u3f+VJ1s3jDB9Wl0QAQS8JJM3ETUA3x+kmOUqcBLjaNc64YXW5BBD0cnnSWsQEuBo2zuCN3HKbbLrrnjiNx2oIlEgAQS8RJk3FT0AvnNGLZyhxENDd7LqrnQIBCLApjhyAwCICXA0bT0JwtWs8scLSeggwQq+HM71ERICrYeMIlt4EpzfCUSAAgTkCCDqZAIFlCBz/0Qsy/vqrsDFKgKtdjQYGsxolgKA3ip/OLRPgalib0eFqV5txwarmCSDozccAC4wS4GpYm4HhalebccGq5gkg6M3HAAsME+BqWFvB4WpXW/HAGlsEEHRb8cAagwS4GtZGULja1UYcsMIuAQTdbmywzAgBPcp2+LvP8NRqg/HgatcG4dN1NAQQ9GhChaFNEuBq2Cbpi3C1a7P86T0OAgh6HHHCSgMEuBq2mSCM7bxTxm6/o5nO6RUCERFA0CMKFqY2T+Do95+TiQP7mzfEiQVD1+4oRucUCEBgdQII+uqMqAGBBQJcDVtfMnC1a32s6SkNAgh6GnHEixoJcDVsPbA33/+g6M52CgQgEEYAQQ/jRC0ILCJw4scvy4lXXoJKRQR4ErUisDSbNAEEPenw4lyVBHhqtRq6XO1aDVdaTZ8Agp5+jPGwIgKsp5cPVtfNtz68S1TUKRCAQGcEEPTOeFEbAosI6I533flOKYcAT6KWw5FWfBJA0H3GHa9LJMBTq+XA5EnUcjjSil8CCLrf2ON5iQR4arU3mP0jo3LNF/eITrlTIACB7ggg6N1x4ysILCLAU6u9JQRPovbGj68hoAQQdPIAAiURYD29O5A8idodN76CwFICCDo5AYESCfDUamcweRK1M17UhsBKBBB08gMCJRLgqdVwmKybh7OiJgRCCCDoIZSoA4EOCOhTq/p+uoo75fIEWDcnOyBQLgEEvVyetAaBgsCpt94UnX6nLE+AJ1HJDAiUTwBBL58pLUKgIMB6+vKJwJOo/AGBQDUEEPRquNIqBIopd5161yl4yhwBPWe+/StPct6chIBABQQQ9Aqg0iQE5gmomOulM5Q5Alsf2iU6QqdAAALlE0DQy2dKixBYRGD8jdfk+IvPu6fCurn7FABAxQQQ9IoB0zwElIA+4KIXz3gtrJt7jTxiNYzGAAAXZ0lEQVR+10kAQa+TNn25JaDr6e9++ynRK2K9FdbNvUUcf5sigKA3RZ5+3RHwup7Ourm7VMfhhggg6A2Bp1ufBLytp7Nu7jPP8boZAgh6M9zp1TEBL+vprJs7TnJcb4QAgt4Idjr1TMDDejrr5p4zHN+bIoCgN0Wefl0TSH09nXVz1+mN8w0RQNAbAk+3EEh1PZ11c3IbAs0QQNCb4U6vECgIpLaezro5iQ2B5ggg6M2xp2cIFPe9p3I+nXVzEhoCzRJA0JvlT+8QKB5vSeG+d9bNSWYINEsAQW+WP71DoCAQ+/vprJuTyBBongCC3nwMsAACBYFY309n3ZwEhoANAgi6jThgBQSifD+9f2RUrvniHt43J38hYIAAgm4gCJgAgXkCup5++LvPFOIeQ9m2e48Mbt4Sg6nYCIHkCSDoyYcYB2MjEMt6+qa775WRT94aG17shUCyBBD0ZEOLYzETsL6evv6662Xz/Q/GjBjbIZAcAQQ9uZDiUCoE9CibTsFbKzrFvvXhXaybWwsM9rgngKC7TwEAWCUwM36yuHTG0nq6Xh6jYs66udWswS7PBBB0z9HHd1ME2pLJ+WxA2iIyJf0ym2XywT/9H5n9+2+ZsXPtZx+UK278uAzIrLREZE0+LS3JzdiHIRDwTABB9xx9fG+EwHnpl6msX2akJecylUaR89maS2yZF8qZV34o7Zf/eyO2XtxpdtMtMvBnfyn6F4+lZU1+XvpEZG0+Lf3SlsF8RtbITOM2YwAEPBFA0D1FG19rJTA/4p6WPjmX9cmU9C0r3CFGTf/d30h28J9CqlZTZ8s26f/SNzpueyjXv77Mytp8thjVM6LvGCEfQCCYAIIejIqKEFiZgAq4jrjPZgNyTvq7Fu/lepk9e0byb+8ROXm8/jAMDcv0l56WDSNXyEymE+29FR3Nr5UZGc6nixE9U/a98eRrCMwTQNDJBQh0SUAF/Ew2KFNZX+kCvpxJ7ffflfZ3/0Zk8myXFnf3WfsvH5N1//KPRKW3ijIv8IP5rKzLpxD4KiDTpgsCCLqLMONkWQRmsj6ZlDUyka2RyWXWvcvq53LtzLz5usi+Z6vuZqH9wXv+nczccucyq+bVmaDT9Ovz8zIk56U/1x0GFAhAIIQAgh5CiTquCegq8KnWYC2j8BDQs//lWcl//npI1Z7q5NffJP2f212rmC81eH70vrE9xSa7nqLJxx4IIOgeooyPHRPQkfhpGZSJ1lrRTW3Wysy3HhE58l51Zm3ZJtnDfy19w+uq66PDlnVT3Ufak4zcO+RGdT8EEHQ/scbTVQjMr4lPZIONTKd3EqBik9xX/6qa9fShYWk9/NfSuvqaTkyqte7ctPwUa+61Uqcz6wQQdOsRwr7KCehofDwbkrMyKLMl7OKu3OALHRSb5HTne8ml74EvSfZH/0oku/S8ecld9dxcX96WYZmSkXyS9faeadJA7AQQ9NgjiP1dE9AjZh9kw3Kmgc1tXRu95MOyN8nlf/rvZfBTO5e9PKYsm6tqZ11+Xq7IzxZH4SgQ8EgAQfcYdec+n87WSgzT6qFhmv3hf5b8Jy+HVr9sPb0Jru/PHuq5naYbmJ+O35Cfa9oU+odArQQQ9Fpx01mTBFTIf98aNrnJrVcuPd8kZ3ATXK9MdBPdaHtCdOROgYAHAgi6hyg791Gn1sezYfMb3XoJU7FJTi+d6Wbn+9CwZF/5W1M72nthsfRbHbGPMBVfJlLaMkoAQTcaGMzqnYBudjuRrY96jbwTCl3dJBfBjvZOGKxUV0fqY/kEm+fKAko75ggg6OZCgkG9EtDjZydbw3IqG+61KTPfq095JtLOWxd+13/PJJds0Qa21vuHZM23dgfbff5zj0j7hk8U9fVO9aLFPJdWpr+LtLL23O8JPZE60j5TjNgpEEiNAIKeWkSd+6PT68dbG6JeJ9d30FW421mreBt97uXx8NL35v+Sgf/6d6t+MP3Z/yCzN//rVevNV+iTdmFJK28XQt+Xx/sOut5Ad2X7DLfPBUefijEQQNBjiBI2BhHQdfLxlp2bzYKMVsHOskK053+FfrdSvdVEfeZT/0Zm7vlcz12pyC/8ilDgGa33nAI0YIgAgm4oGJjSHQG9a/23rXWlPlfanSXhX81IS4pfWXXXyva/9j+k/4ffu8So2Ztvk+nPfj7c2A5q6mMq/dIufsVSGK3HEinsXI0Agr4aIf6/aQKnW2vlpKyL4oY3FfDprK/jKfReAtD/wn+S/p/8z4UmqhTzpXbqyH3ggsD34kMd3+qNc6NyRja0ObteB2/6qIYAgl4NV1qtgUAMU+w6nT4j/ZW9JR6CuZh+/8f/JjOf+hOZufVPQj4ptY5usuvPcumXGfPr7kzBlxp6GquZAIJeM3C6652A7vg+3tpo+jhaE6Px3slW30IMo/YN+aSMtc8ktbO/+sjSgwUCCLqFKGBDMAEV86OtjWbXy1XIz2e6gmz/YZNg6BVU1GNwa3Kdu7C51q7r6pvbpxD1CmJPk9URQNCrY0vLJROwLOY6tT4lAwh5hzFXYR/UQ4YGd8gj6h0Gk+qNE0DQGw8BBoQQsCrmatdU1l/rRrcQXrHV0an4wVznN2ydbUfUY8sk3/Yi6L7jH43377euMDfNPi19cl76ihvbKL0T0M1za2RW9FEVS0WvjP2D9geWTMIWCCxLAEEnMcwT+F1rnblrXM/pnu0Kz5CbD0qFBupZ9rUyU2EPnTe9MT8r/6x9pvMP+QICNRJA0GuETVedEziTrZH/17qi8w8r+oIp9orALmnW4hS8jtJ5irWe+NNLdwQQ9O648VUNBHQEfCT7iJlLY1TMJ2WAKfYaYq9d6BT8UHGC38a6ul4+syX/Pa+11RR/uumcAILeOTO+qImApXVzxLymoC/pxpqo6ya5q1lPbyYZ6HVVAgj6qoio0AQBvdL1eLahia4v6RMxbzYM1kR9U36aK2KbTQl6vwwBBJ3UMEngcN+omSdQJzPdd93ZE6YmoUZslK6pD+XTJjzQbNg6e9KELRgBgYsJIOjkgzkC49mQjLfWm7BrKhto9B52ExCMGKHX9gwaEXVG6UaSAjMWEUDQSQhTBHR6+3Br1MRGOL39bVLWmOLj3ZghPflv4FY53SC3tX3SzIY973mB/3MEEHQywRQBS2vnTLWbSo3CGEtT74zS7eWHd4sQdO8ZYMz/Y62NcjYbbNwqRueNh+CyBlgZpQ/nU3JV+5RdUFjmjgCC7i7kth0+1LfJhIFT+oY5N8GZiMVSIwbyWRk0cpPc9tnjJhlhlE8CCLrPuJv02tKtcGdkDRfImMwSKdath/PzJqzj9jgTYcCICwQQdFLBDIHjrfVyOhtq3B7dmHc2YzNc44FYwQAVdAs3yHHHu+Us8Wcbgu4v5mY9/k22USZbrJ+bDZAhw6ysow+1p+Sf56yjG0oN16Yg6K7Db8t5K4I+k7XknAzYgoM1iwiszc9Lv4E73hF0EtMSAQTdUjSc22JlQ9yMZHKOKXfT2WhlhK7n0be1T5hmhXF+CCDofmJt3lMrgs6RNfOpIlYEXUmx091+vnixEEH3EukI/LQi6GyKs58sVjbFIej2c8WThQi6p2gb9/Xd1qi0jZz91iN0uWTGifk0T6e59Z10C6WVz8o1bR5qsRALbODqV3LAEAErm+IUyZT0yXTWb4gOpswTGMhnZFBmTQBhU5yJMGDEBQKM0EkFMwQsCTrT7mbS4hJDLE23I+h288SjZQi6x6gb9fl3rXVyKhs2Yx3Xv5oJxYIhlq59VaNG2hMykk/aA4VFLgkg6C7DbtNpS1e/KiFG6fbyxNLoXOlsbv9e1hp5o91etLCobgIIet3E6W9FApY2xqmh09InU6ylm8jawXxGBoysnSsQNsSZSAuMuIgAgk46mCJg5T73i6Gck36ZMbL73lSwajSmP5+VtUZeWJt3e0M+KZvaEzVSoCsIrEwAQSdDTBE43Vorx7MNpmxSYyZ1bJi1zNnlwSBLx9Qu5r0pPy0b2uc8hAAfIyGAoEcSKE9m/t/WqMkRMaJefxZaFXOdMfgXnD+vPyHocUUCCDoJYo6A1VE6I/V6U8WqmCsFRuf15gK9hRFA0MM4UatmAlZH6YqB42zVJ4O142kXe8zovPr400N3BBD07rjxVcUELI/S1XV2v1eXANZ2sy/19A/aH8i6/Hx1AGgZAl0SQNC7BMdn1RM41tooZ7PB6jvqsgc9p66jdTbLdQlwyWc6xT4oM9Iy8M755TwazqfkqvapchymFQiUTABBLxkozZVHQAXz/daIyQ1yF3upo/Xz0id5xmMu3UQ/y3NZI7Omzpgv54dOtV/dHjf9F45u+PNNOgQQ9HRimaQn56Vf3u8bMe+b/uVDhX2a8+odxcryWvlSR66eHZc1xs7CdwSbyskTQNCTD3H8Do5nQzLeWh+FIwh7WJhUyPXWN8vT6xd7MtaekCu4sz0suNRqjACC3hh6Ou6EgMUb5Fayf07YWzLDVPwCJp1a7y+m1tvRCLkaz41wnfxJpW6TBBD0JunTd0cEYhP1eedmspZM531uN8/pZreBbFb683ZH8bZQGTG3EAVsCCWAoIeSop4JArGKusJbGLVnfZJL2hvoMslFN5HFNhq/OMkRcxN/5DGiAwIIegewqGqDQMyiPk9QxV1XkHX0rr+nUPqkXYzC9fdY1sYvxx0xTyEj/fmAoPuLeRIex7RRLgT4bJZJO49L4OcFvJW1pS/PQ9yMos5Ie0JG2AAXRawwcjEBBJ2MiJaA3iZ3QoalneBRMR3Bt7NM8jwrRvHtPGvsnLtuZmtlOoXelizLpaX/bvjyl24TWt83H5OzvKDWLUC+a5wAgt54CDCgFwJ6Tv1oa2OSor4cFxX6PJNiNK9lXviLf8ml4413umFtfjn/YqHWUXeWS5LCvRxXXe/XG+A4Z97Ln0a+bZoAgt50BOi/ZwIqar9tbTB9TWzPTtJAZQT0Otcr26fd/OWlMpA03DgBBL3xEGBAWQTOZGvkeLbezWi9LG5e29Ep9k35BA+teE2ABP1G0BMMqmeXZrI+OS7rZLJl91EXz/Gx4jujciuRwI4yCSDoZdKkLTMEUt4wZwZyhIYwKo8waJgcTABBD0ZFxdgI6Nr6B9la+SAbYho+tuCVbK8Kud7FfkV+jrXyktnSnB0CCLqdWGBJRQR0Gl7PrZ/OhirqgWYtE9BLYvRcue5kp0AgZQIIesrRxbdFBPSI24lsmPV1J3kx1J6STXIGIXcSb9wUQdDJAncEGLGnHXJG5GnHF+8uTwBBJzvcElBhPy1rWGNPIAPm18g3yHlG5AnEExe6I4Cgd8eNrxIioJvnTmdrZSIblKlsICHP0ndlMJ+W9fmUbGCzW/rBxsNVCSDoqyKigicCus5+qjUoEzLIznijgdfR+HqZko3tKa5qNRojzGqGAILeDHd6jYCA3jynI/ezGZfUWAiXXgajI/F1+XkL5mADBMwRQNDNhQSDrBHQKfkzrUE5I2vknPQzcq8pQDoSXyszsk7Oy7r2FOfHa+JON/ESQNDjjR2WN0RAR+6T2YCclUHRjXWU8gjoWfFhmZKhfJqReHlYackJAQTdSaBxsxoCuuau4q6/GL13znh+FK4Crr94vrRzhnwBgXkCCDq5AIESCeiIfV7cJ1WeGMEvoqsj8CE5X0ylq4Bze1uJyUdT7gkg6O5TAABVEtD19/NZv0xKfyHuOqL3cjROj5TpiHtOxGdkTT7DOniVyUbb7gkg6O5TAABNECiEvdUvM3lWCHyeS5RX0uqU+WA+I1kmogLen+Uy2J5h6ryJpKJP9wQQdPcpAABrBM5duNxGR/Va5gVf/3k6mxvp11F0ZD2QzxRdzQu2/rOOtrWszafrMIM+IACBQAIIeiAoqkHAGoH56fzL2TX/F4Kl/39ekJf7jmlxa1HGHgiEE0DQw1lREwIQgAAEIGCWAIJuNjQYBgEIQAACEAgngKCHs6ImBCAAAQhAwCwBBN1saDAMAhCAAAQgEE4AQQ9nRU0IQAACEICAWQIIutnQYBgEIAABCEAgnACCHs6KmhCAAAQgAAGzBBB0s6HBMAhAAAIQgEA4AQQ9nBU1IQABCEAAAmYJIOhmQ4NhEIAABCAAgXACCHo4K2pCAAIQgAAEzBJA0M2GBsMgAAEIQAAC4QQQ9HBW1IQABCAAAQiYJYCgmw0NhkEAAhCAAATCCSDo4ayoCQEIQAACEDBLAEE3GxoMgwAEIAABCIQTQNDDWVETAhCAAAQgYJYAgm42NBgGAQhAAAIQCCeAoIezoiYEIAABCEDALAEE3WxoMAwCEIAABCAQTgBBD2dFTQhAAAIQgIBZAgi62dBgGAQgAAEIQCCcAIIezoqaEIAABCAAAbMEEHSzocEwCEAAAhCAQDgBBD2cFTUhAAEIQAACZgkg6GZDg2EQgAAEIACBcAIIejgrakIAAhCAAATMEkDQzYYGwyAAAQhAAALhBBD0cFbUhAAEIAABCJglgKCbDQ2GQQACEIAABMIJIOjhrKgJAQhAAAIQMEsAQTcbGgyDAAQgAAEIhBNA0MNZURMCEIAABCBglgCCbjY0GAYBCEAAAhAIJ4Cgh7OiJgQgAAEIQMAsAQTdbGgwDAIQgAAEIBBOAEEPZ0VNCEAAAhCAgFkCCLrZ0GAYBCAAAQhAIJwAgh7OipoQgAAEIAABswQQdLOhwTAIQAACEIBAOAEEPZwVNSEAAQhAAAJmCSDoZkODYRCAAAQgAIFwAgh6OCtqQgACEIAABMwSQNDNhgbDIAABCEAAAuEEEPRwVtSEAAQgAAEImCWAoJsNDYZBAAIQgAAEwgkg6OGsqAkBCEAAAhAwSwBBNxsaDIMABCAAAQiEE0DQw1lREwIQgAAEIGCWAIJuNjQYBgEIQAACEAgngKCHs6ImBCAAAQhAwCwBBN1saDAMAhCAAAQgEE4AQQ9nRU0IQAACEICAWQIIutnQYBgEIAABCEAgnACCHs6KmhCAAAQgAAGzBBB0s6HBMAhAAAIQgEA4AQQ9nBU1IQABCEAAAmYJIOhmQ4NhEIAABCAAgXACCHo4K2pCAAIQgAAEzBJA0M2GBsMgAAEIQAAC4QQQ9HBW1IQABCAAAQiYJYCgmw0NhkEAAhCAAATCCSDo4ayoCQEIQAACEDBLAEE3GxoMgwAEIAABCIQTQNDDWVETAhCAAAQgYJYAgm42NBgGAQhAAAIQCCeAoIezoiYEIAABCEDALAEE3WxoMAwCEIAABCAQTgBBD2dFTQhAAAIQgIBZAgi62dBgGAQgAAEIQCCcAIIezoqaEIAABCAAAbMEEHSzocEwCEAAAhCAQDgBBD2cFTUhAAEIQAACZgkg6GZDg2EQgAAEIACBcAIIejgrakIAAhCAAATMEkDQzYYGwyAAAQhAAALhBBD0cFbUhAAEIAABCJglgKCbDQ2GQQACEIAABMIJIOjhrKgJAQhAAAIQMEsAQTcbGgyDAAQgAAEIhBNA0MNZURMCEIAABCBglgCCbjY0GAYBCEAAAhAIJ4Cgh7OiJgQgAAEIQMAsAQTdbGgwDAIQgAAEIBBOAEEPZ0VNCEAAAhCAgFkCCLrZ0GAYBCAAAQhAIJwAgh7OipoQgAAEIAABswQQdLOhwTAIQAACEIBAOAEEPZwVNSEAAQhAAAJmCSDoZkODYRCAAAQgAIFwAgh6OCtqQgACEIAABMwSQNDNhgbDIAABCEAAAuEEEPRwVtSEAAQgAAEImCWAoJsNDYZBAAIQgAAEwgkg6OGsqAkBCEAAAhAwSwBBNxsaDIMABCAAAQiEE0DQw1lREwIQgAAEIGCWAIJuNjQYBgEIQAACEAgngKCHs6ImBCAAAQhAwCwBBN1saDAMAhCAAAQgEE4AQQ9nRU0IQAACEICAWQIIutnQYBgEIAABCEAgnACCHs6KmhCAAAQgAAGzBBB0s6HBMAhAAAIQgEA4AQQ9nBU1IQABCEAAAmYJIOhmQ4NhEIAABCAAgXACCHo4K2pCAAIQgAAEzBL4/zo3T0gy2qNQAAAAAElFTkSuQmCC" />
-                                </defs>
-                            </svg>
 
-                        </a>
-
-                        <!-- Address Display -->
-                        <div class="address-container">
-                            <div class="d-flex flex-column">
-                                <a href="#addressForm" class="address-link" onclick="openForm()">
-                                    <span>Default address</span>
-                                    <span class="notification">ST7, Shabwa, Dar Muhaimud, Yemen <img
-                                            src="photo/Vector 7077.png" alt=""></span>
-                                </a>
-                            </div>
-
-                            <div id="overlay" class="overlay"></div>
-                            <!-- class="address-form-container" -->
-
-
-                            <!-- Form Content -->
-                            <div id="addressForm" class="hidden-form">
-                                <form class="form-design">
-                                    <button onclick="openNewForm()"> <i class="fa-solid fa-plus"></i> New
-                                        Address</button>
-                                    <div
-                                        style="border:1px solid #BEA276;border-radius: 12px;padding:0px 8px; font-size:2px 14px;background-color: white;">
-                                        <p><span style="color: #BEA276; ">Default</span><br>ST7, Shabwa, Dar Muhaimud,
-                                            Yemen</p>
-                                    </div>
-                                    <div style="background-color: white;border-radius: 10px;">
-                                        <p style="font-weight: bold;padding:0px 15px;padding-top: 6px;">Work</p>
-                                        <p
-                                            style="line-height: 2px;padding:0px 15px;color: #7A808B;font-size: 13px;font-weight: bold;">
-                                            ST7, Shabwa, Dar Muhaimud, Yemen</p>
-                                        <span style=>
-                                            <p
-                                                style="line-height:5px;padding:0px 15px;font-size: 15px;color: #7A808B; display: inline;">
-                                                +20 123 456 789</p><img src="photo/fi-rr-pencil.svg"
-                                                style="margin-left: 130px;padding-left:80px;padding-bottom: 10px;"
-                                                alt=""><img style="padding-left:5px;padding-bottom: 10px;"
-                                                src="photo/fi-rr-trash.svg" alt="">
-                                        </span>
-                                    </div>
-                                    <div style="background-color: white;border-radius: 10px;">
-                                        <p style="font-weight: bold;padding:0px 15px;padding-top: 6px;">Work</p>
-                                        <p
-                                            style="line-height: 2px;padding:0px 15px;color: #7A808B;font-size: 13px;font-weight: bold;">
-                                            ST7, Shabwa, Dar Muhaimud, Yemen</p>
-                                        <span style=>
-                                            <p
-                                                style="line-height:5px;padding:0px 15px;font-size: 15px;color: #7A808B; display: inline;">
-                                                +20 123 456 789</p><img src="photo/fi-rr-pencil.svg"
-                                                style="margin-left: 130px;padding-left:80px;padding-bottom: 10px;"
-                                                alt=""><img style="padding-left:5px;padding-bottom: 10px;"
-                                                src="photo/fi-rr-trash.svg" alt="">
-                                        </span>
-                                    </div>
-
-
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    <div data-component="address-list"></div>
                 </div>
                 <div class="col col-md-6">
                     <div class="download-bar">
@@ -2755,24 +1594,8 @@
 
 
 
-            <div class="fs-carousel" aria-label="Flash Sale Products">
-                <button class="fs-carousel__button fs-carousel__button--prev" id="fs-prev-button"
-                    aria-label="Previous products">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
+            <div class="fs-carousel" aria-label="Flash Sale Products" id="Flash-Sale">
 
-                <div class="fs-carousel__track" id="fs-carousel-track"></div>
-
-                <button class="fs-carousel__button fs-carousel__button--next" id="fs-next-button"
-                    aria-label="Next products">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
             </div>
         </div>
 
@@ -2789,74 +1612,8 @@
     </div>
 
     <!-- Slider Section -->
-    <div class="store-slider">
-        <button class="store-slider__nav-btn store-slider__nav-btn--prev" onclick="slideStores('prev')">
-            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="14.5" cy="14.5" r="14.5" fill="#BFA274" />
-                <path d="M17 10L12 15L17 20" stroke="white" stroke-width="1.5" />
-            </svg>
-        </button>
+    <div class="store-carousel" id="store-carousel">
 
-        <div class="store-slider__wrapper">
-            <div class="store-slider__list">
-                <div class="store-slider__card">
-                    <img src="../photo/Rectangle 30.png" class="store-slider__logo" alt="El Nor Store">
-                    <div class="store-slider__info">
-                        <h3 class="store-slider__title">El Nor Store</h3>
-                        <div class="store-slider__distance">1.2 KM</div>
-                        <div class="store-slider__rating-box">
-                            <i class="fa-solid fa-star store-slider__star"></i>
-                            <span class="store-slider__rating-text">4.8 - 574 Ratings</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="store-slider__card">
-                    <img src="photo/Rectangle 31.png" class="store-slider__logo" alt="El Hoda Store">
-                    <div class="store-slider__info">
-                        <h3 class="store-slider__title">El Hoda Store</h3>
-                        <div class="store-slider__distance">1.2 KM</div>
-                        <div class="store-slider__rating-box">
-                            <i class="fa-solid fa-star store-slider__star"></i>
-                            <span class="store-slider__rating-text">4.8 - 574 Ratings</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="store-slider__card">
-                    <img src="../photo/Rectangle 30.png" class="store-slider__logo" alt="El Nor Store">
-                    <div class="store-slider__info">
-                        <h3 class="store-slider__title">El Nor Store</h3>
-                        <div class="store-slider__distance">1.2 KM</div>
-                        <div class="store-slider__rating-box">
-                            <i class="fa-solid fa-star store-slider__star"></i>
-                            <span class="store-slider__rating-text">4.8 - 574 Ratings</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="store-slider__card">
-                    <img src="photo/Rectangle 31.png" class="store-slider__logo" alt="El Hoda Store">
-                    <div class="store-slider__info">
-                        <h3 class="store-slider__title">El Hoda Store</h3>
-                        <div class="store-slider__distance">1.2 KM</div>
-                        <div class="store-slider__rating-box">
-                            <i class="fa-solid fa-star store-slider__star"></i>
-                            <span class="store-slider__rating-text">4.8 - 574 Ratings</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <button class="store-slider__nav-btn store-slider__nav-btn--next" onclick="slideStores('next')">
-            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="14.5" cy="14.5" r="14.5" transform="matrix(-1 0 0 1 29 0)" fill="#BFA274" />
-                <path d="M12 10L17 15L12 20" stroke="white" stroke-width="1.5" />
-            </svg>
-        </button>
     </div>
 
     <!--  Limitd stock -->
@@ -2925,156 +1682,11 @@
             <a href="#" class="bomber-header__view-all">View All ›</a>
         </div>
 
-        <div class="bomber-carousel__wrapper">
-            <button class="bomber-carousel__button bomber-carousel__button--prev">
-
-
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
+        <div class="bomber-carousel__wrapper" id="New-Arrival">
 
 
 
-            </button>
-            <div class="bomber-carousel">
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 1">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
 
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">49.0 YER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 2">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                        <span class="bomber-product__discount">20%</span>
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">30.0 YER</span>
-                            <span class="bomber-product__price--original">49.9 YER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 3">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">49.0 YER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 4">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">49.0 YER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 5">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                        <span class="bomber-product__discount">20%</span>
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">30.0 YER</span>
-                            <span class="bomber-product__price--original">49.9 YER</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bomber-product">
-                    <div class="bomber-product__image-container">
-                        <img class="bomber-product__image" src="images\bomberjacket.jpeg" alt="Bomber Jacket 6">
-                        <button class="fs-product__favorite" aria-label="Add to favorites">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg>
-                        </button>
-                        <span class="bomber-product__discount">20%</span>
-                    </div>
-                    <div class="bomber-product__info">
-                        <h3 class="bomber-product__title">Bomber Jackets</h3>
-                        <div class="bomber-product__price-container">
-                            <span class="bomber-product__price--current">30.0 YER</span>
-                            <span class="bomber-product__price--original">49.9 YER</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="bomber-carousel__button bomber-carousel__button--next">
-
-
-
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-
-            </button>
         </div>
     </div>
 
@@ -3085,190 +1697,10 @@
             <a href="#" class="suggested-header__view-all">View All ›</a>
         </div>
 
-        <div class="suggested-grid">
-            <!-- First Row -->
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 1">
-                    <button class="suggested-product__favorite">♡</button>
-                    <span class="suggested-product__discount">20%</span>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">30.0 YER</span>
-                        <span class="suggested-product__price--original">49.9 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat for remaining 11 products -->
-            <!-- Products 2-12 with similar structure -->
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional products... -->
-            <!-- For brevity, showing 3 out of 12 -->
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 3">
-                    <button class="suggested-product__favorite">♡</button>
-                    <span class="suggested-product__discount">20%</span>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">30.0 YER</span>
-                        <span class="suggested-product__price--original">49.9 YER</span>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="suggested-product">
-                <div class="suggested-product__image-container">
-                    <img class="suggested-product__image" src="images/bomberjacket.jpeg" alt="Bomber Jacket 2">
-                    <button class="suggested-product__favorite">♡</button>
-                </div>
-                <div class="suggested-product__info">
-                    <h3 class="suggested-product__title">Bomber Jackets</h3>
-                    <div class="suggested-product__price-container">
-                        <span class="suggested-product__price--current">49.0 YER</span>
-                    </div>
-                </div>
-            </div>
-
+        <div class="suggestedGrid" id="Suggested-Grid">
 
         </div>
+
     </div>
 
 
@@ -3714,314 +2146,12 @@
 
 
 
-    <script>
-        const products = [
-            {
-                id: 1,
-                name: "Premium Bomber Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "30.0 YER",
-                originalPrice: "49.9 YER",
-                discount: "40%",
-                rating: 4.5,
-                reviews: 128
-            },
-            {
-                id: 2,
-                name: "Classic Leather Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "35.0 YER",
-                originalPrice: "55.9 YER",
-                discount: "37%",
-                rating: 4.8,
-                reviews: 256
-            },
-            {
-                id: 3,
-                name: "Denim Bomber Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "28.0 YER",
-                originalPrice: "45.9 YER",
-                discount: "39%",
-                rating: 4.3,
-                reviews: 92
-            },
-            {
-                id: 4,
-                name: "Vintage Style Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "32.0 YER",
-                originalPrice: "52.9 YER",
-                discount: "40%",
-                rating: 4.6,
-                reviews: 156
-            },
-            {
-                id: 5,
-                name: "Modern Bomber Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "33.0 YER",
-                originalPrice: "53.9 YER",
-                discount: "39%",
-                rating: 4.7,
-                reviews: 184
-            },
-            {
-                id: 6,
-                name: "Sport Bomber Jacket",
-                image: "images/bomberjacket.jpeg",
-                salePrice: "29.0 YER",
-                originalPrice: "48.9 YER",
-                discount: "41%",
-                rating: 4.4,
-                reviews: 142
-            }
-        ];
-
-        let startIndex = 0;
-        const itemsToShow = 4;
-
-        function generateStars(rating) {
-            const fullStars = Math.floor(rating);
-            const hasHalfStar = rating % 1 !== 0;
-            let starsHTML = '';
-
-            for (let i = 0; i < fullStars; i++) {
-                starsHTML += '★';
-            }
-            if (hasHalfStar) {
-                starsHTML += '½';
-            }
-            const remainingStars = 5 - Math.ceil(rating);
-            for (let i = 0; i < remainingStars; i++) {
-                starsHTML += '☆';
-            }
-
-            return starsHTML;
-        }
-
-        function createProductCard(product) {
-            return `
-        <div class="fs-product" data-product-id="${product.id}">
-          <div class="fs-product__image-wrapper">
-            <img src="${product.image}" alt="${product.name}" class="fs-product__image">
-            <button class="fs-product__favorite" aria-label="Add to favorites">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </button>
-            <div class="fs-product__discount">${product.discount}</div>
-          </div>
-          <div class="fs-product__info">
-            <h3 class="fs-product__name">${product.name}</h3>
-            <div class="fs-product__price">
-              <span class="fs-product__price-sale">${product.salePrice}</span>
-              
 
 
-              <span class="fs-product__price-original">${product.originalPrice}</span>
-            </div>
-           
-          </div>
-        </div>
-      `;
-        }
-
-        function updateCarousel() {
-            const track = document.getElementById('fs-carousel-track');
-            track.style.transform = `translateX(-${startIndex * (100 / itemsToShow)}%)`;
-
-            const prevButton = document.getElementById('fs-prev-button');
-            const nextButton = document.getElementById('fs-next-button');
-
-            prevButton.disabled = startIndex === 0;
-            nextButton.disabled = startIndex >= products.length - itemsToShow;
-
-            // Add ARIA labels for accessibility
-            prevButton.setAttribute('aria-disabled', startIndex === 0);
-            nextButton.setAttribute('aria-disabled', startIndex >= products.length - itemsToShow);
-        }
-
-        function handleFavoriteClick(event) {
-            const favoriteButton = event.target.closest('.fs-product__favorite');
-            if (favoriteButton) {
-                favoriteButton.classList.toggle('active');
-
-                // Add haptic feedback if available
-                if (window.navigator.vibrate) {
-                    window.navigator.vibrate(50);
-                }
-
-                // Optional: Save to localStorage
-                const productId = favoriteButton.closest('.fs-product').dataset.productId;
-                const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-
-                if (favoriteButton.classList.contains('active')) {
-                    favorites.push(productId);
-                } else {
-                    const index = favorites.indexOf(productId);
-                    if (index > -1) favorites.splice(index, 1);
-                }
-
-                localStorage.setItem('favorites', JSON.stringify(favorites));
-            }
-        }
-
-        function initializeCarousel() {
-            const track = document.getElementById('fs-carousel-track');
-            track.innerHTML = products.map(product => createProductCard(product)).join('');
-
-            // Touch handling
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            track.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            track.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // Swipe left
-                        handleNext();
-                    } else {
-                        // Swipe right
-                        handlePrev();
-                    }
-                }
-            }
-
-            function handlePrev() {
-                if (startIndex > 0) {
-                    startIndex--;
-                    updateCarousel();
-                }
-            }
-
-            function handleNext() {
-                if (startIndex < products.length - itemsToShow) {
-                    startIndex++;
-                    updateCarousel();
-                }
-            }
-
-            // Button click handlers
-            document.getElementById('fs-prev-button').addEventListener('click', handlePrev);
-            document.getElementById('fs-next-button').addEventListener('click', handleNext);
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') handlePrev();
-                if (e.key === 'ArrowRight') handleNext();
-            });
-
-            // Favorite button handlers
-            track.addEventListener('click', handleFavoriteClick);
-
-            // Load favorites from localStorage
-            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-            favorites.forEach(productId => {
-                const product = track.querySelector(`[data-product-id="${productId}"]`);
-                if (product) {
-                    product.querySelector('.fs-product__favorite').classList.add('active');
-                }
-            });
-
-            // Initialize first state
-            updateCarousel();
-        }
-
-        function updateTimer() {
-            let timeLeft = {
-                days: 2,
-                hours: 11,
-                minutes: 15,
-                seconds: 4
-            };
-
-            function padNumber(num) {
-                return num.toString().padStart(2, '');
-            }
-
-            function updateDisplay() {
-                document.getElementById('fs-days').innerHTML = `${padNumber(timeLeft.days)} <span>D</span>`;
-                document.getElementById('fs-hours').innerHTML = `${padNumber(timeLeft.hours)} <span>H</span>`;
-                document.getElementById('fs-minutes').innerHTML = `${padNumber(timeLeft.minutes)} <span>MIN</span>`;
-                document.getElementById('fs-seconds').innerHTML = `${padNumber(timeLeft.seconds)} <span>SEC</span>`;
-
-                // Add urgency class when time is running low
-                if (timeLeft.days === 0 && timeLeft.hours < 12) {
-                    document.querySelectorAll('.fs-timer-box').forEach(box => {
-                        box.style.animation = 'pulse 1s infinite';
-                    });
-                }
-            }
-
-            const timerInterval = setInterval(() => {
-                if (timeLeft.seconds > 0) {
-                    timeLeft.seconds--;
-                } else {
-                    timeLeft.seconds = 59;
-                    if (timeLeft.minutes > 0) {
-                        timeLeft.minutes--;
-                    } else {
-                        timeLeft.minutes = 59;
-                        if (timeLeft.hours > 0) {
-                            timeLeft.hours--;
-                        } else {
-                            timeLeft.hours = 23;
-                            if (timeLeft.days > 0) {
-                                timeLeft.days--;
-                            } else {
-                                // Sale ended
-                                clearInterval(timerInterval);
-                                document.querySelector('.fs-container').innerHTML = `
-                  <div class="fs-sale-ended">
-                    <h2>Flash Sale Ended</h2>
-                    <p>Don't worry! New deals coming soon.</p>
-                  </div>
-                `;
-                                return;
-                            }
-                        }
-                    }
-                }
-                updateDisplay();
-            }, 1000);
-        }
-
-        // Initialize everything when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeCarousel();
-            updateTimer();
-
-            // Optional: Add ResizeObserver for responsive adjustments
-            const resizeObserver = new ResizeObserver(entries => {
-                for (const entry of entries) {
-                    const width = entry.contentRect.width;
-                    // Adjust itemsToShow based on screen width
-                    if (width < 640) itemsToShow = 1;
-                    else if (width < 768) itemsToShow = 2;
-                    else if (width < 1024) itemsToShow = 3;
-                    else itemsToShow = 4;
-
-                    updateCarousel();
-                }
-            });
-
-            resizeObserver.observe(document.querySelector('.fs-carousel'));
-        });
-    </script>
-
-
+    <script src="js/ProductDisplay.js"></script>
+    <script src="js/StoreDisplay.js"></script>
+    <script src="js/address-components.js"></script>
+    <script src="js/loginform.js"></script>
 
 </body>
 
