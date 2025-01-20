@@ -204,7 +204,7 @@ class AddressList {
                 form.setEditMode(address);
             }
         } else {
-            form.setAddMode();
+            form?.setAddMode();
         }
 
         Modal.show(formElement);
@@ -246,6 +246,12 @@ class AddressForm {
     init() {
         this.render();
         this.setupEventListeners();
+        // Add Google Maps initialization
+        if (window.google && window.google.maps) {
+            this.initializeAutocomplete();
+        } else {
+            window.initMap = () => this.initializeAutocomplete();
+        }
     }
 
     render() {
@@ -254,7 +260,7 @@ class AddressForm {
                 <h2 class="form-title">Add Address</h2>
 
                 <div class="search-input-group">
-                    <input type="text" id="searchAddress" placeholder="Search" />
+                    <input type="text" id="searchAddress" placeholder="Search for an address..." />
                 </div>
 
                 <div class="map">
@@ -328,6 +334,75 @@ class AddressForm {
                 </div>
             </form>
         `;
+    }
+
+    // Add Google Maps related methods
+    initializeAutocomplete() {
+        try {
+            const searchInput = this.element.querySelector('#searchAddress');
+
+            const autocomplete = new google.maps.places.Autocomplete(searchInput, {
+                types: ['address'],
+                fields: ['address_components', 'formatted_address', 'geometry']
+            });
+
+            autocomplete.addListener('place_changed', () => {
+                const place = autocomplete.getPlace();
+
+                if (!place.geometry) {
+                    console.warn("No details available for input: '" + place.name + "'");
+                    return;
+                }
+
+                this.updateMap(place.geometry.location);
+                this.fillAddressFields(place);
+            });
+        } catch (error) {
+            console.error('Error initializing Google Places Autocomplete:', error);
+        }
+    }
+
+    updateMap(location) {
+        const mapFrame = this.element.querySelector('.map iframe');
+        const lat = location.lat();
+        const lng = location.lng();
+        mapFrame.src = `https://maps.google.com/maps?q=${lat},${lng}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+    }
+
+    fillAddressFields(place) {
+        const addressMapping = {
+            street_number: 'buildingNumber',
+            route: 'street',
+            locality: 'city',
+            administrative_area_level_1: 'governorate',
+            country: 'country'
+        };
+
+        const form = this.element.querySelector('form');
+        const formData = {};
+
+        place.address_components.forEach(component => {
+            const addressType = component.types[0];
+            if (addressMapping[addressType]) {
+                formData[addressMapping[addressType]] = component.long_name;
+            }
+        });
+
+        Object.entries(formData).forEach(([field, value]) => {
+            const element = form[field];
+            if (element) {
+                if (element.tagName === 'SELECT') {
+                    const option = Array.from(element.options).find(opt =>
+                        opt.value.toLowerCase() === value.toLowerCase()
+                    );
+                    if (option) {
+                        element.value = option.value;
+                    }
+                } else {
+                    element.value = value;
+                }
+            }
+        });
     }
 
     setupEventListeners() {
@@ -458,6 +533,7 @@ class DeleteConfirmation {
     setupEventListeners() {
         this.element.querySelector('[data-action="cancel"]').addEventListener('click', () => {
             Modal.hide();
+            this.reset();
         });
 
         this.element.querySelector('[data-action="confirm"]').addEventListener('click', () => {

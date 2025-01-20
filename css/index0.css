@@ -1,3 +1,8 @@
+input {
+    border: none;
+    outline: none;
+}
+
 .MyFavourite {
     overflow: hidden;
 }
@@ -1470,7 +1475,7 @@
 
 
 .modal__overlay {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -1781,8 +1786,8 @@ input,
 
 
 
-.signup__modal {
-    position: fixed;
+/* .signup__modal {
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -1794,7 +1799,7 @@ input,
     z-index: 1000;
     overflow-y: auto;
     padding: 20px;
-}
+} */
 
 .signup__content {
     background: white;
@@ -1950,8 +1955,8 @@ input,
 
 
 
-.signup__modal {
-    position: fixed;
+/* .signup__modal {
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -1961,11 +1966,11 @@ input,
     z-index: 1000;
     overflow-y: auto;
     padding: 20px;
-}
-
+} */
+/* 
 .signup__modal--active {
     display: block;
-}
+} */
 
 .signup__content {
     background: white;
@@ -2002,6 +2007,398 @@ input,
 }
 
 /* Improve visibility of active modal */
-.signup__modal--active {
+/* .signup__modal--active {
     display: block;
+} */
+
+
+
+
+/***************************************************************/
+.login__country-code {
+    position: relative;
+    overflow: hidden;
+    width: 33%;
+    border-right: 1px solid #ddd;
 }
+
+.login__country-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    color: #b69876;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px;
+    padding-right: 24px;
+    outline: none;
+}
+
+.login__country-code::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+    pointer-events: none;
+}
+
+/* Style for the dropdown options */
+.login__country-select option {
+    background: white;
+    color: #b69876;
+    padding: 8px 16px;
+}
+
+/***************************************************************/
+.login__country-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-right: 1px solid #ddd;
+    padding-right: 8px;
+    position: relative;
+}
+
+.login__country-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    color: #b69876;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px;
+    padding-right: 24px;
+    outline: none;
+    min-width: 90px;
+}
+
+.login__country-code::after {
+    content: '';
+    position: absolute;
+    right: 24px;
+    /* Adjusted to account for the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #b69876;
+    pointer-events: none;
+}
+
+.login__country-code i {
+    color: #b69876;
+    font-size: 16px;
+}
+
+/* Style for the dropdown options */
+.login__country-select option {
+    background: white;
+    color: #b69876;
+    padding: 8px 16px;
+}
+
+/* Ensure proper alignment with input */
+.login__input-container {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.login__input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+
+
+/***************************************************************/
+
+.login__country-code {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-right: 1px solid #ddd;
+    padding-right: 8px;
+}
+
+.signup__country-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #f5f5f5;
+    border: none;
+    color: #b69876;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px;
+    padding-right: 24px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    min-width: 90px;
+}
+
+.login__country-code::after {
+    content: '';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #b69876;
+    pointer-events: none;
+}
+
+.login__country-code i {
+    color: #b69876;
+    font-size: 16px;
+    position: absolute;
+    right: 8px;
+}
+
+.signup__country-select option {
+    background: white;
+    color: #b69876;
+    padding: 8px 16px;
+}
+
+/* Maintain existing styles */
+.login__input-container {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.login__input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.signup__activate {
+    padding: 0 12px;
+    color: #b69876;
+}
+
+/***************************************************************/
+.signup__form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.signup__label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.signup__required {
+    display: inline-block;
+}
+
+.signup__select-wrapper {
+    position: relative;
+}
+
+.signup__select-wrapper::after {
+    content: '\f078';
+    /* Font Awesome chevron-down icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+}
+
+.signup__select {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 40px;
+    /* Space for the chevron */
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup__select:focus {
+    border-color: #b69876;
+}
+
+.signup__select option {
+    padding: 12px;
+    background: white;
+    color: #333;
+}
+
+
+
+/***************************************************************/
+
+
+
+
+.signup__two-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.signup__form-group {
+    position: relative;
+}
+
+.signup__label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.signup__required {
+    display: inline-block;
+}
+
+.signup__select-wrapper {
+    position: relative;
+}
+
+.signup__select-wrapper::after {
+    content: '\f078';
+    /* Font Awesome chevron-down icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.signup__select {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup__select:focus {
+    border-color: #b69876;
+}
+
+.signup__select option {
+    padding: 12px;
+    background: white;
+    color: #333;
+}
+
+/***************************************************************/
+
+.signup__form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.signup__label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.signup__required {
+    display: inline-block;
+}
+
+.signup__select-wrapper {
+    position: relative;
+}
+
+.signup__select-wrapper::after {
+    content: '\f078';
+    /* Font Awesome chevron-down icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.signup__select {
+    width: 100%;
+    padding: 12px 16px;
+    padding-right: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup__select:focus {
+    border-color: #b69876;
+}
+
+.signup__select option {
+    padding: 12px;
+    background: white;
+    color: #333;
+}
+
+
+
+/***************************************************************/

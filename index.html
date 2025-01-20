@@ -213,15 +213,14 @@
                             <div class="login__form-group">
                                 <label class="login__label">Mobile number</label>
                                 <div class="login__input-container">
-                                    <div class="login__country-code" id="countryCode">
-                                        <span>+967</span>
-                                        <div class="login__country-dropdown" id="countryDropdown">
-                                            <div class="login__country-option" data-code="+967">+967 Yemen</div>
-                                            <div class="login__country-option" data-code="+966">+966 Saudi Arabia</div>
-                                            <div class="login__country-option" data-code="+971">+971 UAE</div>
-                                            <div class="login__country-option" data-code="+974">+974 Qatar</div>
-                                            <div class="login__country-option" data-code="+968">+968 Oman</div>
-                                        </div>
+                                    <div class="login__country-code">
+                                        <select class="login__country-select" id="countryCode">
+                                            <option value="+967">+967</option>
+                                            <option value="+966">+966</option>
+                                            <option value="+971">+971</option>
+                                            <option value="+974">+974</option>
+                                            <option value="+968">+968</option>
+                                        </select>
                                     </div>
                                     <input type="tel" class="login__input" placeholder="123 456 789">
                                     <span class="login__icon">
@@ -308,6 +307,9 @@
 
                 </div>
             </div>
+
+
+
             <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-sm ">
@@ -315,8 +317,8 @@
                         <div class="modal__content">
                             <form action="">
                                 <div class="modal__body">
-                                    <button class="modal__back" data-bs-target="#exampleModalToggle"
-                                        data-bs-toggle="modal">
+                                    <button class="modal__back" onclick="return false;"
+                                        data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
                                         <i class="fa-solid fa-arrow-left"></i>
                                     </button>
 
@@ -326,24 +328,19 @@
                                     <div class="login__input-group">
                                         <label class="login__label">Mobile number</label>
                                         <div class="login__input-container">
-                                            <div class="login__country-code" id="forgotPasswordCountryCode"
-                                                style="display: flex;justify-content: center;align-items: center;gap: 3px;">
-                                                <span>+967</span>
+                                            <div class="login__country-code">
+                                                <select class="login__country-select" id="forgotPasswordCountryCode">
+                                                    <option value="+967">+967</option>
+                                                    <option value="+966">+966</option>
+                                                    <option value="+971">+971</option>
+                                                    <option value="+974">+974</option>
+                                                    <option value="+968">+968</option>
+                                                </select>
                                                 <i class="fa-solid fa-mobile-screen-button"></i>
-                                                <div class="login__country-dropdown" id="forgotPasswordCountryDropdown">
-                                                    <div class="login__country-option" data-code="+967">+967 Yemen</div>
-                                                    <div class="login__country-option" data-code="+966">+966 Saudi
-                                                        Arabia
-                                                    </div>
-                                                    <div class="login__country-option" data-code="+971">+971 UAE</div>
-                                                    <div class="login__country-option" data-code="+974">+974 Qatar</div>
-                                                    <div class="login__country-option" data-code="+968">+968 Oman</div>
-                                                </div>
                                             </div>
                                             <input type="tel" class="login__input" placeholder="Enter your number">
                                         </div>
                                     </div>
-
                                     <p class="modal__warning" id="warningRequired">
                                         All inputs is required
                                     </p>
@@ -368,8 +365,8 @@
                         <div class="modal__content">
                             <form action="">
                                 <div class="modal__body">
-                                    <button class="modal__back" data-bs-target="#exampleModalToggle2"
-                                        data-bs-toggle="modal">
+                                    <button class="modal__back" onclick="return false;"
+                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
                                         <i class="fa-solid fa-arrow-left"></i>
                                     </button>
 
@@ -414,8 +411,8 @@
                         <div class="modal__content">
                             <form action="/loged.html">
                                 <div class="modal__body">
-                                    <button class="modal__back" data-bs-target="#exampleModalToggle4"
-                                        data-bs-toggle="modal"">
+                                    <button class="modal__back" onclick="return false;"
+                                        data-bs-target="#exampleModalToggle4" data-bs-toggle="modal"">
                                     <i class=" fa-solid fa-arrow-left"></i>
                                     </button>
 
@@ -536,25 +533,19 @@
                                 <div class="signup__form-group">
                                     <label class="signup__label">Mobile number</label>
                                     <div class="login__input-container">
-                                        <div class="login__country-code" id="signupCountryCode">
-                                            <button type="button" class="signup__dropdown"
-                                                onclick="toggleDropdown('codedown')"
-                                                style="display: flex;align-items: center;justify-content: center;gap: 5px; border: 0;background-color: #f5f5f5;">
-                                                <span>+966</span>
-
-                                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                            </button>
-                                            <div class="login__country-dropdown" id="codedown">
-                                                <div class="login__country-option" data-code="+967">+967 Yemen</div>
-                                                <div class="login__country-option" data-code="+966">+966 Saudi Arabia
-                                                </div>
-                                                <div class="login__country-option" data-code="+971">+971 UAE</div>
-                                                <div class="login__country-option" data-code="+974">+974 Qatar</div>
-                                                <div class="login__country-option" data-code="+968">+968 Oman</div>
-                                            </div>
+                                        <div class="login__country-code">
+                                            <select class="signup__country-select" id="signupCountryCode">
+                                                <option value="+966">+966</option>
+                                                <option value="+967">+967</option>
+                                                <option value="+971">+971</option>
+                                                <option value="+974">+974</option>
+                                                <option value="+968">+968</option>
+                                            </select>
+                                            <i class="fa-solid fa-mobile-screen-button"></i>
                                         </div>
-                                        <input type="tel" class="login__input" placeholder="Enter your number">
-                                        <span class="signup__activate">Activate</span>
+                                        <input type="tel" class="login__input" placeholder="Mobile number">
+                                        <button class="signup__activate" data-bs-target="#exampleModalToggle8"
+                                            data-bs-toggle="modal" onclick="startTimer1();">Activate</button>
                                     </div>
                                 </div>
 
@@ -562,7 +553,9 @@
                                 <div class="signup__form-group">
                                     <label class="signup__label">Email</label>
                                     <input type="email" class="signup__input" placeholder="Enter your email">
-                                    <span class="signup__activate" style="transform: translateY(10px);">Activate</span>
+                                    <button class="signup__activate" style="transform: translateY(10px);"
+                                        data-bs-target="#exampleModalToggle9" data-bs-toggle="modal"
+                                        onclick="startTimer0();">Activate</button>
                                 </div>
 
                                 <!-- Country Dropdown -->
@@ -576,15 +569,12 @@
                                                 fill="#EB3C3C" />
                                         </svg>
                                     </label>
-                                    <button type="button" class="signup__dropdown"
-                                        onclick="toggleDropdown('countryDropdown')">
-                                        <span>Yemen</span>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                    <div class="signup__dropdown-content" id="countryDropdown">
-                                        <div class="signup__dropdown-item">Yemen</div>
-                                        <div class="signup__dropdown-item">Saudi Arabia</div>
-                                        <div class="signup__dropdown-item">UAE</div>
+                                    <div class="signup__select-wrapper">
+                                        <select class="signup__select">
+                                            <option value="Yemen">Yemen</option>
+                                            <option value="Saudi Arabia">Saudi Arabia</option>
+                                            <option value="UAE">UAE</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -601,15 +591,12 @@
                                                     fill="#EB3C3C" />
                                             </svg>
                                         </label>
-                                        <button type="button" class="signup__dropdown"
-                                            onclick="toggleDropdown('governorateDropdown')">
-                                            <span>Shabwa</span>
-                                            <i class="fas fa-chevron-down"></i>
-                                        </button>
-                                        <div class="signup__dropdown-content" id="governorateDropdown">
-                                            <div class="signup__dropdown-item">Shabwa</div>
-                                            <div class="signup__dropdown-item">Sana'a</div>
-                                            <div class="signup__dropdown-item">Aden</div>
+                                        <div class="signup__select-wrapper">
+                                            <select class="signup__select">
+                                                <option value="Shabwa">Shabwa</option>
+                                                <option value="Sana'a">Sana'a</option>
+                                                <option value="Aden">Aden</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -624,20 +611,16 @@
                                                     fill="#EB3C3C" />
                                             </svg>
                                         </label>
-                                        <button type="button" class="signup__dropdown"
-                                            onclick="toggleDropdown('cityDropdown')">
-                                            <span>Shabwa</span>
-                                            <i class="fas fa-chevron-down"></i>
-                                        </button>
-                                        <div class="signup__dropdown-content" id="cityDropdown">
-                                            <div class="signup__dropdown-item">Shabwa</div>
-                                            <div class="signup__dropdown-item">City 2</div>
-                                            <div class="signup__dropdown-item">City 3</div>
+                                        <div class="signup__select-wrapper">
+                                            <select class="signup__select">
+                                                <option value="Shabwa">Shabwa</option>
+                                                <option value="City 2">City 2</option>
+                                                <option value="City 3">City 3</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Currency Dropdown -->
                                 <div class="signup__form-group">
                                     <label class="signup__label">
                                         Select currency
@@ -648,18 +631,14 @@
                                                 fill="#EB3C3C" />
                                         </svg>
                                     </label>
-                                    <button type="button" class="signup__dropdown"
-                                        onclick="toggleDropdown('currencyDropdown')">
-                                        <span>YER</span>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                    <div class="signup__dropdown-content" id="currencyDropdown">
-                                        <div class="signup__dropdown-item">YER</div>
-                                        <div class="signup__dropdown-item">USD</div>
-                                        <div class="signup__dropdown-item">SAR</div>
+                                    <div class="signup__select-wrapper">
+                                        <select class="signup__select">
+                                            <option value="YER">YER</option>
+                                            <option value="USD">USD</option>
+                                            <option value="SAR">SAR</option>
+                                        </select>
                                     </div>
                                 </div>
-
                                 <!-- Password Input -->
                                 <div class="signup__form-group">
                                     <label class="signup__label">Password</label>
@@ -702,55 +681,44 @@
             <div class="modal fade" id="exampleModalToggle8" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body ">
-                            <a class="" href="/">
-                                <div class="icon5 ms-2">
-                                    <i class="fa-solid fa-arrow-left arrow"></i>
-                                </div>
-                            </a>
-                            <h2 class="titel1">Activate mobile number</h2>
-                            <p class="text-center enter ">Enter the code to activate the mobile number</p>
-                            <div class="groub-inbut ms-4 m-2  ">
-                                <div class="d-flex justify-content-center align-items-center gap-4">
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                </div>
-                            </div>
-                            <div class="count1">
-                                <div class="container fan d-flex justify-content-center align-items-center">
-                                    <div class="row text-secondary">
+                    <div class="modal__overlay" id="verificationModal">
+                        <div class="modal__content">
+                            <form action="">
+                                <div class="modal__body">
+                                    <button class="modal__back" onclick="return false;"
+                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
 
-                                        <div class="col-md-3">
-                                            <div class="time  ">
-                                                <span class="mins">00: </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="time">
-                                                <span class="sec"> 59s</span>
-                                            </div>
-                                        </div>
+                                    <h2 class="titel1">Activate mobile number</h2>
+                                    <p class="text-center enter ">Enter the code to activate the mobile number</p>
+                                    <div class="verify__input-group">
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
                                     </div>
+
+                                    <div class="verify__timer">
+                                        <span id="timerMinutes1">00</span>:<span id="timerSeconds1">59</span>s
+                                    </div>
+
+                                    <a href="#" class="verify__resend" id="resendButton1">Resend</a>
+
+                                    <p class="modal__warning" id="verifyWarningRequired">
+                                        All inputs is required
+                                    </p>
+                                    <p class="modal__warning" id="verifyWarningIncorrect">
+                                        Incorrect verification code
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <a class="Resend" href="">Resend</a>
-                            </div>
-                            <div class="groub1-button py-3">
-                                <p id="warning"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                    inputs is required</p>
-                                <p id="warningmessage"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                    incorrect Mobile number or password</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-target="#exampleModalToggle9" data-bs-toggle="modal"
-                                class="form-control btn btn11 " value="Next">Next</button>
+
+                                <div class="modal__footer">
+                                    <button class="modal__button" data-bs-target="#exampleModalToggle7"
+                                        data-bs-toggle="modal" onclick="return false;">Next</button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -758,55 +726,44 @@
             <div class="modal fade" id="exampleModalToggle9" aria-hidden="true"
                 aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body ">
-                            <a class="" href="/">
-                                <div class="icon5 ms-2">
-                                    <i class="fa-solid fa-arrow-left arrow"></i>
-                                </div>
-                            </a>
-                            <h2 class="titel1">Activate mobile number</h2>
-                            <p class="text-center enter ">Enter the code to activate the mobile number</p>
-                            <div class="groub-inbut ms-4 m-2  ">
-                                <div class="d-flex justify-content-center align-items-center gap-4">
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                    <div class="icoon4"></div>
-                                </div>
-                            </div>
-                            <div class="count1">
-                                <div class="container fan d-flex justify-content-center align-items-center">
-                                    <div class="row text-secondary">
+                    <div class="modal__overlay" id="verificationModal">
+                        <div class="modal__content">
+                            <form action="">
+                                <div class="modal__body">
+                                    <button class="modal__back" data-bs-target="#exampleModalToggle2"
+                                        data-bs-toggle="modal" onclick="return false;">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
 
-                                        <div class="col-md-3">
-                                            <div class="time  ">
-                                                <span class="mins">00: </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="time">
-                                                <span class="sec"> 59s</span>
-                                            </div>
-                                        </div>
+                                    <h2 class="titel1">Activate mobile number</h2>
+                                    <p class="text-center enter ">Enter the code to activate the mobile number</p>
+                                    <div class="verify__input-group">
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
+                                        <input type="number" class="verify__input" maxlength="1" />
                                     </div>
+
+                                    <div class="verify__timer">
+                                        <span id="timerMinutes0">00</span>:<span id="timerSeconds0">59</span>s
+                                    </div>
+
+                                    <a href="#" class="verify__resend" id="resendButton0">Resend</a>
+
+                                    <p class="modal__warning" id="verifyWarningRequired">
+                                        All inputs is required
+                                    </p>
+                                    <p class="modal__warning" id="verifyWarningIncorrect">
+                                        Incorrect verification code
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <a class="Resend" href="">Resend</a>
-                            </div>
-                            <div class="groub1-button py-3">
-                                <p id="warning"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">All
-                                    inputs is required</p>
-                                <p id="warningmessage"
-                                    class="text-danger  d-none d-flex justify-content-center align-items-center">
-                                    incorrect Mobile number or password</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-target="#exampleModalToggle9" data-bs-toggle="modal"
-                                class="form-control btn btn11 " value="Next">Next</button>
+
+                                <div class="modal__footer">
+                                    <button class="modal__button" data-bs-target="#exampleModalToggle7"
+                                        data-bs-toggle="modal" onclick="return false;">Next</button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -2178,9 +2135,10 @@
 
 
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=15161561665464564&libraries=places"></script>
     <script src="js/ProductDisplay.js"></script>
     <script src="js/StoreDisplay.js"></script>
+
     <script src="js/address-components.js"></script>
     <script src="js/loginform.js"></script>
 

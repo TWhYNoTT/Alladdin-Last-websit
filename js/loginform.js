@@ -27,11 +27,11 @@ countryOptions.forEach(option => {
 });
 
 
-document.addEventListener('click', (e) => {
-    if (!countryCode.contains(e.target)) {
-        countryDropdown.style.display = 'none';
-    }
-});
+// document.addEventListener('click', (e) => {
+//     if (!countryCode.contains(e.target)) {
+//         countryDropdown.style.display = 'none';
+//     }
+// });
 
 
 
@@ -40,21 +40,21 @@ document.addEventListener('click', (e) => {
 
 const forgotPasswordCountryCode = document.getElementById('forgotPasswordCountryCode');
 const forgotPasswordCountryDropdown = document.getElementById('forgotPasswordCountryDropdown');
-const forgotPasswordCountryOptions = forgotPasswordCountryDropdown.querySelectorAll('.login__country-option');
+// const forgotPasswordCountryOptions = forgotPasswordCountryDropdown.querySelectorAll('.login__country-option');
 
 forgotPasswordCountryCode.addEventListener('click', (e) => {
     e.stopPropagation();
     forgotPasswordCountryDropdown.style.display = forgotPasswordCountryDropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-forgotPasswordCountryOptions.forEach(option => {
-    option.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const code = option.getAttribute('data-code');
-        forgotPasswordCountryCode.querySelector('span').textContent = code;
-        forgotPasswordCountryDropdown.style.display = 'none';
-    });
-});
+// forgotPasswordCountryOptions.forEach(option => {
+//     option.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         const code = option.getAttribute('data-code');
+//         forgotPasswordCountryCode.querySelector('span').textContent = code;
+//         forgotPasswordCountryDropdown.style.display = 'none';
+//     });
+// });
 
 
 
@@ -83,11 +83,68 @@ verificationInputs.forEach((input, index) => {
     });
 });
 
+
+
+
 function startTimer() {
     let totalSeconds = 59;
     const minutesSpan = document.getElementById('timerMinutes');
     const secondsSpan = document.getElementById('timerSeconds');
     const resendButton = document.getElementById('resendButton');
+
+    resendButton.classList.add('verify__resend--disabled');
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(timerInterval);
+            resendButton.classList.remove('verify__resend--disabled');
+            return;
+        }
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        minutesSpan.textContent = String(minutes).padStart(2, '0');
+        secondsSpan.textContent = String(seconds).padStart(2, '0');
+
+        totalSeconds--;
+    }, 1000);
+}
+
+
+
+
+function startTimer0() {
+    let totalSeconds = 59;
+    const minutesSpan = document.getElementById('timerMinutes0');
+    const secondsSpan = document.getElementById('timerSeconds0');
+    const resendButton = document.getElementById('resendButton0');
+
+    resendButton.classList.add('verify__resend--disabled');
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(timerInterval);
+            resendButton.classList.remove('verify__resend--disabled');
+            return;
+        }
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        minutesSpan.textContent = String(minutes).padStart(2, '0');
+        secondsSpan.textContent = String(seconds).padStart(2, '0');
+
+        totalSeconds--;
+    }, 1000);
+}
+function startTimer1() {
+    let totalSeconds = 59;
+    const minutesSpan = document.getElementById('timerMinutes1');
+    const secondsSpan = document.getElementById('timerSeconds1');
+    const resendButton = document.getElementById('resendButton1');
 
     resendButton.classList.add('verify__resend--disabled');
 
