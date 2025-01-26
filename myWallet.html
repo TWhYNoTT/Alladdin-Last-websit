@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <title>Alladdin website</title>
+   
 </head>
 
 <body>
@@ -331,7 +332,7 @@
     </header>
 
     <section>
-        <div class="container py-2">
+        <div class="container py-2 ">
             <div class="row ">
                 <div class="col col-md-6">
                     <div class="d-flex gap-2">
@@ -525,6 +526,8 @@
                     </div>
                 </div>
             </div>
+
+           
         </div>
     </section>
 
@@ -532,9 +535,9 @@
 
     <section>
         <h1 class="titel"> My wallet</h1>
-        <div class="container">
-            <div class="row    d-flex   justify-content-around ">
-                <div class="col-md-7 ">
+        <div class="container d-flex justify-content-lg-start">
+            <div class="row    d-flex   justify-content-between ">
+                <div class="col-md-9 ">
                     <div class="innerWallet ">
                         <div class="  py-1 boxshadoow d-flex justify-content-between py-3  w-100">
                             <div class="container d-flex justify-content-between">
@@ -734,7 +737,7 @@
 
 
 
-                <div class="col-md-4 d-none list1" id="addBalance2">
+                <div class="col-md-2 d-none list1" id="addBalance2">
                     <div class="innerBox">
                         <h4 class="walletAddrsses"> Balance transfre</h4>
                         <div class="groub1-inbut ms-4 m-2 ">
@@ -813,7 +816,7 @@
 
 
                 </div>
-                <div class="col-md-4  d-none list2" id="addBalance">
+                <div class="col-md-2  d-none list2" id="addBalance">
 
                     <div class="innerBox2">
                         <h4 class="walletAddrsses">Add balance</h4>
@@ -957,7 +960,53 @@
                 </div>
             </div>
 
+         <!-- Add Balance Form -->
+         <!-- <div class="form-container">
+            <div class="form-header">Add Balance</div>
+            <form>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="amount" placeholder="200">
+                        <span class="input-group-text">YER</span>
+                    </div>
+                </div>
 
+                <div class="mb-3">
+                    <label class="form-label">Payment Method</label>
+                    <div class="form-check payment-method">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer">
+                        <label class="form-check-label" for="bankTransfer">
+                            <img src="https://via.placeholder.com/30" alt="Bank Transfer"> Bank Transfer
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Electronic Wallets</label>
+                    <div class="form-check payment-method">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="cashPay">
+                        <label class="form-check-label" for="cashPay">
+                            <img src="https://via.placeholder.com/30" alt="Cash Pay"> Cash Pay (Account 6525454)
+                        </label>
+                    </div>
+                    <div class="form-check payment-method">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="floosak">
+                        <label class="form-check-label" for="floosak">
+                            <img src="https://via.placeholder.com/30" alt="Floosak"> Floosak (Account 6525454)
+                        </label>
+                    </div>
+                    <div class="form-check payment-method">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="sabaCash">
+                        <label class="form-check-label" for="sabaCash">
+                            <img src="https://via.placeholder.com/30" alt="Saba Cash"> Saba Cash (Account 6525454)
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Confirm</button>
+            </form>
+        </div> -->
 
 
 
