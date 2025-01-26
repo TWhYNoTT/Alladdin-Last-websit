@@ -2838,3 +2838,27 @@ h6 {
   color: white;
 
 }
+
+
+.review-card {
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.review-stars {
+  color: #ffc107;
+}
+
+.review-text {
+  font-size: 0.95rem;
+}
+
+.reviewer-name {
+  font-weight: bold;
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
