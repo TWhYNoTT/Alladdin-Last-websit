@@ -394,29 +394,71 @@ const Products1 = [
         image: "images/bomberjacket.jpeg",
         salePrice: "29.0 YER",
 
-    }
+    },
+    {
+        id: 10,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 11,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 12,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 13,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 14,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 15,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 16,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 17,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
+    {
+        id: 18,
+        name: "Sport Bomber Jacket",
+        image: "images/bomberjacket.jpeg",
+        salePrice: "29.0 YER",
+
+    },
 ];
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    new ProductDisplay({
-        containerId: 'Flash-Sale',
-        displayType: 'carousel',
-        products: Products,
-        itemsToShow: 4,
-    });
-
-    new ProductDisplay({
-        containerId: 'New-Arrival',
-        displayType: 'carousel',
-        products: Products0,
-        itemsToShow: 4,
-    });
-
-    new ProductDisplay({
-        containerId: 'Suggested-Grid',
-        displayType: 'grid',
-        products: Products1,
-    });
-});

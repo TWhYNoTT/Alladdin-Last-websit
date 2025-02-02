@@ -773,7 +773,7 @@
 
         <!--end models-->
     </header>
-
+    <!--------------i want integrate the same section with all pages----------------->
     <section>
 
         <div class="container py-2">
@@ -948,7 +948,7 @@
             </div>
         </div>
     </section>
-
+    <!--------------i want integrate the same section with all pages----------------->
 
     <section>
         <div class="container  ">
@@ -2141,6 +2141,31 @@
 
     <script src="js/address-components.js"></script>
     <script src="js/loginform.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProductDisplay({
+                containerId: 'Flash-Sale',
+                displayType: 'carousel',
+                products: Products,
+                itemsToShow: 4,
+            });
+
+            new ProductDisplay({
+                containerId: 'New-Arrival',
+                displayType: 'carousel',
+                products: Products0,
+                itemsToShow: 4,
+            });
+
+            new ProductDisplay({
+                containerId: 'Suggested-Grid',
+                displayType: 'grid',
+                products: Products1,
+            });
+        });
+
+    </script>
 
 </body>
 

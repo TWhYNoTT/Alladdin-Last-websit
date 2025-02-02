@@ -109,6 +109,7 @@ input {
 .download-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 15px 20px;
     background-color: white;
 
@@ -119,7 +120,7 @@ input {
 .location {
     display: flex;
     align-items: center;
-    margin-right: auto;
+    /* margin-right: auto; */
 }
 
 .flag {
