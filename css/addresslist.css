@@ -157,13 +157,13 @@
 .addr-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .form-group {
@@ -359,4 +359,19 @@ select {
 
 .delete-cancel:hover {
     background: #E9ECEF;
+}
+
+
+
+.required::after {
+    content: '' !important;
+}
+
+
+.phone-input {
+    padding: 0px !important;
+}
+
+.phone-input input {
+    border: 0 !important;
 }
