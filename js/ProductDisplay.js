@@ -5,6 +5,7 @@ class ProductDisplay {
             products: config.products || [],
             displayType: config.displayType || 'carousel',
             itemsToShow: config.itemsToShow || 4,
+            layout: config.layout || 'horizontal' // Add new layout parameter
         };
 
         this.startIndex = 0;
@@ -63,9 +64,10 @@ class ProductDisplay {
     createProductCard(product) {
         const productUrl = product?.productUrl || '#';
         const hasDiscount = product.discount && product.originalPrice;
+        const layoutClass = this.config.layout === 'vertical' ? 'fs-product--vertical' : '';
 
         return `
-            <div class="fs-product" data-product-id="${product.id}">
+            <div class="fs-product ${layoutClass}" data-product-id="${product.id}">
                 <div class="fs-product__image-wrapper">
                     <a href="${productUrl}" class="fs-product__link">
                         <img src="${product.image}" alt="${product.name}" class="fs-product__image">

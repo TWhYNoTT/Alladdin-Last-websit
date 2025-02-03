@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/filter.css">
     <link rel="stylesheet" href="/css/index0.css">
     <link rel="stylesheet" href="/css/Search-Component-Styles.css">
+    <link rel="stylesheet" href="css/store-header.css">
     <title>Alladdin website</title>
 </head>
 
@@ -534,6 +535,18 @@
 
 
 
+
+
+
+    <div id="storeHeader"></div>
+
+
+
+
+
+
+    <!---------------------------------------------------------------------------->
+
     <div class="container py-4">
         <div class="row">
             <div class="col-md-4">
@@ -877,8 +890,6 @@
         <p class="text-white">copyright 2024 |Techlife |All Rights Reserved</p>
     </div>
 
-
-
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
@@ -958,6 +969,9 @@
     </script>
 
     <script src="js/SearchComponent.js"></script>
+
+
+
     <script src="js/ProductDisplay.js"></script>
     <script>
         let latoutval = 'horizontal';
@@ -1015,11 +1029,31 @@
             }
         });
     </script>
-
-
-
-
     <script src="js/address-components.js"></script>
+
+    <script src="js/store-header.js"></script>
+    <script>
+
+        const configsh = {
+            storeName: 'El Nor Store',
+            itemCount: 154,
+            rating: 4.8,
+            ratingCount: 574,
+            logoUrl: '/images/Rectangle 30.png',
+        };
+
+        const headerContainer = document.getElementById('storeHeader');
+        const storeHeader = new StoreHeader(headerContainer, configsh);
+
+
+        headerContainer.addEventListener('favorite', (e) => {
+            console.log('Favorite status:', e.detail.isFavorite);
+        });
+
+        headerContainer.addEventListener('ratingClick', () => {
+            console.log('Rating section clicked');
+        });
+    </script>
 </body>
 
 </html>

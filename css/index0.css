@@ -590,6 +590,43 @@ input {
     font-size: 0.875rem;
 }
 
+/* Add vertical layout styles */
+.fs-grid:has(.fs-product--vertical) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.fs-product--vertical {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.fs-product--vertical .fs-product__image-wrapper {
+    width: 120px;
+    min-width: 120px;
+    padding-top: 120px;
+}
+
+.fs-product--vertical .fs-product__info {
+    flex: 1;
+    padding: 0.5rem 0;
+}
+
+.fs-product--vertical .fs-product__name {
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for vertical layout */
+@media (max-width: 480px) {
+    .fs-product--vertical .fs-product__image-wrapper {
+        width: 100px;
+        min-width: 100px;
+        padding-top: 100px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .fs-carousel .fs-product {
