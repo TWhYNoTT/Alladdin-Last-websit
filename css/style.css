@@ -352,6 +352,17 @@ li {
   min-width: 23rem;
 }
 
+@media (max-width: 767px) {
+  .modal-dialog {
+    right: 50%;
+    transform: translateX(50%) !important;
+    -webkit-transform: translateX(50%) !important;
+    -moz-transform: translateX(50%) !important;
+    -ms-transform: translateX(50%) !important;
+    -o-transform: translateX(50%) !important;
+  }
+}
+
 .modal-location {
   position: absolute;
   top: 14rem;
