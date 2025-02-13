@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/all.min.css">
@@ -12,10 +12,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Amatic+SC&family=Bad+Script&family=Pacifico&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@100;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/searchbox.css">
     <link rel="stylesheet" href="/css/index.css">
     <title>Alladdin website-Home</title>
 
@@ -41,8 +44,7 @@
                                 d="M6.07031 6.63759C5.99531 6.63759 5.92781 6.62184 5.86031 6.59184C5.79281 6.56184 5.72531 6.52509 5.67281 6.47259C5.62031 6.41259 5.58281 6.35259 5.55281 6.28509C5.52281 6.21684 5.50781 6.15009 5.50781 6.07509C5.50781 5.99934 5.52281 5.92509 5.55281 5.85759C5.58281 5.79009 5.62031 5.72259 5.67281 5.67759C5.89031 5.46684 6.25781 5.46684 6.46781 5.67759C6.57281 5.78184 6.63281 5.92509 6.63281 6.07509C6.63281 6.15009 6.62531 6.21684 6.59531 6.28509C6.56531 6.35259 6.52031 6.41259 6.46781 6.47259C6.41531 6.52509 6.35531 6.56184 6.28781 6.59184C6.22031 6.62184 6.14531 6.63759 6.07031 6.63759Z"
                                 fill="white" />
                         </svg>
-                        <a href="/flash.html" class="text-white text-decoration-none py-2"
-                            style="border-right: 1.5px solid rgba(255, 255, 255, 0.488);height: 60%;font-size: 13px;text-align: center;vertical-align: center;
+                        <a href="/flash.html" class="text-white text-decoration-none py-2" style="border-right: 1.5px solid rgba(255, 255, 255, 0.488);height: 60%;font-size: 13px;text-align: center;vertical-align: center;
                             padding-right: 8px;">AllOffers
                         </a>
 
@@ -161,22 +163,57 @@
 
 
 
-                            <form class="d-flex" role="search">
-                                <div class="input-group searchInput mx-2 ">
-                                    <span class="input-group-text " id="basic-addon1"><svg width="19" height="19"
-                                            viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M9.259 16.3149C12.9822 16.3149 16.0004 13.2966 16.0004 9.57345C16.0004 5.85027 12.9822 2.83203 9.259 2.83203C5.53581 2.83203 2.51758 5.85027 2.51758 9.57345C2.51758 13.2966 5.53581 16.3149 9.259 16.3149Z"
-                                                stroke="#BFA274" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M13.9492 14.6133L16.5922 17.2494" stroke="#BFA274"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="search..."
-                                        aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
+                            <form class=" d-flex">
+                                <div class="search-container">
+                                    <div class="search-box">
+                                        <span class="search-icon">
+                                            <svg width="20" height="20" viewBox="0 0 19 19" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9.259 16.3149C12.9822 16.3149 16.0004 13.2966 16.0004 9.57345C16.0004 5.85027 12.9822 2.83203 9.259 2.83203C5.53581 2.83203 2.51758 5.85027 2.51758 9.57345C2.51758 13.2966 5.53581 16.3149 9.259 16.3149Z"
+                                                    stroke="#999" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M13.9492 14.6133L16.5922 17.2494" stroke="#999"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <input type="text" name="search" placeholder="El" class="search-input">
+                                    </div>
 
+                                    <!-- Suggestions Container -->
+                                    <div class="search-suggestions">
+                                        <div class="store-suggestion">
+                                            <div class="store-info">
+                                                <a class="searchsuglink" href="#">
+                                                    <img src="path/to/store-logo.png" alt="El Nor Store"
+                                                        class="store-logo">
+                                                    <div class="store-details">
+                                                        <h3 class="store-name">El Nor Store</h3>
+                                                        <span class="store-distance">1.2 KM</span>
+                                                        <div class="store-rating">
+                                                            <span class="rating-star">★</span>
+                                                            <span>4.8 -574 Ratings</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-suggestion">
+                                            <a class="searchsuglink" href="#">
+                                                <img src="path/to/bomber-jacket.png" alt="Bomber Jackets"
+                                                    class="product-image">
+                                                <div class="product-details">
+                                                    <h3 class="product-name">Bomber Jackets</h3>
+                                                    <div class="product-price">
+                                                        <span class="current-price">30.0 YER</span>
+                                                        <span class="original-price">49.9 YER</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                             <!-- Icons for Navbar -->
                             <div class="d-flex gap-2 align-items-center">
@@ -853,92 +890,99 @@
     <section>
         <form id="newAddressForm" class="hidden-form" style="width: 50%;margin-top: 200px;">
             <h2 class="new-form-title">Add Address</h2>
-        
+
             <!-- Search Input -->
             <div class="form-group search-input-group">
                 <div class="input-wrapper">
-                  <input type="text" id="searchAddress" placeholder="Search " />
+                    <input type="text" id="searchAddress" placeholder="Search " />
                 </div>
-              </div>
-        
+            </div>
+
             <!-- Map -->
-            <div class="groub-button py-2" >
-                <div class="map p-2 " style="width: 100%"><iframe width="100%" height="200" frameborder="0" scrolling="no"
-                    marginheight="0" marginwidth="0"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                        href="https://www.maps.ie/population/">Find Population on Map</a></iframe></div>
+            <div class="groub-button py-2">
+                <div class="map p-2 " style="width: 100%"><iframe width="100%" height="200" frameborder="0"
+                        scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                            href="https://www.maps.ie/population/">Find Population on Map</a></iframe></div>
             </div>
-          
-             <!-- First Row -->
-        <div class="form-row">
-            <div class="form-group">
-              <label for="addressName">Address Name *</label>
-              <input style="background-color: #F5F5F5;width:100%;" type="text" id="addressName" placeholder="Home" />
+
+            <!-- First Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="addressName">Address Name *</label>
+                    <input style="background-color: #F5F5F5;width:100%;" type="text" id="addressName"
+                        placeholder="Home" />
+                </div>
+                <div class="form-group" style="margin-left: 10px">
+                    <label for="buildingNumber">Building Number *</label>
+                    <input style="background-color: #F5F5F5; width: 100%;" type="text" id="buildingNumber"
+                        placeholder="23" />
+                </div>
+                <div class="form-group">
+                    <label for="apartmentNumber">Apartment Number *</label>
+                    <input style="background-color: #F5F5F5;width: 100%;" type="text" id="apartmentNumber"
+                        placeholder="10" />
+                </div>
             </div>
-            <div class="form-group" style="margin-left: 10px">
-              <label for="buildingNumber">Building Number *</label>
-              <input style="background-color: #F5F5F5; width: 100%;" type="text" id="buildingNumber" placeholder="23"  />
+
+            <!-- Second Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select style="width:95% ;" id="country">
+                        <option value="Yemen">Yemen</option>
+                        <option value="Egypt">Egypt</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="specialMark">Special Mark</label>
+                    <input style="background-color: #F5F5F5;" type="text" id="specialMark"
+                        placeholder="Front of McDonald's" />
+                </div>
             </div>
-            <div class="form-group">
-              <label for="apartmentNumber">Apartment Number *</label>
-              <input style="background-color: #F5F5F5;width: 100%;" type="text" id="apartmentNumber" placeholder="10" />
+
+            <!-- Third Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="governorate">Governorate *</label>
+                    <select style="width: 100%;" id="governorate">
+                        <option value="Shabwa">Shabwa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <select style="width: 100%;" id="city">
+                        <option value="Shabwa">Dar Muhaimud</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number *</label>
+                    <input style="background-color: #F5F5F5; width: 100%;" type="text" id="mobileNumber"
+                        placeholder="+967 123 456 789" />
+                </div>
             </div>
-          </div>
-        
-          <!-- Second Row -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="country">Country *</label>
-              <select style="width:95% ;" id="country">
-                <option value="Yemen">Yemen</option>
-                <option value="Egypt">Egypt</option>
-              </select>
+
+
+            <!-- Fourth Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="street">Street *</label>
+                    <input style="background-color: #F5F5F5;" type="text" id="street" placeholder="ST7" />
+                </div>
+                <div class="form-group">
+                    <label for="anotherMobileNumber">Another Mobile Number</label>
+                    <input style="background-color: #F5F5F5;" type="text" id="anotherMobileNumber"
+                        placeholder="+967 123 456 789" />
+                </div>
             </div>
-            <div class="form-group">
-              <label for="specialMark">Special Mark</label>
-              <input style="background-color: #F5F5F5;" type="text" id="specialMark" placeholder="Front of McDonald's" />
-            </div>
-          </div>
-        
-         <!-- Third Row -->
-  <div class="form-row">
-      <div class="form-group">
-        <label for="governorate">Governorate *</label>
-        <select style="width: 100%;" id="governorate">
-          <option value="Shabwa">Shabwa</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="city">City *</label>
-        <select style="width: 100%;" id="city">
-          <option value="Shabwa">Dar Muhaimud</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="mobileNumber">Mobile Number *</label>
-        <input style="background-color: #F5F5F5; width: 100%;" type="text" id="mobileNumber" placeholder="+967 123 456 789" />
-      </div>
-    </div>
-    
-        
-          <!-- Fourth Row -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="street">Street *</label>
-              <input style="background-color: #F5F5F5;" type="text" id="street" placeholder="ST7" />
-            </div>
-            <div class="form-group">
-              <label for="anotherMobileNumber">Another Mobile Number</label>
-              <input style="background-color: #F5F5F5;" type="text" id="anotherMobileNumber" placeholder="+967 123 456 789" />
-            </div>
-          </div>
-        
-          
+
+
             <!-- Submit Button -->
             <div class="form-group">
-              <button type="submit" style="padding: 10px 10px;width: 40%;margin-left: 30%;margin-top: 50px;" class="submit-button">Save Address</button>
+                <button type="submit" style="padding: 10px 10px;width: 40%;margin-left: 30%;margin-top: 50px;"
+                    class="submit-button">Save Address</button>
             </div>
-          </form>
+        </form>
         <div class="container py-2">
 
             <div class="row ">
@@ -961,7 +1005,7 @@
                             </svg>
 
                         </a>
-                        
+
                         <!-- Address Display -->
                         <div class="address-container">
                             <div class="d-flex flex-column">
@@ -979,7 +1023,8 @@
                             <!-- Form Content -->
                             <div id="addressForm" class="hidden-form">
                                 <form class="form-design">
-                                    <button onclick="openNewForm()"> <i class="fa-solid fa-plus"></i> New Address</button>
+                                    <button onclick="openNewForm()"> <i class="fa-solid fa-plus"></i> New
+                                        Address</button>
                                     <div
                                         style="border:1px solid #BEA276;border-radius: 12px;padding:0px 8px; font-size:2px 14px;background-color: white;">
                                         <p><span style="color: #BEA276; ">Default</span><br>ST7, Shabwa, Dar Muhaimud,
@@ -1207,7 +1252,9 @@
                         <div class="overlay-text" id="overlayText">
                             <div style="font-size: 17px;">Latest trending</div>
                             <div style="font-size: 32px;">Electronic<br>items</div>
-                        <button style="background-color: white;color:black; border-radius: 5px; border:0px;padding: 5px 10px;margin-top:8px;font-size: 17px;">Shop now</button>
+                            <button
+                                style="background-color: white;color:black; border-radius: 5px; border:0px;padding: 5px 10px;margin-top:8px;font-size: 17px;">Shop
+                                now</button>
                         </div>
                         <img src="photo/Banner-board-800x420 2.png" alt="Your Photo">
                     </div>
@@ -2878,7 +2925,7 @@
 
 
     <footer class="  py-5 mt-5">
-        
+
         <div class="container align-items-center position-relative">
             <div class="row  ">
                 <div class="col-md-4 ">
@@ -3041,8 +3088,9 @@
 
                     </div>
                     <div class="gap-2 py-2">
-                        <svg style="margin-left:150px;" width="98" height="32" viewBox="0 0 98 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path 
+                        <svg style="margin-left:150px;" width="98" height="32" viewBox="0 0 98 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
                                 d="M93.6668 30.926H3.98925C2.34516 30.926 1 29.5808 1 27.9367V4.0227C1 2.37861 2.34516 1.03345 3.98925 1.03345H93.6668C95.3109 1.03345 96.6561 2.37861 96.6561 4.0227V27.9367C96.6561 29.5808 95.3109 30.926 93.6668 30.926Z"
                                 fill="black" />
                             <path
@@ -3117,7 +3165,7 @@
                                 fill="white" />
                         </svg>
 
-                        <svg  width="98" height="32" viewBox="0 0 98 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="98" height="32" viewBox="0 0 98 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M94.0108 30.926H4.33325C2.68916 30.926 1.34399 29.5808 1.34399 27.9367V4.0227C1.34399 2.37861 2.68916 1.03345 4.33325 1.03345H94.0108C95.6549 1.03345 97.0001 2.37861 97.0001 4.0227V27.9367C97.0001 29.5808 95.6549 30.926 94.0108 30.926Z"
                                 fill="black" />
@@ -3197,7 +3245,7 @@
         <div class="circle top-right"></div>
     </footer>
     <div class="nav1 w-100  py-1 copyRight text-center">
-        <p class="text-white" >copyright 2024 |Techlife |All Rights Reserved</p>
+        <p class="text-white">copyright 2024 |Techlife |All Rights Reserved</p>
     </div>
 
 
