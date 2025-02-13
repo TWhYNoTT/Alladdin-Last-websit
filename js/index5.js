@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 ///////////////////wallet
 function showDiv(divId) {
   // إخفاء جميع العناصر
-  const divs = document.querySelectorAll('.col-md-2');
+  const divs = document.querySelectorAll('.col-md-4');
   divs.forEach(div => {
       div.classList.add('d-none');
   });
