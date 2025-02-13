@@ -20,53 +20,58 @@ class FilterComponent {
 
     render() {
         const template = `
-            <div class="filter-section">
-                <h3>Categories</h3>
-                <div class="categories-list">
-                    ${this.renderCategories()}
-                </div>
-            </div>
-            
-            <div class="filter-section">
-                <h3>Sub Categories</h3>
-                <div class="subcategories-tree">
-                    ${this.renderSubCategories(this.config.subCategories)}
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3>Price</h3>
-                <div class="price-range">
-                    <div class="range-slider">
-                        <div class="slider-track"></div>
-                        <div class="slider-handle" data-handle="min"></div>
-                        <div class="slider-handle" data-handle="max"></div>
-                    </div>
-                    <div class="price-values">
-                        <span class="min-price">${this.config.price.min}.0 YER</span>
-                        <span class="max-price">${this.config.price.max} YER</span>
+            <form class="filter-form">
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <div class="categories-list">
+                        ${this.renderCategories()}
                     </div>
                 </div>
-            </div>
-
-            <div class="filter-section">
-                <h3>Size</h3>
-                <div class="size-options">
-                    ${this.renderSizeOptions()}
+                
+                <div class="filter-section">
+                    <h3>Sub Categories</h3>
+                    <div class="subcategories-tree">
+                        ${this.renderSubCategories(this.config.subCategories)}
+                    </div>
                 </div>
-            </div>
 
-            <div class="filter-section">
-                <h3>Color</h3>
-                <div class="color-options">
-                    ${this.renderColorOptions()}
+                <div class="filter-section">
+                    <h3>Price</h3>
+                    <div class="price-range">
+                        <div class="range-slider">
+                            <div class="slider-track"></div>
+                            <div class="slider-handle" data-handle="min"></div>
+                            <div class="slider-handle" data-handle="max"></div>
+                        </div>
+                        <div class="price-values">
+                            <span class="min-price">${this.config.price.min}.0 YER</span>
+                            <span class="max-price">${this.config.price.max} YER</span>
+                        </div>
+                        <!-- Hidden inputs for price range values -->
+                        <input type="hidden" name="minPrice" value="${this.config.price.min}">
+                        <input type="hidden" name="maxPrice" value="${this.config.price.max}">
+                    </div>
                 </div>
-            </div>
 
-            <div class="filter-actions">
-                <button class="apply-btn">Apply</button>
-                <button class="reset-btn">Rest</button>
-            </div>
+                <div class="filter-section">
+                    <h3>Size</h3>
+                    <div class="size-options">
+                        ${this.renderSizeOptions()}
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        ${this.renderColorOptions()}
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="apply-btn">Apply</button>
+                    <button type="button" class="reset-btn">Reset</button>
+                </div>
+            </form>
         `;
 
         this.container.innerHTML = template;
@@ -74,12 +79,18 @@ class FilterComponent {
 
     renderCategories() {
         return this.config.categories.map(category => `
-            <div class="category-item" data-category="${category.name}">
-                <div class="category-name">
-                    <span class="category-dot"></span>
-                    <span>${category.name}</span>
-                </div>
-                <span class="category-count">${category.count}</span>
+            <div class="category-item">
+                <label class="category-label">
+                    <input type="checkbox" 
+                           name="categories" 
+                           value="${category.name}" 
+                           ${this.selectedFilters.categories.has(category.name) ? 'checked' : ''}>
+                    <div class="category-name">
+                        <span class="category-dot"></span>
+                        <span>${category.name}</span>
+                    </div>
+                    <span class="category-count">${category.count}</span>
+                </label>
             </div>
         `).join('');
     }
@@ -87,7 +98,7 @@ class FilterComponent {
     renderSubCategories(items, level = 0) {
         return items.map((item, index) => {
             const hasChildren = item.children && item.children.length > 0;
-            const isExpanded = level < 4; // Auto-expand first 4 levels
+            const isExpanded = level < 4;
             const expandIcon = hasChildren ? (isExpanded ? '−' : '+') : '+';
             const hiddenClass = !isExpanded && hasChildren ? 'hidden' : '';
             const isLast = index === items.length - 1;
@@ -98,8 +109,14 @@ class FilterComponent {
                         ${level > 0 ? `<div class="tree-line"></div>
                         <div class="tree-line-horizontal"></div>` : ''}
                         <div class="subcategory-header">
-                            <button class="expand-icon ${hasChildren ? 'has-children' : ''}">${expandIcon}</button>
-                            <span class="subcategory-name">${item.name}</span>
+                            <button type="button" class="expand-icon ${hasChildren ? 'has-children' : ''}">${expandIcon}</button>
+                            <label class="subcategory-label">
+                                <input type="checkbox" 
+                                       name="subCategories" 
+                                       value="${item.name}"
+                                       ${this.selectedFilters.subCategories.has(item.name) ? 'checked' : ''}>
+                                <span class="subcategory-name">${item.name}</span>
+                            </label>
                             ${item.count ? `<span class="subcategory-count">${item.count}</span>` : ''}
                         </div>
                     </div>
@@ -115,18 +132,25 @@ class FilterComponent {
 
     renderSizeOptions() {
         return this.config.sizes.map(size => `
-            <div class="size-option ${size.selected ? 'selected' : ''}" data-size="${size.label}">
-                ${size.label}
-            </div>
+            <label class="size-option ${size.selected ? 'selected' : ''}">
+                <input type="checkbox" 
+                       name="sizes" 
+                       value="${size.label}"
+                       ${this.selectedFilters.sizes.has(size.label) ? 'checked' : ''}>
+                <span class="size-label">${size.label}</span>
+            </label>
         `).join('');
     }
 
     renderColorOptions() {
         return this.config.colors.map(color => `
-            <div class="color-option ${color === '#c4a77d' ? 'selected' : ''}" 
-                 style="background-color: ${color}"
-                 data-color="${color}">
-            </div>
+            <label class="color-option ${this.selectedFilters.colors.has(color) ? 'selected' : ''}"
+                   style="background-color: ${color}">
+                <input type="checkbox" 
+                       name="colors" 
+                       value="${color}"
+                       ${this.selectedFilters.colors.has(color) ? 'checked' : ''}>
+            </label>
         `).join('');
     }
 
@@ -137,6 +161,8 @@ class FilterComponent {
         const maxHandle = slider.querySelector('[data-handle="max"]');
         const minPrice = this.container.querySelector('.min-price');
         const maxPrice = this.container.querySelector('.max-price');
+        const minPriceInput = this.container.querySelector('input[name="minPrice"]');
+        const maxPriceInput = this.container.querySelector('input[name="maxPrice"]');
 
         let isDragging = false;
         let activeHandle = null;
@@ -150,13 +176,17 @@ class FilterComponent {
                 const finalPercent = Math.min(percent, maxPercent - 0.1);
                 handle.style.left = `${finalPercent * 100}%`;
                 track.style.left = `${finalPercent * 100}%`;
-                minPrice.textContent = `${this.getPriceFromPercent(finalPercent).toFixed(1)} YER`;
+                const price = this.getPriceFromPercent(finalPercent);
+                minPrice.textContent = `${price.toFixed(1)} YER`;
+                minPriceInput.value = price;
             } else {
                 const minPercent = parseFloat(minHandle.style.left) / 100 || 0;
                 const finalPercent = Math.max(percent, minPercent + 0.1);
                 handle.style.left = `${finalPercent * 100}%`;
                 track.style.right = `${(1 - finalPercent) * 100}%`;
-                maxPrice.textContent = `${this.getPriceFromPercent(finalPercent)} YER`;
+                const price = this.getPriceFromPercent(finalPercent);
+                maxPrice.textContent = `${price} YER`;
+                maxPriceInput.value = price;
             }
         };
 
@@ -195,19 +225,7 @@ class FilterComponent {
     }
 
     attachEventListeners() {
-        // Category selection
-        this.container.querySelectorAll('.category-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const categoryName = item.dataset.category;
-                if (this.selectedFilters.categories.has(categoryName)) {
-                    this.selectedFilters.categories.delete(categoryName);
-                    item.classList.remove('selected');
-                } else {
-                    this.selectedFilters.categories.add(categoryName);
-                    item.classList.add('selected');
-                }
-            });
-        });
+        const form = this.container.querySelector('.filter-form');
 
         // Subcategory expansion
         this.container.querySelectorAll('.expand-icon').forEach(icon => {
@@ -219,75 +237,51 @@ class FilterComponent {
                     e.target.textContent = nestedContent.classList.contains('hidden') ? '+' : '−';
                 }
                 e.stopPropagation();
+                e.preventDefault(); // Prevent form submission
             });
         });
 
-        // Size selection
-        this.container.querySelectorAll('.size-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const size = option.dataset.size;
-                if (this.selectedFilters.sizes.has(size)) {
-                    this.selectedFilters.sizes.delete(size);
-                    option.classList.remove('selected');
-                } else {
-                    this.selectedFilters.sizes.add(size);
-                    option.classList.add('selected');
+        // Handle form submission
+        form.addEventListener('submit', (e) => {
+            // e.preventDefault();
+            const formData = new FormData(form);
+
+            const filters = {
+                categories: formData.getAll('categories'),
+                subCategories: formData.getAll('subCategories'),
+                sizes: formData.getAll('sizes'),
+                colors: formData.getAll('colors'),
+                price: {
+                    min: parseInt(formData.get('minPrice')),
+                    max: parseInt(formData.get('maxPrice'))
                 }
-            });
-        });
+            };
 
-        // Color selection
-        this.container.querySelectorAll('.color-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const color = option.dataset.color;
-                if (this.selectedFilters.colors.has(color)) {
-                    this.selectedFilters.colors.delete(color);
-                    option.classList.remove('selected');
-                } else {
-                    this.selectedFilters.colors.add(color);
-                    option.classList.add('selected');
-                }
+            const event = new CustomEvent('filtersApplied', {
+                detail: filters
             });
-        });
-
-        // Apply button
-        this.container.querySelector('.apply-btn').addEventListener('click', () => {
-            this.applyFilters();
+            this.container.dispatchEvent(event);
         });
 
         // Reset button
         this.container.querySelector('.reset-btn').addEventListener('click', () => {
             this.resetFilters();
         });
-    }
 
-    applyFilters() {
-        const selectedFilters = {
-            categories: Array.from(this.selectedFilters.categories),
-            sizes: Array.from(this.selectedFilters.sizes),
-            colors: Array.from(this.selectedFilters.colors),
-            price: {
-                min: this.getPriceFromPercent(parseFloat(this.container.querySelector('[data-handle="min"]').style.left) / 100),
-                max: this.getPriceFromPercent(parseFloat(this.container.querySelector('[data-handle="max"]').style.left) / 100)
+        // Update visual states for checkboxes
+        form.addEventListener('change', (e) => {
+            if (e.target.type === 'checkbox') {
+                const label = e.target.closest('label');
+                if (label) {
+                    label.classList.toggle('selected', e.target.checked);
+                }
             }
-        };
-
-        const event = new CustomEvent('filtersApplied', {
-            detail: selectedFilters
         });
-        this.container.dispatchEvent(event);
     }
 
     resetFilters() {
-        // Clear selected filters
-        this.selectedFilters.categories.clear();
-        this.selectedFilters.sizes.clear();
-        this.selectedFilters.colors.clear();
-
-        // Reset UI
-        this.container.querySelectorAll('.selected').forEach(el => {
-            el.classList.remove('selected');
-        });
+        const form = this.container.querySelector('.filter-form');
+        form.reset();
 
         // Reset price range
         const slider = this.container.querySelector('.range-slider');
@@ -300,9 +294,16 @@ class FilterComponent {
         track.style.left = '0%';
         track.style.right = '0%';
 
-        // Reset price display
+        // Reset price display and hidden inputs
         this.container.querySelector('.min-price').textContent = `${this.config.price.min}.0 YER`;
         this.container.querySelector('.max-price').textContent = `${this.config.price.max} YER`;
+        this.container.querySelector('input[name="minPrice"]').value = this.config.price.min;
+        this.container.querySelector('input[name="maxPrice"]').value = this.config.price.max;
+
+        // Reset visual states
+        this.container.querySelectorAll('.selected').forEach(el => {
+            el.classList.remove('selected');
+        });
 
         // Dispatch reset event
         const event = new CustomEvent('filtersReset');

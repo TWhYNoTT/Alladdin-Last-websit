@@ -1,0 +1,172 @@
+.search-form {
+    width: 100%;
+
+}
+
+.search-container {
+    padding: 16px;
+    /* background: #1F2024; */
+    border-radius: 16px;
+    position: relative;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 16px; */
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+
+    /* background: #272B30; */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 12px 12px 40px;
+    color: black;
+    font-size: 16px;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+/* Suggestions Styles */
+.search-suggestions {
+    padding: 5px;
+    display: none;
+    position: absolute;
+    background: #1F2024;
+    width: 88%;
+    z-index: 99;
+    border-radius: 8px;
+    top: 90%;
+    /* Hidden by default, shown when input is focused */
+}
+
+.search-input:focus+.search-suggestions,
+.search-suggestions:hover {
+    display: block;
+}
+
+.store-suggestion,
+.product-suggestion {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #272B30;
+}
+
+.store-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.store-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: #FFC107;
+}
+
+.store-details {
+    flex: 1;
+}
+
+.store-name {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.store-distance {
+    font-size: 14px;
+    color: #FF4444;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.store-rating {
+    font-size: 14px;
+    color: #999;
+}
+
+.rating-star {
+    color: #FFC107;
+}
+
+.product-suggestion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.current-price {
+    font-size: 14px;
+    color: #FF4444;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+
+
+.searchsuglink {
+    text-decoration: none;
+    appearance: none;
+}
+
+
+.tempclass {
+    display: flex !important;
+    background: transparent !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    padding: 8px !important;
+}
+
+.tempclass input {
+    background-color: white !important;
+}

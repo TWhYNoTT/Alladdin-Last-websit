@@ -301,6 +301,10 @@ class AddressForm {
                 
                 <div id="mapContainer" style="height: 200px; width: 100%; margin-bottom: 20px;"></div>
                 
+                <!-- Hidden inputs for coordinates -->
+                <input type="hidden" name="latitude" id="latitude">
+                <input type="hidden" name="longitude" id="longitude">
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="addressName">Address Name *</label>
@@ -368,9 +372,17 @@ class AddressForm {
         `;
     }
 
+    updateCoordinateInputs(lat, lng) {
+        const latInput = this.element.querySelector('#latitude');
+        const lngInput = this.element.querySelector('#longitude');
+
+        latInput.value = lat;
+        lngInput.value = lng;
+    }
+
     initializeMap() {
         // Initialize Leaflet map
-        this.map = L.map('mapContainer').setView([15.3694, 47.3725], 13); // Default to Yemen coordinates
+        this.map = L.map('mapContainer').setView([15.3694, 47.3725], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
@@ -381,9 +393,13 @@ class AddressForm {
             draggable: true
         }).addTo(this.map);
 
+        // Set initial coordinates in hidden inputs
+        this.updateCoordinateInputs(15.3694, 47.3725);
+
         // Handle marker drag events
         this.marker.on('dragend', (event) => {
             const position = event.target.getLatLng();
+            this.updateCoordinateInputs(position.lat, position.lng);
             this.reverseGeocode(position.lat, position.lng);
         });
 
@@ -391,6 +407,7 @@ class AddressForm {
         this.map.on('click', (e) => {
             const { lat, lng } = e.latlng;
             this.marker.setLatLng([lat, lng]);
+            this.updateCoordinateInputs(lat, lng);
             this.reverseGeocode(lat, lng);
         });
 
@@ -442,6 +459,7 @@ class AddressForm {
     updateMapPosition(lat, lng) {
         this.map.setView([lat, lng], 16);
         this.marker.setLatLng([lat, lng]);
+        this.updateCoordinateInputs(lat, lng);
     }
 
     fillAddressFields(address) {
@@ -490,9 +508,10 @@ class AddressForm {
         form.anotherPhone.value = address.anotherPhone || '';
         form.specialMark.value = address.specialMark || '';
 
-        // Update map position if coordinates are available
+        // Update map position and hidden inputs if coordinates are available
         if (address.lat && address.lng) {
             this.updateMapPosition(address.lat, address.lng);
+            this.updateCoordinateInputs(address.lat, address.lng);
         }
     }
 
@@ -501,9 +520,10 @@ class AddressForm {
         this.element.querySelector('.form-title').textContent = 'Add Address';
         this.element.querySelector('form').reset();
 
-        // Reset map to default position
+        // Reset map to default position and update hidden inputs
         if (this.map && this.marker) {
             this.updateMapPosition(15.3694, 47.3725);
+            this.updateCoordinateInputs(15.3694, 47.3725);
         }
     }
 
@@ -512,7 +532,6 @@ class AddressForm {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        const markerPosition = this.marker.getLatLng();
         const addressDetails = {
             buildingNumber: data.buildingNumber,
             apartmentNumber: data.apartmentNumber,
@@ -520,8 +539,8 @@ class AddressForm {
             city: data.city,
             governorate: data.governorate,
             country: data.country,
-            lat: markerPosition.lat,
-            lng: markerPosition.lng
+            lat: parseFloat(data.latitude),
+            lng: parseFloat(data.longitude)
         };
 
         const formattedAddress = `${addressDetails.buildingNumber} ${addressDetails.street}, ${addressDetails.city}, ${addressDetails.governorate}, ${addressDetails.country}`;
