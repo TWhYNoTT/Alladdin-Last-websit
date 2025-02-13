@@ -165,6 +165,7 @@
     justify-content: space-between !important;
     gap: 16px !important;
     padding: 8px !important;
+    background-color: transparent !important;
 }
 
 .tempclass input {
