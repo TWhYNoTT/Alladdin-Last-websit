@@ -269,3 +269,8 @@
     cursor: pointer;
     margin-top: 24px;
 }
+
+
+.phone-input {
+    padding: 0 !important;
+}

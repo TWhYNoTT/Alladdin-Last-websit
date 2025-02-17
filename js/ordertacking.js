@@ -11,7 +11,9 @@ class OrderTracking {
     initTabs() {
         // Get the elements
         const currentOrders = document.querySelector('.current-orders');
+        const currentOrders0 = document.querySelector('.current-ordersd');
         const historyOrders = document.querySelector('.history-orders');
+        const historyOrders0 = document.querySelector('.history-ordersd');
 
         // Add click handlers to nav buttons
         document.querySelectorAll('.order-nav__btn').forEach(btn => {
@@ -37,7 +39,9 @@ class OrderTracking {
                 // Toggle content visibility based on button clicked
                 const isHistory = btn.textContent.trim().toLowerCase() === 'history';
                 currentOrders.style.display = isHistory ? 'none' : 'block';
+                currentOrders0.style.display = isHistory ? 'none' : 'block';
                 historyOrders.style.display = isHistory ? 'block' : 'none';
+                historyOrders0.style.display = isHistory ? 'block' : 'none';
             });
         });
     }

@@ -152,7 +152,7 @@
                                         <div class="store-suggestion">
                                             <div class="store-info">
                                                 <a class="searchsuglink" href="#">
-                                                    <img src="path/to/store-logo.png" alt="El Nor Store"
+                                                    <img src="images/Rectangle 30.png" alt="El Nor Store"
                                                         class="store-logo">
                                                     <div class="store-details">
                                                         <h3 class="store-name">El Nor Store</h3>
@@ -168,7 +168,7 @@
 
                                         <div class="product-suggestion">
                                             <a class="searchsuglink" href="#">
-                                                <img src="path/to/bomber-jacket.png" alt="Bomber Jackets"
+                                                <img src="images/bomberjacket.jpeg" alt="Bomber Jackets"
                                                     class="product-image">
                                                 <div class="product-details">
                                                     <h3 class="product-name">Bomber Jackets</h3>
@@ -1080,7 +1080,7 @@
     <!--------------------------->
 
 
-
+    <script src="/js/cusModalManager.js"></script>
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
@@ -1135,6 +1135,11 @@
             };
             console.log('Transfer:', data);
             e.target.closest('.modal').style.display = 'none';
+            appModal.showBalance({
+                title: "Successfully completed",
+                message: "Balance has been added successfully",
+                amount: "200" // Amount will be displayed with YER currency
+            });
         });
 
         document.getElementById('addBalanceForm').addEventListener('submit', (e) => {
@@ -1146,6 +1151,11 @@
             };
             console.log('Add Balance:', data);
             e.target.closest('.modal').style.display = 'none';
+            appModal.showBalance({
+                title: "Successfully completed",
+                message: "Balance has been added successfully",
+                amount: "200" // Amount will be displayed with YER currency
+            });
         });
 
         // Payment option selection

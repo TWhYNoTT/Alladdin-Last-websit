@@ -153,8 +153,28 @@
 
 
 .searchsuglink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     text-decoration: none;
     appearance: none;
+
+}
+
+.searchsuglink>img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+}
+
+.store-name {
+    color: white !important;
 }
 
 
@@ -170,4 +190,18 @@
 
 .tempclass input {
     background-color: white !important;
+}
+
+
+
+
+.impsug {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
 }

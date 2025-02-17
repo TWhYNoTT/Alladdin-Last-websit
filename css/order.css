@@ -219,6 +219,17 @@
     border-bottom: 1px solid #f1f3f5;
 }
 
+.deliveries-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconcontainer {
+    align-self: center;
+    cursor: pointer;
+}
+
 .order-nav__check {
     width: 16px;
     height: 16px;
@@ -371,4 +382,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+.btnroll {
+
+    cursor: pointer;
+
+}
+
+
+.controll-container {
+    display: flex;
+    gap: 5px;
+
+}
+
+
+.flxnd {
+    align-self: flex-end;
 }

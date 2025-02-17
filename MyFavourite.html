@@ -151,7 +151,7 @@
                                         <div class="store-suggestion">
                                             <div class="store-info">
                                                 <a class="searchsuglink" href="#">
-                                                    <img src="path/to/store-logo.png" alt="El Nor Store"
+                                                    <img src="images/Rectangle 30.png" alt="El Nor Store"
                                                         class="store-logo">
                                                     <div class="store-details">
                                                         <h3 class="store-name">El Nor Store</h3>
@@ -167,7 +167,7 @@
 
                                         <div class="product-suggestion">
                                             <a class="searchsuglink" href="#">
-                                                <img src="path/to/bomber-jacket.png" alt="Bomber Jackets"
+                                                <img src="images/bomberjacket.jpeg" alt="Bomber Jackets"
                                                     class="product-image">
                                                 <div class="product-details">
                                                     <h3 class="product-name">Bomber Jackets</h3>
@@ -606,7 +606,7 @@
             <!-- Products View -->
             <div class="product-grid" style="display: none;">
                 <!-- Product Card -->
-                <div class="product-card">
+                <a class="product-card" href="/reviews.html">
                     <img src="images/bomberjacket.jpeg" alt="Bomber Jacket" class="product-image">
                     <span class="product-discount">20%</span>
                     <button class="product-favorite">❤️</button>
@@ -617,19 +617,19 @@
                             <span class="price-original">49.9 YER</span>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Repeat product cards -->
             </div>
 
             <!-- Stores View -->
             <div class="stores" style="display: none;">
-                <div class="store-card">
+                <a class="store-card" href="/landing.html">
                     <div class="store-info">
                         <div class="store-logo ">
                             <img src="images/Rectangle 30.png" class="store-logo" alt="">
                         </div>
                         <div class="store-details">
-                            <h3 class="store-name">El Noor</h3>
+                            <h3 class="store-name wtclr">El Noor</h3>
                             <div class="store-rating">
                                 <span class="rating-star">⭐</span>
                                 <span class="rating-score">4.5</span>
@@ -640,15 +640,15 @@
                     </div>
 
                     <button class="favorite-btn">❤️</button>
-                </div>
+                </a>
 
-                <div class="store-card">
+                <a class="store-card" href="/landing.html">
                     <div class="store-info">
                         <div class="store-logo ">
                             <img src="images/Rectangle 30.png" class="store-logo" alt="">
                         </div>
                         <div class="store-details">
-                            <h3 class="store-name">El Safa</h3>
+                            <h3 class="store-name wtclr">El Safa</h3>
                             <div class="store-rating">
                                 <span class="rating-star">⭐</span>
                                 <span class="rating-score">4.5</span>
@@ -658,15 +658,15 @@
                         </div>
                     </div>
                     <button class="favorite-btn">❤️</button>
-                </div>
+                </a>
 
-                <div class="store-card">
+                <a class="store-card" href="/landing.html">
                     <div class="store-info">
                         <div class="store-logo ">
                             <img src="images/Rectangle 30.png" class="store-logo" alt="">
                         </div>
                         <div class="store-details">
-                            <h3 class="store-name">El Hoda</h3>
+                            <h3 class="store-name wtclr">El Hoda</h3>
                             <div class="store-rating">
                                 <span class="rating-star">⭐</span>
                                 <span class="rating-score">4.5</span>
@@ -676,7 +676,7 @@
                         </div>
                     </div>
                     <button class="favorite-btn">❤️</button>
-                </div>
+                </a>
             </div>
 
             <!-- Delivery Points View -->
@@ -1719,6 +1719,10 @@
     <!--------------------------->
 
 
+
+
+    <script src="/js/cusModalManager.js"></script>
+
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
@@ -1781,6 +1785,33 @@
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 btn.classList.toggle('active');
+            });
+        });
+        // Handle favorite buttons
+        document.querySelectorAll('.delivery-point').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                appModal.showDeliveryPointDetails({
+                    name: "El Noor",
+                    icon: "N",
+                    color: "#4267B2",
+                    rating: "4.5",
+                    numRatings: "235",
+                    distance: "2.1km",
+                    address: "St7, Shabwa, Dar Muhaimud, Yemen",
+                    workTime: {
+                        "Saturday": "09:00AM-10:00PM",
+                        "Sunday": "09:00AM-10:00PM",
+                        "Monday": "09:00AM-10:00PM",
+                        "Tuesday": "09:00AM-10:00PM",
+                        "Wednesday": "09:00AM-10:00PM"
+                    },
+                    waitingTime: "5 Days",
+                    description: "Lorem Ipsum Is Placeholder Text Commonly Used In The Graphic, Print, And Publishing Industries For Previewing"
+                    ,
+                    withBTN: false
+                }
+                );
+
             });
         });
     </script>

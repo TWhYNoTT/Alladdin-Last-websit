@@ -4,13 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Flash Sale</title>
+    <link rel="stylesheet" href="css/falsh.css">
 </head>
 
 <body>
+    <div class="flash-sale">
+        <h1 class="flash-sale__title">FLASH SALE</h1>
+        <div class="countdown">
+            <div class="countdown__item">
+                <div class="countdown__number" id="days">2</div>
+                <div class="countdown__label">D</div>
+            </div>
+            <div class="countdown__item">
+                <div class="countdown__number" id="hours">11</div>
+                <div class="countdown__label">H</div>
+            </div>
+            <div class="countdown__item">
+                <div class="countdown__number" id="minutes">15</div>
+                <div class="countdown__label">MIN</div>
+            </div>
+            <div class="countdown__item">
+                <div class="countdown__number" id="seconds">04</div>
+                <div class="countdown__label">SEC</div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        class CountdownTimer {
+            constructor(endDate) {
+                this.endDate = endDate;
+                this.daysElement = document.getElementById('days');
+                this.hoursElement = document.getElementById('hours');
+                this.minutesElement = document.getElementById('minutes');
+                this.secondsElement = document.getElementById('seconds');
+            }
 
+            start() {
+                this.update();
+                setInterval(() => this.update(), 1000);
+            }
+
+            update() {
+                const now = new Date().getTime();
+                const distance = this.endDate - now;
+
+                if (distance < 0) {
+                    this.daysElement.textContent = '0';
+                    this.hoursElement.textContent = '00';
+                    this.minutesElement.textContent = '00';
+                    this.secondsElement.textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                this.daysElement.textContent = days;
+                this.hoursElement.textContent = this.padNumber(hours);
+                this.minutesElement.textContent = this.padNumber(minutes);
+                this.secondsElement.textContent = this.padNumber(seconds);
+            }
+
+            padNumber(number) {
+                return number.toString().padStart(2, '0');
+            }
+        }
+
+        // Set end date to 2 days, 11 hours, 15 minutes, and 4 seconds from now
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 2);
+        endDate.setHours(endDate.getHours() + 11);
+        endDate.setMinutes(endDate.getMinutes() + 15);
+        endDate.setSeconds(endDate.getSeconds() + 4);
+
+        const countdown = new CountdownTimer(endDate);
+        countdown.start();
+    </script>
 </body>
 
 </html>

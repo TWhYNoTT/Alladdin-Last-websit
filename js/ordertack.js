@@ -200,13 +200,13 @@ class OrderModals {
         });
 
         // Show warning modal for delete and cancel actions
-        document.querySelectorAll('.product-card__delete, .store-block__cancel').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const action = btn.classList.contains('product-card__delete') ? 'delete' : 'cancel';
-                this.showWarningModal(action, btn);
-            });
-        });
+        // document.querySelectorAll('.product-card__delete, .store-block__cancel').forEach(btn => {
+        //     btn.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const action = btn.classList.contains('product-card__delete') ? 'delete' : 'cancel';
+        //         this.showWarningModal(action, btn);
+        //     });
+        // });
 
         // Close modal handlers
         document.querySelectorAll('.order-tracking-modal-close, .order-tracking-modal-cancel').forEach(btn => {

@@ -271,3 +271,16 @@
     justify-content: center;
     align-items: center;
 }
+
+.product-image {
+    height: auto;
+}
+
+
+.wtclr {
+    color: black !important;
+}
+
+a {
+    text-decoration: none;
+}

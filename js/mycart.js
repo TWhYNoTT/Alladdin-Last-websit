@@ -7,10 +7,10 @@ class CartManager {
 
     initEventListeners() {
         // Form submission
-        this.form.addEventListener('submit', (e) => {
-            // e.preventDefault();
-            this.handleFormSubmit();
-        });
+        // this.form.addEventListener('submit', (e) => {
+        //     // e.preventDefault();
+        //     this.handleFormSubmit();
+        // });
 
         // Select all checkbox
         const selectAllCheckbox = this.form.querySelector('.select-all input');
@@ -61,18 +61,18 @@ class CartManager {
         });
 
         // Delete buttons
-        const deleteButtons = this.form.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const productCard = e.target.closest('.product-card');
-                if (productCard) {
-                    productCard.remove();
-                    this.updateSummary();
-                    this.updateProductCount();
-                }
-            });
-        });
+        // const deleteButtons = this.form.querySelectorAll('.delete-btn');
+        // deleteButtons.forEach(btn => {
+        //     btn.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const productCard = e.target.closest('.product-card');
+        //         if (productCard) {
+        //             productCard.remove();
+        //             this.updateSummary();
+        //             this.updateProductCount();
+        //         }
+        //     });
+        // });
 
         // Clear all button
         const clearAllBtn = this.form.querySelector('.clear-all');
