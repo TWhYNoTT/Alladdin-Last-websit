@@ -340,6 +340,117 @@ class CustomModal {
                     color: #FF4444;
                     font-weight: 500;
                 }
+
+
+                 .barcode-modal {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .barcode-modal__title {
+            font-size: 18px;
+            color: #1A1A1A;
+            margin: 0 0 8px 0;
+            font-weight: 500;
+        }
+
+        .barcode-modal__code {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 24px 0;
+        }
+
+        .barcode-modal__barcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-modal__stars {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 24px 0;
+    }
+
+    .app-modal__star {
+        color: #ddd;
+        font-size: 32px;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .app-modal__star.active {
+        color: #FFB800;
+    }
+
+    .app-modal__comment {
+        width: 100%;
+        min-height: 120px;
+        padding: 16px;
+        border: 1px solid #E5E5E5;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        resize: none;
+        font-size: 16px;
+        color: #666;
+    }
+
+    .app-modal__photo-upload {
+        margin-top: 16px;
+    }
+
+    .app-modal__photo-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border: 1px solid #C4A77D;
+        border-radius: 8px;
+        color: #C4A77D;
+        background: none;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+
+    .app-modal__photo-preview {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .app-modal__photo-item {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .app-modal__photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .app-modal__photo-remove {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        background: #FF4444;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 16px;
+    }
             `;
             document.head.appendChild(styles);
         }
@@ -398,13 +509,65 @@ class CustomModal {
         });
     }
 
+
+
+    showBarcode() {
+        this.show({
+            type: 'barcode',
+            content: `
+            <div class="barcode-modal">
+                <h2 class="barcode-modal__title">Order barcode</h2>
+                <p class="barcode-modal__code">#52156564320</p>
+                <div class="barcode-modal__barcode">
+                    <!-- The barcode with numbers below -->
+                    <svg width="240" height="100" viewBox="0 0 240 100">
+                        <!-- Barcode lines -->
+                        <g>
+                            <rect x="0" y="0" width="2" height="70" fill="black"/>
+                            <rect x="4" y="0" width="2" height="70" fill="black"/>
+                            <rect x="12" y="0" width="2" height="70" fill="black"/>
+                            <rect x="22" y="0" width="3" height="70" fill="black"/>
+                            <rect x="32" y="0" width="2" height="70" fill="black"/>
+                            <rect x="38" y="0" width="3" height="70" fill="black"/>
+                            <rect x="48" y="0" width="2" height="70" fill="black"/>
+                            <rect x="54" y="0" width="2" height="70" fill="black"/>
+                            <rect x="64" y="0" width="3" height="70" fill="black"/>
+                            <rect x="72" y="0" width="2" height="70" fill="black"/>
+                            <rect x="82" y="0" width="3" height="70" fill="black"/>
+                            <rect x="92" y="0" width="2" height="70" fill="black"/>
+                            <rect x="102" y="0" width="2" height="70" fill="black"/>
+                            <rect x="112" y="0" width="3" height="70" fill="black"/>
+                            <rect x="122" y="0" width="2" height="70" fill="black"/>
+                            <rect x="132" y="0" width="3" height="70" fill="black"/>
+                            <rect x="142" y="0" width="2" height="70" fill="black"/>
+                            <rect x="152" y="0" width="2" height="70" fill="black"/>
+                            <rect x="162" y="0" width="3" height="70" fill="black"/>
+                            <rect x="172" y="0" width="2" height="70" fill="black"/>
+                            <rect x="182" y="0" width="3" height="70" fill="black"/>
+                            <rect x="192" y="0" width="2" height="70" fill="black"/>
+                            <rect x="202" y="0" width="2" height="70" fill="black"/>
+                            <rect x="212" y="0" width="3" height="70" fill="black"/>
+                            <rect x="222" y="0" width="2" height="70" fill="black"/>
+                            <rect x="232" y="0" width="2" height="70" fill="black"/>
+                            <rect x="238" y="0" width="2" height="70" fill="black"/>
+                            
+                            <!-- Numbers below barcode -->
+                            <text x="0" y="90" font-size="14" letter-spacing="16">123456789012</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        `
+        });
+    }
+
     showRating({ title, image }) {
         this.show({
             type: 'rating',
             content: `
                 <h3 class="app-modal__title">${title}</h3>
                 ${image ? `<img src="${image}" alt="Rating" style="width: 80px; height: 80px; border-radius: 12px; margin-bottom: 16px;">` : ''}
-                <div class="app-modal__stars">
+                <div class="app-modal__stars" id="rating-stars">
                     ${Array(5).fill('★').map((star, i) =>
                 `<span class="app-modal__star" data-rating="${i + 1}">${star}</span>`
             ).join('')}
@@ -413,6 +576,9 @@ class CustomModal {
                 <button class="app-modal__btn app-modal__btn--primary">Add rating</button>
             `
         });
+
+        this.initializeStarRating();
+
     }
 
     showDelete({ title, message }) {
@@ -481,14 +647,15 @@ class CustomModal {
             type: 'rating',
             content: `
                 <h3 class="app-modal__title">${title}</h3>
-                <div class="app-modal__stars">
+                <div class="app-modal__stars" id="rating-stars">
                     ${Array(5).fill('★').map((star, i) =>
                 `<span class="app-modal__star" data-rating="${i + 1}">${star}</span>`
             ).join('')}
                 </div>
                 <textarea class="app-modal__comment" placeholder="Type your comment..."></textarea>
                 <div class="app-modal__photo-upload">
-                    <button class="app-modal__photo-btn">
+                    <input type="file" id="photo-upload" multiple accept="image/*" style="display: none">
+                    <button class="app-modal__photo-btn" onclick="document.getElementById('photo-upload').click()">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path d="M3 16V17C3 18.1 3.9 19 5 19H19C20.1 19 21 18.1 21 17V16M16 8L12 4M12 4L8 8M12 4V16" stroke-width="2"/>
                         </svg>
@@ -499,6 +666,9 @@ class CustomModal {
                 <button class="app-modal__btn app-modal__btn--primary">Add rating</button>
             `
         });
+
+        this.initializeStarRating();
+        this.initializePhotoUpload();
     }
 
     // Map modal with delivery points
@@ -630,6 +800,8 @@ class CustomModal {
                 </div>
             `
         });
+
+
 
         // Add styles specific to this modal
         const styles = document.createElement('style');
@@ -790,8 +962,190 @@ class CustomModal {
                 width: 100%;
                 margin-top: 16px;
             }
+
+             .barcode-modal {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .barcode-modal__title {
+            font-size: 18px;
+            color: #1A1A1A;
+            margin: 0 0 8px 0;
+            font-weight: 500;
+        }
+
+        .barcode-modal__code {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 24px 0;
+        }
+
+        .barcode-modal__barcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .app-modal__stars {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 24px 0;
+    }
+
+    .app-modal__star {
+        color: #ddd;
+        font-size: 32px;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .app-modal__star.active {
+        color: #FFB800;
+    }
+
+    .app-modal__comment {
+        width: 100%;
+        min-height: 120px;
+        padding: 16px;
+        border: 1px solid #E5E5E5;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        resize: none;
+        font-size: 16px;
+        color: #666;
+    }
+
+    .app-modal__photo-upload {
+        margin-top: 16px;
+    }
+
+    .app-modal__photo-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border: 1px solid #C4A77D;
+        border-radius: 8px;
+        color: #C4A77D;
+        background: none;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+
+    .app-modal__photo-preview {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .app-modal__photo-item {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .app-modal__photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .app-modal__photo-remove {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        background: #FF4444;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 16px;
+    }
         `;
         document.head.appendChild(styles);
+    }
+
+    initializeStarRating() {
+        const starsContainer = document.querySelector('#rating-stars');
+        const stars = starsContainer.querySelectorAll('.app-modal__star');
+        let currentRating = 0;
+
+        stars.forEach(star => {
+            // Hover effect
+            star.addEventListener('mouseover', function () {
+                const rating = this.dataset.rating;
+                highlightStars(rating);
+            });
+
+            // Click to set rating
+            star.addEventListener('click', function () {
+                currentRating = this.dataset.rating;
+                highlightStars(currentRating);
+            });
+        });
+
+        // Reset stars when mouse leaves container
+        starsContainer.addEventListener('mouseleave', () => {
+            highlightStars(currentRating);
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                const starRating = star.dataset.rating;
+                if (starRating <= rating) {
+                    star.style.color = '#FFB800';
+                    star.classList.add('active');
+                } else {
+                    star.style.color = '#ddd';
+                    star.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    initializePhotoUpload() {
+        const fileInput = document.getElementById('photo-upload');
+        const previewContainer = document.querySelector('.app-modal__photo-preview');
+
+        fileInput.addEventListener('change', function () {
+            const files = Array.from(this.files).filter(file => file.type.startsWith('image/'));
+
+            // Only show up to 5 images
+            if (files.length > 5) {
+                alert('You can only upload up to 5 images');
+                return;
+            }
+
+            previewContainer.innerHTML = ''; // Clear existing previews
+
+            files.forEach(file => {
+                const reader = new FileReader();
+                const preview = document.createElement('div');
+                preview.className = 'app-modal__photo-item';
+
+                reader.onload = function (e) {
+                    preview.innerHTML = `
+                        <img src="${e.target.result}" alt="Preview">
+                        <button class="app-modal__photo-remove" onclick="this.parentElement.remove()">×</button>
+                    `;
+                };
+
+                reader.readAsDataURL(file);
+                previewContainer.appendChild(preview);
+            });
+        });
     }
 
 }

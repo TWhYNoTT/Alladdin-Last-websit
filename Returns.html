@@ -172,7 +172,7 @@
                                                 <img src="images/bomberjacket.jpeg" alt="Bomber Jackets"
                                                     class="product-image">
                                                 <div class="product-details">
-                                                    <h3 class="product-name">Bomber Jackets</h3>
+                                                    <h3 class="product-name wtclr">Bomber Jackets</h3>
                                                     <div class="product-price">
                                                         <span class="current-price">30.0 YER</span>
                                                         <span class="original-price">49.9 YER</span>
@@ -583,7 +583,7 @@
                         <div class="store-logo">
                             <img src="images/Rectangle 30.png" alt="Store Logo" class="store-logo">
                         </div>
-                        <span class="store-name">El Nor Store</span>
+                        <span class="store-name blcclr">El Nor Store</span>
                     </div>
                 </div>
 
@@ -629,7 +629,7 @@
                         <div class="store-logo" style="background: #2196f3;">
                             <img src="images/Rectangle 30.png" alt="Store Logo" class="store-logo">
                         </div>
-                        <span class="store-name">El Hoda Store</span>
+                        <span class="store-name blcclr">El Hoda Store</span>
                     </div>
                 </div>
 
@@ -680,11 +680,11 @@
                         <div class="store-logo" style="background: #2196f3;">
                             <img src="images/Rectangle 30.png" alt="Store Logo" class="store-logo">
                         </div>
-                        <span class="store-name">El Hoda Store</span>
+                        <span class="store-name blcclr">El Hoda Store</span>
 
                     </div>
 
-                    <button class="barcode-btn">
+                    <button class="barcode-btn" onclick="openModal()">
                         <span>
                             <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -804,7 +804,7 @@
                         <div class="store-logo">
                             <img src="images/Rectangle 30.png" alt="Store Logo" class="store-logo">
                         </div>
-                        <span class="store-name">El Nor Store</span>
+                        <span class="store-name blcclr">El Nor Store</span>
 
                     </div>
                 </div>
@@ -1193,7 +1193,7 @@
 
 
 
-
+    <script src="/js/cusModalManager.js"></script>
 
     <script src="/js/jquery-3.7.1.min.js"></script>
 
@@ -1202,6 +1202,14 @@
 
     <script src="js/address-components.js"></script>
     <script src="js/searchbox.js"></script>
+    <script>
+        function openModal() {
+            // Show barcode modal
+            appModal.showBarcode({
+                code: "123456789" // The barcode number to display
+            });
+        }
+    </script>
 </body>
 
 </html>
