@@ -13,22 +13,22 @@ input {
     margin: 0 auto;
 }
 
-.header-section {
+.header-section,
+.lineStores {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    /* padding-bottom: 10px; */
 }
 
 .textShop {
     font-size: 24px;
     margin: 0;
+    border-bottom: 2px solid #eee;
 }
 
-.topspan {
-    color: #007bff;
-}
+
 
 .category-slider {
     width: 100%;
@@ -309,9 +309,10 @@ input {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     /* background: linear-gradient(to right, #fff, #fef2f2); */
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
+    border-bottom: 2px solid #eee;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
 }
 
@@ -328,6 +329,9 @@ input {
     background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding: 15px 0;
+    border-bottom: 2px solid #EB3C3C;
+    margin: 0 !important;
 }
 
 .fs-title-highlight {
@@ -686,8 +690,8 @@ input {
 }
 
 .prizeimage {
-    transform: translateY(-10px);
-    height: 70px;
+    /* transform: translateY(-10px); */
+    height: 55px;
 }
 
 .prizeimage0 {
@@ -700,19 +704,17 @@ input {
 
 
 .lineStores {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
 }
 
 .textShop {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 0.5rem 0;
     margin: 0;
 }
 
-.topspan {
-    color: #666;
-}
 
 .store-slider {
     position: relative;
