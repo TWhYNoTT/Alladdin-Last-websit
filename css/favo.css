@@ -1,6 +1,7 @@
 /* Navigation Tabs */
 .nav-tabs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
     margin-bottom: 32px;

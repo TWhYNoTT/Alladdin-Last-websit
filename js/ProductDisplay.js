@@ -29,21 +29,24 @@ class ProductDisplay {
         if (this.config.displayType === 'carousel') {
             container.innerHTML = `
                 <div class="fs-container">
+                 <button class="fs-carousel__button fs-carousel__button--prev" aria-label="Previous">
+                          <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14.5" cy="14.5" r="14.5" fill="#BFA274"></circle>
+                            <path d="M17 10L12 15L17 20" stroke="white" stroke-width="1.5"></path>
+                        </svg>
+                        </button>
+                        
                     <div class="fs-carousel">
-                        <button class="fs-carousel__button fs-carousel__button--prev" aria-label="Previous">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
+                       
                         <div class="fs-carousel__track"></div>
-                        <button class="fs-carousel__button fs-carousel__button--next" aria-label="Next">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
+                      
                     </div>
+                      <button class="fs-carousel__button fs-carousel__button--next" aria-label="Next">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14.5" cy="14.5" r="14.5" transform="matrix(-1 0 0 1 29 0)" fill="#BFA274"></circle>
+                            <path d="M12 10L17 15L12 20" stroke="white" stroke-width="1.5"></path>
+                        </svg>
+                        </button>
                 </div>
             `;
         } else {

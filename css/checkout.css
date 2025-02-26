@@ -6,6 +6,7 @@
 
 .checkout__content {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
@@ -85,6 +86,7 @@
 /* Payment Methods */
 .payment-section {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 

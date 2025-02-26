@@ -1,8 +1,10 @@
 .order-tracking {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 8px;
 }
 
 /* Navigation */
@@ -74,6 +76,7 @@
     font-size: 13px;
     color: #868e96;
     margin-bottom: 16px;
+    display: grid;
 }
 
 .order-card__total {
@@ -135,18 +138,23 @@
 }
 
 .status-badge--pending {
-    background-color: #fff3e0;
+    background-color: #eae5dc;
     color: #c4a77d;
 }
 
 .status-badge--preparing {
-    background-color: #e8f5e9;
+    background-color: #d9f3e7;
     color: #2ecc71;
 }
 
 .status-badge--delivering {
     background-color: #e3f2fd;
     color: #2196f3;
+}
+
+.status-badge--canceled {
+    background-color: #f7e3e3;
+    color: #c4a77d;
 }
 
 /* Captain Info */
@@ -221,6 +229,8 @@
 
 .deliveries-info {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     align-items: center;
     justify-content: space-between;
 }
@@ -269,7 +279,10 @@
 }
 
 .store-block__header {
+
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
@@ -325,6 +338,7 @@
 /* Product Card */
 .product-card {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     padding: 16px;
     background: white;
@@ -402,4 +416,8 @@
 
 .flxnd {
     align-self: flex-end;
+}
+
+.bld {
+    font-weight: bold;
 }

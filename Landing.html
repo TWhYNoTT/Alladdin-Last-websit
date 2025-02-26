@@ -117,7 +117,14 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-menu-up" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793zM1 9V6h14v3zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5">
+                                    </path>
+                                </svg>
+                            </span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
@@ -582,21 +589,34 @@
 
     <!---------------------------------------------------------------------------->
 
+
+
     <div class="container py-4">
         <div class="row">
-            <div class="col-md-4">
-                <div class="flashSquare">
+            <!-- Filter Column - takes full width on mobile, 4 columns on medium screens and up -->
+            <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <div class="d-flex justify-content-between align-items-center d-md-none mb-3">
+                    <h3 class="m-0">Filters</h3>
+                    <button class="btn btn-sm btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filterCollapse" aria-expanded="false">
+                        <i class="fa fa-filter"></i> Show/Hide
+                    </button>
+                </div>
+
+                <!-- Collapsible on mobile, always visible on larger screens -->
+                <div class="collapse d-md-block" id="filterCollapse">
                     <div id="filterComponent" class="filter-container"></div>
                 </div>
             </div>
-            <div class="col-md-8">
 
-                <div id="searchComponent"></div>
-
-                <div id="Filterd-Products"></div>
+            <!-- Products Column -->
+            <div class="col-12 col-md-8">
+                <div id="searchComponent" class="mb-3"></div>
+                <div id="Filterd-Products" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3"></div>
             </div>
         </div>
     </div>
+
 
 
 
@@ -1088,6 +1108,41 @@
 
         headerContainer.addEventListener('ratingClick', () => {
             console.log('Rating section clicked');
+        });
+    </script>
+
+
+    <script>
+        // Add this script to your JavaScript file or in a script tag
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle filter collapse on mobile
+            const filterToggle = document.querySelector('[data-bs-toggle="collapse"]');
+            if (filterToggle) {
+                filterToggle.addEventListener('click', function () {
+                    // Toggle icon or text if needed
+                });
+            }
+
+            // Close filter on mobile when a filter is applied (optional)
+            const applyBtn = document.querySelector('.apply-btn');
+            if (applyBtn && window.innerWidth < 768) {
+                applyBtn.addEventListener('click', function () {
+                    const bsCollapse = new bootstrap.Collapse(document.getElementById('filterCollapse'));
+                    bsCollapse.hide();
+                });
+            }
+
+            // Adjust on window resize
+            window.addEventListener('resize', function () {
+                const filterCollapse = document.getElementById('filterCollapse');
+                if (window.innerWidth >= 768) {
+                    // Ensure filter is visible on larger screens
+                    if (filterCollapse.classList.contains('collapse') &&
+                        !filterCollapse.classList.contains('show')) {
+                        filterCollapse.classList.add('show');
+                    }
+                }
+            });
         });
     </script>
 </body>

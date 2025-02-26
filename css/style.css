@@ -2873,3 +2873,12 @@ h6 {
   font-size: 0.85rem;
   color: #6c757d;
 }
+
+button {
+  font-weight: bold;
+}
+
+
+.navbar-toggler-icon {
+  color: white;
+}

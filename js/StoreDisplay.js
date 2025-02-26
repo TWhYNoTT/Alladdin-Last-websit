@@ -238,6 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
         containerId: 'store-carousel',
         displayType: 'carousel',
         stores: stores,
-        itemsToShow: 4,
+        itemsToShow: 3,
     });
 });
