@@ -102,7 +102,7 @@ body {
 .form-row {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .form-group {

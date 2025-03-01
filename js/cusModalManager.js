@@ -239,6 +239,7 @@ class CustomModal {
                 }
 
                 .app-modal__delete-message {
+                font-weight: bold;
                     color: #1A1A1A;
                     margin-bottom: 24px;
                 }
@@ -504,7 +505,7 @@ class CustomModal {
                 </div>
                 <h3 class="app-modal__success-title">${title}</h3>
                 <p class="app-modal__success-message">${message}</p>
-                <button class="app-modal__btn app-modal__btn--primary">My orders</button>
+                <a href="#" class="app-modal__btn app-modal__btn--primary" style="text-decoration:none">My orders</a>
             `
         });
     }
@@ -597,8 +598,8 @@ class CustomModal {
 </svg>
 
                 </div>
-                <h3 class="app-modal__title">${title}</h3>
-                <p class="app-modal__delete-message">${message}</p>
+                
+                <p class="app-modal__delete-message bld">${message}</p>
                 <div class="app-modal__buttons">
                     <button class="app-modal__btn app-modal__btn--primary">Confirm</button>
                     <button class="app-modal__btn app-modal__btn--secondary">Cancel</button>

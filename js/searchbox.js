@@ -15,8 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle form submission
-    document.querySelector('.search-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Handle search submission here
+
+
+    const langSelect = document.querySelector('.lang');
+
+    // Set initial direction based on the selected option
+    setDirectionFromLang(langSelect.value);
+
+    // Add event listener to change direction when selection changes
+    langSelect.addEventListener('change', function () {
+        setDirectionFromLang(this.value);
     });
+
+    function setDirectionFromLang(value) {
+        const html = document.documentElement;
+
+        if (value === '1') { // English
+            html.setAttribute('dir', 'ltr');
+            // Optionally set lang attribute
+            html.setAttribute('lang', 'en');
+        } else { // Arabic (default)
+            html.setAttribute('dir', 'rtl');
+            // Optionally set lang attribute
+            html.setAttribute('lang', 'ar');
+        }
+    }
 });
+
+
+
+function toggleDirection() {
+    const html = document.documentElement;
+    const currentDir = html.getAttribute('dir');
+
+    if (currentDir === 'rtl') {
+        html.setAttribute('dir', 'ltr');
+    } else {
+        html.setAttribute('dir', 'rtl');
+    }
+}

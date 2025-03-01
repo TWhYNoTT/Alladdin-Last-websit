@@ -421,3 +421,12 @@
 .bld {
     font-weight: bold;
 }
+
+
+.dspfle {
+    display: flex !important;
+}
+
+.dspnone {
+    display: none !important;
+}

@@ -305,37 +305,27 @@ class AddressForm {
                 <input type="hidden" name="latitude" id="latitude">
                 <input type="hidden" name="longitude" id="longitude">
                 
-                <div class="form-row">
+                
+<div  class="resgrid">
+                <div>
                     <div class="form-group">
                         <label for="addressName">Address Name *</label>
                         <input type="text" id="addressName" name="addressName" required placeholder="Home">
                     </div>
-                    <div class="form-group">
-                        <label for="buildingNumber">Building Number *</label>
-                        <input type="text" id="buildingNumber" name="buildingNumber" required placeholder="23">
-                    </div>
-                    <div class="form-group">
-                        <label for="apartmentNumber">Apartment Number</label>
-                        <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="10">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
+
+
+
+  <div class="form-group">
                         <label for="country">Country *</label>
                         <select id="country" name="country" required>
                             <option value="Yemen">Yemen</option>
                             <option value="Egypt">Egypt</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="specialMark">Special Mark</label>
-                        <input type="text" id="specialMark" name="specialMark" placeholder="Front of McDonald's">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
+                    
+
+                    <div class="form-row">
+  <div class="form-group">
                         <label for="governorate">Governorate *</label>
                         <select id="governorate" name="governorate" required>
                             <option value="Shabwa">Shabwa</option>
@@ -347,26 +337,59 @@ class AddressForm {
                             <option value="Dar Muhaimud">Dar Muhaimud</option>
                         </select>
                     </div>
+</div>
+  <div class="form-group">
+                        <label for="street">Street *</label>
+                        <input type="text" id="street" name="street" required placeholder="ST7">
+                    </div>
+
+
+
+</div>
+
+
+<div>
+
+<div class="form-row">
+                    <div class="form-group">
+                        <label for="buildingNumber">Building Number *</label>
+                        <input type="text" id="buildingNumber" name="buildingNumber" required placeholder="23">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apartmentNumber">Apartment Number</label>
+                        <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="10">
+                    </div>
+                
+                
+              </div>
+                  
+                    <div class="form-group">
+                        <label for="specialMark">Special Mark</label>
+                        <input type="text" id="specialMark" name="specialMark" placeholder="Front of McDonald's">
+                    </div>
+              
+                
+               
+                  
                     <div class="form-group">
                         <label for="phone">Mobile Number *</label>
                         <input type="tel" id="phone" name="phone" required placeholder="+967 123 456 789">
                     </div>
-                </div>
+          
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="street">Street *</label>
-                        <input type="text" id="street" name="street" required placeholder="ST7">
-                    </div>
-                    <div class="form-group">
+          <div class="form-group">
                         <label for="anotherPhone">Another Mobile Number</label>
                         <input type="tel" id="anotherPhone" name="anotherPhone" placeholder="+967 123 456 789">
                     </div>
-                </div>
                 
+
+</div>
+</div>
+
                 <div class="form-actions">
-                    <button type="button" class="btn btn-cancel" data-action="cancel">Cancel</button>
-                    <button type="submit" class="btn btn-save">Save Address</button>
+                    <button type="button" class="btn btn-cancel" data-action="cancel" style="display:none;">Cancel</button>
+                    <button type="submit" class="btn btn-save">Confirm</button>
                 </div>
             </form>
         `;

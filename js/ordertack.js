@@ -192,12 +192,12 @@ class OrderModals {
 
     attachEventListeners() {
         // Show barcode modal
-        document.querySelectorAll('.barcode-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showBarcodeModal();
-            });
-        });
+        // document.querySelectorAll('.barcode-btn').forEach(btn => {
+        //     btn.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         this.showBarcodeModal();
+        //     });
+        // });
 
         // Show warning modal for delete and cancel actions
         // document.querySelectorAll('.product-card__delete, .store-block__cancel').forEach(btn => {

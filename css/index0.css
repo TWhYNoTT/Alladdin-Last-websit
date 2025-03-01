@@ -131,6 +131,8 @@ input {
 .location {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    appearance: none;
     /* margin-right: auto; */
 }
 
@@ -1094,7 +1096,7 @@ input {
 .form-row {
     display: flex;
     gap: 16px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 
 .form-group {
@@ -1182,7 +1184,7 @@ input {
     background-color: var(--primary-color);
     color: white;
     width: 40%;
-    margin: 50px auto;
+    margin: 20px auto;
     display: block;
 }
 
@@ -1191,7 +1193,7 @@ input {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
 }
 
 /* Confirmation Modal */
@@ -2488,4 +2490,18 @@ input,
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     margin-bottom: 20px;
+}
+
+
+.resgrid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .resgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 }
