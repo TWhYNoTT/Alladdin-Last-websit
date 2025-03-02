@@ -271,7 +271,6 @@ class AddressList {
     }
 }
 
-// Address Form Component with Leaflet integration
 class AddressForm {
     constructor(element, listComponent) {
         this.element = element;
@@ -293,7 +292,12 @@ class AddressForm {
     render() {
         this.element.innerHTML = `
             <form class="address-form">
-                <h2 class="form-title">Add Address</h2>
+                <div class="form-header">
+                    <button type="button" class="close-btn" data-action="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="form-title">Add Address</h2>
+                </div>
                 
                 <div class="search-input-group">
                     <input type="text" id="searchAddress" placeholder="Search for an address..." />
@@ -511,6 +515,10 @@ class AddressForm {
     setupEventListeners() {
         this.element.querySelector('form').addEventListener('submit', (e) => this.handleSubmit(e));
         this.element.querySelector('[data-action="cancel"]').addEventListener('click', () => {
+            Modal.hide();
+        });
+        // Add event listener for the new close button
+        this.element.querySelector('[data-action="close"]').addEventListener('click', () => {
             Modal.hide();
         });
     }

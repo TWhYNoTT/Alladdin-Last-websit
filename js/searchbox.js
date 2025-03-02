@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 function toggleDirection() {
     const html = document.documentElement;
     const currentDir = html.getAttribute('dir');

@@ -2087,90 +2087,146 @@
         }, 5000);
     </script>
 
-
+    <script src="js/searchbox.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.category-slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 8,
-                slidesToScroll: 1,
-                prevArrow: `<span type="button" class="slick-prev"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+
+
+            const langSelecte = document.querySelector('.lang');
+
+
+
+            // Add event listener to change direction when selection changes
+            langSelecte.addEventListener('change', function () {
+                $('.category-slider').slick('unslick');
+                $(document).ready(function () {
+                    $('.category-slider').slick({
+                        dots: true,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 8,
+                        slidesToScroll: 1,
+                        rtl: html.getAttribute('dir') === 'rtl', // Enable RTL based on document direction
+                        prevArrow: `<span type="button" class="slick-prev"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="14.5" cy="14.5" r="14.5" fill="#BFA274"/>
 <path d="M17 10L12 15L17 20" stroke="white" stroke-width="1.5"/>
 </svg>
 </span>`,
-                nextArrow: `<span type="button" class="slick-next">
-                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        nextArrow: `<span type="button" class="slick-next">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="14.5" cy="14.5" r="14.5" transform="matrix(-1 0 0 1 29 0)" fill="#BFA274"/>
 <path d="M12 10L17 15L12 20" stroke="white" stroke-width="1.5"/>
 </svg>
+                </span>`,
+                        responsive: [
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    slidesToShow: 6,
+                                    slidesToScroll: 1
+                                }
+                            },
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 4,
+                                    slidesToScroll: 1
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                });
 
-                    
-                    </span>`,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 6,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
             });
-        });
+
+            $(document).ready(function () {
+                $('.category-slider').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 8,
+                    slidesToScroll: 1,
+                    rtl: html.getAttribute('dir') === 'rtl', // Enable RTL based on document direction
+                    prevArrow: `<span type="button" class="slick-prev"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14.5" cy="14.5" r="14.5" fill="#BFA274"/>
+<path d="M17 10L12 15L17 20" stroke="white" stroke-width="1.5"/>
+</svg>
+</span>`,
+                    nextArrow: `<span type="button" class="slick-next">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14.5" cy="14.5" r="14.5" transform="matrix(-1 0 0 1 29 0)" fill="#BFA274"/>
+<path d="M12 10L17 15L12 20" stroke="white" stroke-width="1.5"/>
+</svg>
+                </span>`,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 6,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
 
 
-        function updateTimer() {
-            let days = parseInt(document.getElementById('fs-days').textContent);
-            let hours = parseInt(document.getElementById('fs-hours').textContent);
-            let minutes = parseInt(document.getElementById('fs-minutes').textContent);
-            let seconds = parseInt(document.getElementById('fs-seconds').textContent);
+            function updateTimer() {
+                let days = parseInt(document.getElementById('fs-days').textContent);
+                let hours = parseInt(document.getElementById('fs-hours').textContent);
+                let minutes = parseInt(document.getElementById('fs-minutes').textContent);
+                let seconds = parseInt(document.getElementById('fs-seconds').textContent);
 
-            seconds--;
+                seconds--;
 
-            if (seconds < 0) {
-                seconds = 59;
-                minutes--;
-                if (minutes < 0) {
-                    minutes = 59;
-                    hours--;
-                    if (hours < 0) {
-                        hours = 23;
-                        days--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                            days--;
+                        }
                     }
                 }
+
+                document.getElementById('fs-days').innerHTML = days.toString().padStart(2, '') + `<span>H</span>`;
+                document.getElementById('fs-hours').innerHTML = hours.toString().padStart(2, '0') + `<span>D</span>`;
+                document.getElementById('fs-minutes').innerHTML = minutes.toString().padStart(2, '0') + `<span>MIN</span>`;
+                document.getElementById('fs-seconds').innerHTML = seconds.toString().padStart(2, '0') + `<span>SEC</span>`;
             }
 
-            document.getElementById('fs-days').innerHTML = days.toString().padStart(2, '') + `<span>H</span>`;
-            document.getElementById('fs-hours').innerHTML = hours.toString().padStart(2, '0') + `<span>D</span>`;
-            document.getElementById('fs-minutes').innerHTML = minutes.toString().padStart(2, '0') + `<span>MIN</span>`;
-            document.getElementById('fs-seconds').innerHTML = seconds.toString().padStart(2, '0') + `<span>SEC</span>`;
-        }
-
-        setInterval(updateTimer, 1000);
+            setInterval(updateTimer, 1000);
+        });
 
     </script>
-
-
 
 
 
@@ -2188,7 +2244,7 @@
     <script src="js/address-components.js"></script>
 
     <script src="js/loginform.js"></script>
-    <script src="js/searchbox.js"></script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
